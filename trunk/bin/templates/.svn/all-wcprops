@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/asf/!svn/ver/1534294/jmeter/trunk/bin/templates
+END
+build-ldap-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/asf/!svn/ver/1509898/jmeter/trunk/bin/templates/build-ldap-test-plan.jmx
+END
+jdbc.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/asf/!svn/ver/1498022/jmeter/trunk/bin/templates/jdbc.jmx
+END
+mongodb.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/asf/!svn/ver/1503908/jmeter/trunk/bin/templates/mongodb.jmx
+END
+build-adv-web-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/asf/!svn/ver/1510815/jmeter/trunk/bin/templates/build-adv-web-test-plan.jmx
+END
+build-ftp-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1509898/jmeter/trunk/bin/templates/build-ftp-test-plan.jmx
+END
+templates.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1501390/jmeter/trunk/bin/templates/templates.dtd
+END
+recording.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1534294/jmeter/trunk/bin/templates/recording.jmx
+END
+build-web-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/asf/!svn/ver/1510815/jmeter/trunk/bin/templates/build-web-test-plan.jmx
+END
+build-ldap-ext-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/asf/!svn/ver/1509898/jmeter/trunk/bin/templates/build-ldap-ext-test-plan.jmx
+END
+build-webservice-test-plan.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/asf/!svn/ver/1509971/jmeter/trunk/bin/templates/build-webservice-test-plan.jmx
+END
+templates.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/asf/!svn/ver/1529446/jmeter/trunk/bin/templates/templates.xml
+END
+BeanShellSampler.jmx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/asf/!svn/ver/1502041/jmeter/trunk/bin/templates/BeanShellSampler.jmx
+END
