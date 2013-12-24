@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/1545095/jmeter/trunk/src/protocol/jms/org/apache/jmeter/protocol/jms/control/gui
+END
+JMSSamplerGui.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/asf/!svn/ver/1545089/jmeter/trunk/src/protocol/jms/org/apache/jmeter/protocol/jms/control/gui/JMSSamplerGui.java
+END
+JMSSubscriberGui.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/1413958/jmeter/trunk/src/protocol/jms/org/apache/jmeter/protocol/jms/control/gui/JMSSubscriberGui.java
+END
+JMSPropertiesPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/1545095/jmeter/trunk/src/protocol/jms/org/apache/jmeter/protocol/jms/control/gui/JMSPropertiesPanel.java
+END
+JMSPublisherGui.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/1545089/jmeter/trunk/src/protocol/jms/org/apache/jmeter/protocol/jms/control/gui/JMSPublisherGui.java
+END
