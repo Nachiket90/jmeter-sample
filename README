@@ -1,1 +1,32 @@
- jmeter sample
+ ###jmeter sample
+ 
+ 
+##changes required
+#
+#	Estimated mean R(n) -> True mean E(R)
+#	confidence interval should be within 90%-99%, for accuracy and performance 95% is taken as default
+#	calculate following formulaes
+#
+#	SumR	=	SumR + Rn
+#	Sumsqr	=	Sumsqr	+	Rn*Rn	
+#	Rmean	=	SumR	/	n
+#	Rsqmean	=	Sumsqr	/	n
+#	Rvariance	=	Rsqmean	-	Rmean	*	Rsqmean
+#	Rstd	=	sqrt(Rvariance)
+#	
+#	Rmean	+-	1.960	*	Rstd	/	sqrt(n)				for 95% confidence interval
+#	
+#	Confidence interval calculation	(min samples 40)
+#
+#	classes involved
+#	1. StandardJMeterEngine.java
+#	2. JMeter Util package
+#	3. Jmeter Processor package
+#	4. Sampler package 
+#	5. Reporter package
+#
+#
+#	
+#
+#
+#############
