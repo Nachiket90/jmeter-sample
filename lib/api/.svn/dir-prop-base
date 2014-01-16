@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 130
+geronimo-activation_*_spec-*.jar
+geronimo-jms_*_spec-*.jar
+geronimo-javamail_*_spec-*.jar
+bsf-api-*.jar
+bcmail-*.jar
+bcprov-*.jar
+
+END
