@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="1756" lt="0" ts="1369226480644" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205265">
+  <httpSample t="237" lt="237" ts="1369226480644" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="52" lt="52" ts="1369226480881" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="316" lt="180" ts="1369226480933" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63545"/>
+  <httpSample t="35" lt="35" ts="1369226481249" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="38" lt="38" ts="1369226481284" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="40" lt="40" ts="1369226481322" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="54" lt="54" ts="1369226481362" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="50" lt="50" ts="1369226481416" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="165" lt="118" ts="1369226481466" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="29" lt="29" ts="1369226481631" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="27" lt="27" ts="1369226481661" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="60" lt="33" ts="1369226481688" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50306"/>
+  <httpSample t="21" lt="21" ts="1369226481748" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="14" lt="14" ts="1369226481770" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="25" lt="25" ts="1369226481784" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="28" lt="28" ts="1369226481809" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="25" lt="25" ts="1369226481838" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="28" lt="28" ts="1369226481863" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="13" lt="13" ts="1369226481892" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="19" lt="19" ts="1369226481905" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="24" lt="24" ts="1369226481924" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="31" lt="31" ts="1369226481948" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="41" lt="41" ts="1369226481979" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="36" lt="36" ts="1369226482020" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="31" lt="31" ts="1369226482057" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="22" lt="22" ts="1369226482088" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="30" lt="30" ts="1369226482110" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="28" lt="28" ts="1369226482141" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="27" lt="27" ts="1369226482169" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="19" lt="19" ts="1369226482196" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="13" lt="13" ts="1369226482215" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="21" lt="21" ts="1369226482229" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="17" lt="17" ts="1369226482250" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="17" lt="17" ts="1369226482267" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="14" lt="14" ts="1369226482285" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="23" lt="23" ts="1369226482300" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="14" lt="14" ts="1369226482324" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="25" lt="25" ts="1369226482338" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="16" lt="16" ts="1369226482363" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="21" lt="21" ts="1369226482379" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<sample t="261" lt="0" ts="1369226482402" s="false" lb="Emp search1" rc="" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Darpan 1-1" dt="" by="79884">
+  <httpSample t="261" lt="155" ts="1369226482402" s="false" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: text expected to contain /(?i)myempid/</failureMessage>
+    </assertionResult>
+  </httpSample>
+</sample>
+
+<sample t="851" lt="0" ts="1369226618833" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205265">
+  <httpSample t="83" lt="83" ts="1369226618833" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="14" lt="14" ts="1369226618916" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="109" lt="63" ts="1369226618930" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63545"/>
+  <httpSample t="8" lt="8" ts="1369226619039" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="13" lt="13" ts="1369226619047" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="11" lt="11" ts="1369226619060" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="8" lt="8" ts="1369226619071" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="7" lt="7" ts="1369226619079" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="84" lt="56" ts="1369226619086" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="15" lt="15" ts="1369226619170" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="19" lt="19" ts="1369226619185" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="30" lt="18" ts="1369226619204" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50306"/>
+  <httpSample t="11" lt="10" ts="1369226619234" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="9" lt="9" ts="1369226619246" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="8" lt="8" ts="1369226619255" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="5" lt="5" ts="1369226619263" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="12" lt="12" ts="1369226619268" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="9" lt="9" ts="1369226619280" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="22" lt="22" ts="1369226619290" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="16" lt="16" ts="1369226619312" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="16" lt="16" ts="1369226619328" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="18" lt="18" ts="1369226619344" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="18" lt="18" ts="1369226619362" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="10" lt="10" ts="1369226619380" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="14" lt="14" ts="1369226619390" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="19" lt="19" ts="1369226619404" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="13" lt="13" ts="1369226619423" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="18" lt="17" ts="1369226619436" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="19" lt="19" ts="1369226619454" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="21" lt="21" ts="1369226619473" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="20" lt="20" ts="1369226619494" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="19" lt="19" ts="1369226619514" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="18" lt="18" ts="1369226619533" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="15" lt="15" ts="1369226619552" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="24" lt="24" ts="1369226619567" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="21" lt="21" ts="1369226619592" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="12" lt="12" ts="1369226619613" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="17" lt="17" ts="1369226619625" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="21" lt="21" ts="1369226619643" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="20" lt="20" ts="1369226619664" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<sample t="164" lt="0" ts="1369226619687" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="79884">
+  <httpSample t="164" lt="115" ts="1369226619687" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>false</failure>
+      <error>false</error>
+    </assertionResult>
+  </httpSample>
+</sample>
+
+<sample t="869" lt="0" ts="1369226635228" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205265">
+  <httpSample t="89" lt="89" ts="1369226635228" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="16" lt="16" ts="1369226635318" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="136" lt="78" ts="1369226635334" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63545"/>
+  <httpSample t="17" lt="17" ts="1369226635471" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="14" lt="14" ts="1369226635489" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="16" lt="16" ts="1369226635503" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="7" lt="7" ts="1369226635519" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="13" lt="13" ts="1369226635526" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="147" lt="127" ts="1369226635540" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="10" lt="10" ts="1369226635688" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="12" lt="12" ts="1369226635698" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="21" lt="9" ts="1369226635710" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50306"/>
+  <httpSample t="9" lt="9" ts="1369226635731" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="11" lt="11" ts="1369226635740" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="7" lt="7" ts="1369226635752" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="10" lt="10" ts="1369226635759" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="10" lt="10" ts="1369226635770" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="9" lt="9" ts="1369226635780" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="6" lt="6" ts="1369226635790" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="4" lt="4" ts="1369226635796" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="4" lt="4" ts="1369226635800" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="4" lt="4" ts="1369226635805" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="9" lt="9" ts="1369226635809" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="6" lt="6" ts="1369226635819" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="6" lt="6" ts="1369226635825" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="8" lt="8" ts="1369226635831" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="15" lt="15" ts="1369226635840" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="18" lt="18" ts="1369226635855" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="16" lt="16" ts="1369226635873" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="16" lt="16" ts="1369226635890" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="18" lt="18" ts="1369226635906" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="16" lt="16" ts="1369226635924" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="24" lt="24" ts="1369226635940" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="17" lt="17" ts="1369226635964" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="19" lt="19" ts="1369226635982" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="18" lt="18" ts="1369226636001" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="21" lt="21" ts="1369226636019" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="26" lt="26" ts="1369226636040" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="15" lt="15" ts="1369226636066" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="16" lt="16" ts="1369226636081" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<sample t="346" lt="0" ts="1369226636099" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="79884">
+  <httpSample t="346" lt="267" ts="1369226636099" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>false</failure>
+      <error>false</error>
+    </assertionResult>
+  </httpSample>
+</sample>
+<sample t="179" lt="0" ts="1369226636451" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="22015">
+  <httpSample t="179" lt="178" ts="1369226636451" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="22015"/>
+</sample>
+<sample t="179" lt="0" ts="1369226636634" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="31748">
+  <httpSample t="179" lt="177" ts="1369226636634" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="31748"/>
+</sample>
+<sample t="162" lt="0" ts="1369226636818" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="56865">
+  <httpSample t="162" lt="156" ts="1369226636818" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="56865"/>
+</sample>
+<sample t="166" lt="0" ts="1369226636984" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="70552">
+  <httpSample t="166" lt="151" ts="1369226636984" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="70552"/>
+</sample>
+<sample t="211" lt="0" ts="1369226637155" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="43105">
+  <httpSample t="211" lt="207" ts="1369226637155" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="43105"/>
+</sample>
+
+<sample t="792" lt="0" ts="1369227209785" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205265">
+  <httpSample t="77" lt="77" ts="1369227209786" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="16" lt="16" ts="1369227209864" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="123" lt="72" ts="1369227209880" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63544"/>
+  <httpSample t="8" lt="8" ts="1369227210004" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="17" lt="17" ts="1369227210013" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="14" lt="14" ts="1369227210030" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="12" lt="12" ts="1369227210045" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="8" lt="8" ts="1369227210058" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="103" lt="88" ts="1369227210066" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="7" lt="7" ts="1369227210169" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="11" lt="11" ts="1369227210176" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="20" lt="9" ts="1369227210187" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50307"/>
+  <httpSample t="13" lt="13" ts="1369227210208" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="9" lt="9" ts="1369227210221" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="8" lt="8" ts="1369227210231" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="13" lt="13" ts="1369227210240" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="14" lt="14" ts="1369227210254" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="14" lt="14" ts="1369227210268" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="17" lt="17" ts="1369227210282" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="15" lt="15" ts="1369227210299" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="11" lt="11" ts="1369227210314" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="14" lt="14" ts="1369227210325" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="17" lt="17" ts="1369227210339" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="11" lt="11" ts="1369227210356" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="7" lt="7" ts="1369227210367" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="8" lt="8" ts="1369227210375" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="8" lt="8" ts="1369227210383" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="10" lt="10" ts="1369227210391" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="11" lt="11" ts="1369227210401" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="12" lt="12" ts="1369227210412" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="12" lt="12" ts="1369227210424" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="17" lt="17" ts="1369227210436" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="13" lt="13" ts="1369227210453" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="16" lt="16" ts="1369227210466" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="16" lt="16" ts="1369227210482" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="14" lt="14" ts="1369227210499" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="20" lt="20" ts="1369227210514" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="18" lt="18" ts="1369227210535" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="9" lt="9" ts="1369227210553" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="15" lt="15" ts="1369227210562" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<httpSample t="296" lt="208" ts="1369227210579" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="300" lt="208" ts="1369227210579" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="79884"/>
+<httpSample t="162" lt="162" ts="1369227210882" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="22015"/>
+<sample t="163" lt="162" ts="1369227210882" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="22015"/>
+<httpSample t="109" lt="107" ts="1369227211050" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="31748"/>
+<sample t="110" lt="107" ts="1369227211050" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="31748"/>
+<httpSample t="164" lt="159" ts="1369227211166" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="56865"/>
+<sample t="166" lt="159" ts="1369227211166" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="56865"/>
+<httpSample t="126" lt="98" ts="1369227211342" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="70552"/>
+<sample t="128" lt="98" ts="1369227211342" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="70552"/>
+<httpSample t="155" lt="151" ts="1369227211475" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="43105"/>
+<sample t="157" lt="151" ts="1369227211475" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="43105"/>
+
+<sample t="737" lt="0" ts="1369227789559" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205265">
+  <httpSample t="321" lt="321" ts="1369227789559" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="7" lt="7" ts="1369227789880" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="60" lt="41" ts="1369227789887" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63545"/>
+  <httpSample t="6" lt="6" ts="1369227789947" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="9" lt="9" ts="1369227789953" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="9" lt="9" ts="1369227789962" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="6" lt="6" ts="1369227789971" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="4" lt="4" ts="1369227789977" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="62" lt="47" ts="1369227789981" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="5" lt="5" ts="1369227790043" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="11" lt="10" ts="1369227790048" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="15" lt="7" ts="1369227790059" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50306"/>
+  <httpSample t="9" lt="9" ts="1369227790074" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="12" lt="12" ts="1369227790083" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="5" lt="5" ts="1369227790095" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="5" lt="5" ts="1369227790100" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="6" lt="6" ts="1369227790106" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="4" lt="4" ts="1369227790112" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="14" lt="14" ts="1369227790116" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="8" lt="7" ts="1369227790131" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="5" lt="5" ts="1369227790139" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="6" lt="6" ts="1369227790145" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="5" lt="5" ts="1369227790151" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="5" lt="5" ts="1369227790156" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="9" lt="9" ts="1369227790161" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="6" lt="6" ts="1369227790170" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="8" lt="8" ts="1369227790176" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="5" lt="5" ts="1369227790184" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="6" lt="6" ts="1369227790189" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="8" lt="8" ts="1369227790195" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="5" lt="5" ts="1369227790203" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="4" lt="4" ts="1369227790209" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="8" lt="8" ts="1369227790214" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="14" lt="14" ts="1369227790222" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="6" lt="6" ts="1369227790236" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="8" lt="8" ts="1369227790242" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="10" lt="10" ts="1369227790251" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="16" lt="16" ts="1369227790261" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="10" lt="10" ts="1369227790277" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="8" lt="8" ts="1369227790288" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<sample t="464" lt="0" ts="1369227790063" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-2" dt="" by="205265">
+  <httpSample t="40" lt="40" ts="1369227790063" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="583"/>
+  <httpSample t="9" lt="9" ts="1369227790103" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="587"/>
+  <httpSample t="53" lt="31" ts="1369227790112" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="63545"/>
+  <httpSample t="5" lt="5" ts="1369227790165" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="358"/>
+  <httpSample t="5" lt="5" ts="1369227790170" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="4814"/>
+  <httpSample t="5" lt="5" ts="1369227790175" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="4110"/>
+  <httpSample t="4" lt="4" ts="1369227790181" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="898"/>
+  <httpSample t="3" lt="3" ts="1369227790186" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="358"/>
+  <httpSample t="33" lt="28" ts="1369227790190" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="29227"/>
+  <httpSample t="4" lt="4" ts="1369227790223" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="353"/>
+  <httpSample t="9" lt="9" ts="1369227790227" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="5129"/>
+  <httpSample t="13" lt="10" ts="1369227790236" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="50306"/>
+  <httpSample t="7" lt="7" ts="1369227790250" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="11007"/>
+  <httpSample t="20" lt="20" ts="1369227790257" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="10104"/>
+  <httpSample t="8" lt="8" ts="1369227790277" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="499"/>
+  <httpSample t="25" lt="25" ts="1369227790285" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1430"/>
+  <httpSample t="16" lt="16" ts="1369227790311" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="925"/>
+  <httpSample t="15" lt="15" ts="1369227790327" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="779"/>
+  <httpSample t="11" lt="11" ts="1369227790343" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1140"/>
+  <httpSample t="7" lt="7" ts="1369227790355" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="352"/>
+  <httpSample t="8" lt="8" ts="1369227790362" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="865"/>
+  <httpSample t="10" lt="10" ts="1369227790370" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1309"/>
+  <httpSample t="7" lt="7" ts="1369227790380" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1314"/>
+  <httpSample t="4" lt="4" ts="1369227790387" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="357"/>
+  <httpSample t="6" lt="6" ts="1369227790391" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="898"/>
+  <httpSample t="10" lt="10" ts="1369227790397" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="965"/>
+  <httpSample t="8" lt="8" ts="1369227790407" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1420"/>
+  <httpSample t="13" lt="13" ts="1369227790415" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1352"/>
+  <httpSample t="8" lt="8" ts="1369227790429" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="333"/>
+  <httpSample t="9" lt="9" ts="1369227790437" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="362"/>
+  <httpSample t="6" lt="6" ts="1369227790446" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="841"/>
+  <httpSample t="4" lt="4" ts="1369227790452" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="358"/>
+  <httpSample t="10" lt="10" ts="1369227790457" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1300"/>
+  <httpSample t="7" lt="7" ts="1369227790468" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1434"/>
+  <httpSample t="9" lt="9" ts="1369227790476" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="863"/>
+  <httpSample t="13" lt="13" ts="1369227790485" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1407"/>
+  <httpSample t="11" lt="11" ts="1369227790498" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="385"/>
+  <httpSample t="6" lt="6" ts="1369227790509" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="631"/>
+  <httpSample t="6" lt="6" ts="1369227790515" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="965"/>
+  <httpSample t="6" lt="6" ts="1369227790521" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-2" dt="bin" by="1402"/>
+</sample>
+<httpSample t="316" lt="305" ts="1369227790298" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="322" lt="305" ts="1369227790298" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="79884"/>
+<httpSample t="744" lt="703" ts="1369227790529" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="79927">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="750" lt="703" ts="1369227790529" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="79927"/>
+<httpSample t="689" lt="687" ts="1369227790623" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="22015"/>
+<sample t="692" lt="687" ts="1369227790622" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="22015"/>
+<httpSample t="690" lt="689" ts="1369227791281" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="22017"/>
+<sample t="693" lt="689" ts="1369227791281" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="22017"/>
+<httpSample t="686" lt="683" ts="1369227791317" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="31748"/>
+<sample t="688" lt="683" ts="1369227791317" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="31748"/>
+<httpSample t="352" lt="349" ts="1369227791977" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="31748"/>
+<sample t="354" lt="349" ts="1369227791977" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="31748"/>
+<httpSample t="380" lt="370" ts="1369227792009" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="56865"/>
+<sample t="382" lt="370" ts="1369227792009" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="56865"/>
+<httpSample t="268" lt="255" ts="1369227792395" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="70552"/>
+<sample t="271" lt="255" ts="1369227792395" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="70552"/>
+<httpSample t="374" lt="369" ts="1369227792335" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="56865"/>
+<sample t="377" lt="369" ts="1369227792335" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="56865"/>
+<httpSample t="202" lt="199" ts="1369227792670" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="43105"/>
+<sample t="205" lt="199" ts="1369227792670" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="43105"/>
+<httpSample t="239" lt="227" ts="1369227792716" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="70552"/>
+<sample t="244" lt="227" ts="1369227792715" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="70552"/>
+<httpSample t="174" lt="170" ts="1369227792963" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-2" dt="text" by="43105"/>
+<sample t="176" lt="170" ts="1369227792963" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-2" dt="" by="43105"/>
+
+
+<sample t="40865" lt="0" ts="1369228206376" s="true" lb="Darpan" rc="200" rm="Number of samples in transaction : 40, number of failing samples : 0" tn="Darpan 1-1" dt="" by="205266">
+  <httpSample t="297" lt="297" ts="1369228207376" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="583"/>
+  <httpSample t="24" lt="24" ts="1369228208673" s="true" lb="/Tab-RSS/WebResource.axd" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="587"/>
+  <httpSample t="121" lt="72" ts="1369228209697" s="true" lb="/" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="63545"/>
+  <httpSample t="13" lt="13" ts="1369228210818" s="true" lb="/Resources/JScript1.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="358"/>
+  <httpSample t="22" lt="22" ts="1369228211831" s="true" lb="/Resources/JScriptMenu.js" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="4814"/>
+  <httpSample t="6" lt="6" ts="1369228212852" s="true" lb="/images/logo_intranet.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="4110"/>
+  <httpSample t="17" lt="17" ts="1369228213858" s="true" lb="/webpart%20images/icon_close.png" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="6" lt="6" ts="1369228214875" s="true" lb="/webpart%20images/bottom_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="50" lt="40" ts="1369228215881" s="true" lb="/ShuttleNew/default.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="29227"/>
+  <httpSample t="4" lt="4" ts="1369228216931" s="true" lb="/webpart%20images/Dwn_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="353"/>
+  <httpSample t="7" lt="7" ts="1369228217935" s="true" lb="/WhatsNew/WhatsNew.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="5129"/>
+  <httpSample t="22" lt="9" ts="1369228218942" s="true" lb="/Tab-RSS/rssTab.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="50307"/>
+  <httpSample t="8" lt="8" ts="1369228219963" s="true" lb="/ShuttleNew/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="11007"/>
+  <httpSample t="7" lt="7" ts="1369228220971" s="true" lb="/Tab-RSS/Stylesheet/main.css" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="10104"/>
+  <httpSample t="4" lt="4" ts="1369228221977" s="true" lb="/images/new.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="499"/>
+  <httpSample t="35" lt="35" ts="1369228222982" s="true" lb="/Tab-RSS/images/icon_employee_facilities.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1430"/>
+  <httpSample t="5" lt="5" ts="1369228224016" s="true" lb="/Tab-RSS/images/icon_employee_applications.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="925"/>
+  <httpSample t="8" lt="8" ts="1369228225020" s="true" lb="/KLISMA.html" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="779"/>
+  <httpSample t="10" lt="10" ts="1369228226028" s="true" lb="/Tab-RSS/images/body_top_left_panel_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1140"/>
+  <httpSample t="20" lt="20" ts="1369228227038" s="true" lb="/Tab-RSS/images/more_arrow.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="352"/>
+  <httpSample t="6" lt="6" ts="1369228228058" s="true" lb="/Tab-RSS/images/icon_emplyoyee_manual.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="865"/>
+  <httpSample t="5" lt="5" ts="1369228229064" s="true" lb="/Tab-RSS/images/icon_webmail.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1309"/>
+  <httpSample t="4" lt="4" ts="1369228230069" s="true" lb="/Tab-RSS/images/icon_library.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1314"/>
+  <httpSample t="7" lt="7" ts="1369228231073" s="true" lb="/ShuttleNew/images/minus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="357"/>
+  <httpSample t="6" lt="6" ts="1369228232080" s="true" lb="/ShuttleNew/images/icon_birthday.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="898"/>
+  <httpSample t="5" lt="5" ts="1369228233086" s="true" lb="/ShuttleNew/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="5" lt="5" ts="1369228234091" s="true" lb="/ShuttleNew/images/icon_shuttle_services.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1420"/>
+  <httpSample t="8" lt="8" ts="1369228235096" s="true" lb="/ShuttleNew/images/icon_food.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1352"/>
+  <httpSample t="8" lt="8" ts="1369228236104" s="true" lb="/ShuttleNew/images/shuttle_arrow_A.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="333"/>
+  <httpSample t="4" lt="4" ts="1369228237112" s="true" lb="/ShuttleNew/images/plus.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="362"/>
+  <httpSample t="9" lt="9" ts="1369228238116" s="true" lb="/ShuttleNew/images/empoyeetrv(1).gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="841"/>
+  <httpSample t="5" lt="5" ts="1369228239124" s="true" lb="/ShuttleNew/images/portal_header_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="358"/>
+  <httpSample t="17" lt="17" ts="1369228240129" s="true" lb="/Tab-RSS/images/icon_company_information.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1300"/>
+  <httpSample t="7" lt="7" ts="1369228241146" s="true" lb="/Tab-RSS/home.jpg" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1434"/>
+  <httpSample t="24" lt="24" ts="1369228242153" s="true" lb="/ShuttleNew/images/icon_quick_dial.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="863"/>
+  <httpSample t="29" lt="29" ts="1369228243177" s="true" lb="/Tab-RSS/images/icon_company_group.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1407"/>
+  <httpSample t="5" lt="5" ts="1369228244206" s="true" lb="/Tab-RSS/dirArrow.GIF" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="385"/>
+  <httpSample t="6" lt="6" ts="1369228245210" s="true" lb="/Tab-RSS/images/icon_manager.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="631"/>
+  <httpSample t="13" lt="13" ts="1369228246215" s="true" lb="/Tab-RSS/images/shutle_service_tbl_bg.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="965"/>
+  <httpSample t="14" lt="14" ts="1369228247228" s="true" lb="/Tab-RSS/images/icon_new_employee.gif" rc="200" rm="OK" tn="Darpan 1-1" dt="bin" by="1402"/>
+</sample>
+<httpSample t="110" lt="81" ts="1369228248243" s="true" lb="/EmployeeSearch/WebUI/EmpSearch.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="79884">
+  <assertionResult>
+    <name>Response Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+</httpSample>
+<sample t="1115" lt="81" ts="1369228247243" s="true" lb="Emp search1" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="79884"/>
+<httpSample t="95" lt="94" ts="1369228249359" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="22015"/>
+<sample t="1097" lt="94" ts="1369228248359" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="22015"/>
+<httpSample t="118" lt="116" ts="1369228250459" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="31748"/>
+<sample t="1120" lt="116" ts="1369228249459" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="31748"/>
+<httpSample t="112" lt="105" ts="1369228251581" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="56865"/>
+<sample t="1114" lt="105" ts="1369228250582" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="56865"/>
+<httpSample t="126" lt="109" ts="1369228252698" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="70552"/>
+<sample t="1128" lt="109" ts="1369228251699" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="70552"/>
+<httpSample t="116" lt="114" ts="1369228253829" s="true" lb="/EmployeeSearch/WebUI/EmpDetails.aspx" rc="200" rm="OK" tn="Darpan 1-1" dt="text" by="43105"/>
+<sample t="1118" lt="114" ts="1369228252830" s="true" lb="Emp search2" rc="200" rm="Number of samples in transaction : 1, number of failing samples : 0" tn="Darpan 1-1" dt="" by="43105"/>
+
+</testResults>

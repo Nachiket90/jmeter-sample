@@ -1,0 +1,457 @@
+sampler_label,aggregate_report_count,average,aggregate_report_median,aggregate_report_90%_line,aggregate_report_min,aggregate_report_max,aggregate_report_error%,aggregate_report_rate,aggregate_report_bandwidth
+home,54,4471,4343,8201,231,9037,0.0,0.18464252864523675,2.2423702458823005
+login,50,17963,17040,25780,6948,31118,0.0,0.16811582507884631,13.659883613414298
+search forums,32,3966,3529,8544,116,9076,0.0,0.11419558134472434,1.473669443046738
+view topic,31,4142,4386,8033,240,8657,0.1935483870967742,0.11190850937865507,1.8285358294496268
+choose forum,18,4041,3416,7013,875,8070,0.0,0.0661101174189141,0.7324586387100447
+choose topic,18,4196,4033,7011,112,8536,0.0,0.06586072651699207,1.279867725133917
+logout,30,14405,13843,18879,2821,23500,0.0,0.11231622258080216,8.379967477433798
+post reply & logout,15,57124,56766,62792,49423,66104,0.0,0.05621240795218198,5.975298452753471
+TOTAL,248,11420,6500,23305,112,66104,0.024193548387096774,0.8286111408104352,33.478334627342164
+1370242193560,5253,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,13601,0
+1370242193571,5241,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,13601,0
+1370242197573,6001,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,13601,0
+1370242201572,2280,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,13601,0
+1370242201573,3020,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,13601,0
+1370242197572,8794,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,13601,0
+1370242205573,6739,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,13891,0
+1370242206369,7020,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83061,0
+1370242205572,8473,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,13891,0
+1370242198880,16824,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83061,0
+1370242209572,8586,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,13994,0
+1370242209573,8919,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,13994,0
+1370242215707,3508,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19704,0
+1370242213391,5849,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,5200,0
+1370242198880,21001,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83123,0
+1370242219884,1889,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,10545,0
+1370242219243,2863,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-2,,false,1052,0
+1370242219219,5869,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,20494,0
+1370242212316,16173,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83247,0
+1370242221776,6746,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,25028,0
+1370242203856,24672,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83251,0
+1370242204597,24815,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83250,0
+1370242229416,501,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,16413,0
+1370242214048,16694,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83248,0
+1370242230745,1035,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19704,0
+1370242203577,30096,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83251,0
+1370242218495,15384,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83249,0
+1370242229922,4353,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,20504,0
+1370242222109,12588,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76490,0
+1370242228531,6670,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,11916,0
+1370242233676,2247,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,10820,0
+1370242228492,8793,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,11983,0
+1370242231786,6597,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,20619,0
+1370242225091,15113,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76490,0
+1370242237288,3461,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,17173,0
+1370242218162,22812,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83247,0
+1370242235205,5917,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,20491,0
+1370242235927,5685,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,25295,0
+1370242234700,7586,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12174,0
+1370242233882,8508,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,18112,0
+1370242240978,4990,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,11818,0
+1370242240208,6357,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12050,0
+1370242245972,1281,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,14092,0
+1370242242394,9053,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,25568,0
+1370242238387,14348,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76366,0
+1370242234278,20248,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76366,0
+1370242228527,27051,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,33466,0
+1370242257243,95,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-1,text,true,6374,91
+1370242252739,5394,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12049,0
+1370242254530,5627,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12049,0
+1370242240753,19809,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,28999,0
+1370242262072,43,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-1,text,true,57915,40
+1370242263725,98,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-4,text,true,6374,95
+1370242264549,32,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-4,text,true,57915,31
+1370242242293,22779,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83124,0
+1370242247257,18064,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,27281,0
+1370242241126,25313,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,32633,0
+1370242266668,96,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-3,text,true,6374,92
+1370242241616,26204,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,33227,0
+1370242267787,36,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-3,text,true,57916,36
+1370242246569,22256,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83121,0
+1370242268727,103,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-5,text,true,6374,103
+1370242251452,17448,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76363,0
+1370242269099,94,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-2,text,true,6374,90
+1370242270139,69,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-4,text,true,11964,65
+1370242260568,9644,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,76253,191
+1370242265076,5796,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,15615,0
+1370242271117,70,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-1,text,true,12026,66
+1370242255582,15607,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,76315,197
+1370242268830,2647,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,16413,0
+1370242271193,751,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12047,0
+1370242271915,45,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-2,text,true,57915,43
+1370242272257,32,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-5,text,true,57915,30
+1370242260162,12888,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83120,0
+1370242273662,79,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-3,text,true,12026,75
+1370242266446,7298,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,76316,203
+1370242273980,69,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-5,text,true,12026,65
+1370242265328,8724,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,76315,198
+1370242270215,5495,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,12047,0
+1370242273747,2185,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,12047,0
+1370242271481,4570,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,20490,0
+1370242268904,7295,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12047,0
+1370242276184,74,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-2,text,true,12026,70
+1370242267829,8433,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,76315,203
+1370242274055,3825,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,12047,0
+1370242276265,2248,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,12047,0
+1370242258137,20492,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83121,0
+1370242270877,8128,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,20845,0
+1370242273053,6682,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,9000,0
+1370242278632,1823,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19830,0
+1370242304077,380,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,14197,0
+1370242304082,4022,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,14197,0
+1370242308082,2197,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,14197,0
+1370242308078,6879,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,14197,0
+1370242312086,4957,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,14197,0
+1370242316088,1478,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,14197,0
+1370242316079,1953,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,14197,0
+1370242312085,8752,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,14197,0
+1370242304462,19932,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83244,0
+1370242320088,6956,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,14197,0
+1370242324397,2662,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19830,0
+1370242310282,17155,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83245,0
+1370242327441,485,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,11985,0
+1370242308107,20215,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83244,0
+1370242320090,8707,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,14197,0
+1370242318035,11912,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83243,0
+1370242327062,3018,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,22114,0
+1370242327930,4004,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,18106,0
+1370242328327,4880,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,11829,0
+1370242329952,4328,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19830,0
+1370242333210,1907,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,18805,0
+1370242314959,20893,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83244,0
+1370242317570,19523,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83243,0
+1370242334283,3977,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,18314,0
+1370242330084,8399,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76485,0
+1370242337097,1539,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,11827,0
+1370242335856,3559,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,5199,0
+1370242327048,15190,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83243,0
+1370242338640,4303,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,24208,0
+1370242320841,23026,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83245,0
+1370242338486,6680,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12171,0
+1370242317045,29413,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83247,0
+1370242338263,9067,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76485,0
+1370242328801,19127,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83245,0
+1370242342242,5706,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,5200,0
+1370242347952,143,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-5,,false,1052,0
+1370242339419,8881,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-2,,false,1052,0
+1370242346463,2097,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,16413,0
+1370242343871,5198,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,11885,0
+1370242347932,2260,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,11834,0
+1370242349073,1344,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,15700,0
+1370242348303,2235,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76486,0
+1370242331937,19213,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,29743,0
+1370242350542,1765,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12170,0
+1370242347334,8199,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12171,0
+1370242350196,6010,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,22213,0
+1370242335119,22023,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,50453,0
+1370242348564,8847,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,20505,0
+1370242357366,108,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-1,text,true,6374,105
+1370242358010,96,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-2,text,true,6374,92
+1370242359591,31,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-2,text,true,57915,29
+1370242360766,39,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-1,text,true,57915,39
+1370242364110,70,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-2,text,true,12150,65
+1370242351154,13029,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,76439,186
+1370242345170,22036,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83246,0
+1370242348098,20699,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76487,0
+1370242368881,71,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-1,text,true,12150,67
+1370242357143,11812,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,76439,211
+1370242342946,27724,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,33703,0
+1370242364186,6510,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,12171,0
+1370242350422,20626,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,28147,0
+1370242356207,18127,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,33506,0
+1370242374666,96,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-3,text,true,6374,93
+1370242374929,96,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-5,text,true,6374,92
+1370242375219,32,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-3,text,true,57915,30
+1370242355534,19808,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83246,0
+1370242367209,8243,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,15615,0
+1370242375347,371,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,16413,0
+1370242368958,6996,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12171,0
+1370242368801,7225,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12171,0
+1370242357412,19234,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76488,0
+1370242377130,236,/pegforums/PEGForums/style.php,200,OK,Scenario2 2-5,text,true,57915,209
+1370242377131,282,/pegforums/PEGForums/index.php,200,OK,Scenario2 2-3,text,true,12151,282
+1370242371052,6381,logout,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,76440,405
+1370242377135,507,/pegforums/PEGForums/ucp.php,200,OK,Scenario2 2-4,text,true,6375,503
+1370242407499,3280,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,14197,0
+1370242407494,5689,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,14197,0
+1370242411492,3253,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,14197,0
+1370242415501,631,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,14197,0
+1370242415496,3080,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,14197,0
+1370242411499,8174,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,14197,0
+1370242419502,3430,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,14197,0
+1370242423503,382,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,14197,0
+1370242419495,5677,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,14197,0
+1370242423498,6244,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,14197,0
+1370242413185,17566,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83244,0
+1370242430753,125,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19502,0
+1370242430881,481,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19742,0
+1370242410782,21811,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83245,0
+1370242414747,18315,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83244,0
+1370242432597,895,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12014,0
+1370242416135,18323,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83245,0
+1370242419676,18919,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83246,0
+1370242433066,5739,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,5200,0
+1370242434463,4693,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,10614,0
+1370242418579,20825,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83245,0
+1370242433495,5924,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,22638,0
+1370242425175,14434,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83243,0
+1370242423888,18767,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83246,0
+1370242431365,12953,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76486,0
+1370242422935,21756,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83244,0
+1370242439159,6174,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,20893,0
+1370242438599,6865,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,11822,0
+1370242439408,6637,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,15615,0
+1370242445467,854,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,17191,0
+1370242444694,1754,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,10890,0
+1370242442659,3838,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,10952,0
+1370242439612,7271,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19503,0
+1370242438808,8306,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-2,,false,1052,0
+1370242446049,2856,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,21044,0
+1370242429745,19960,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83244,0
+1370242446501,3373,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,21699,0
+1370242449710,1032,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,5199,0
+1370242444322,7006,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12171,0
+1370242446887,5532,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19652,0
+1370242446457,7330,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,21100,0
+1370242450746,7004,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-5,,false,1052,0
+1370242439424,22875,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,33969,0
+1370242447117,15374,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76487,0
+1370242448909,13773,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76487,0
+1370242462495,2388,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12170,0
+1370242462685,3049,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12170,0
+1370242446324,19930,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,29014,0
+1370242445336,21023,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,31409,0
+1370242449878,22248,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,53834,0
+1370242452422,19796,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76486,0
+1370242457754,14643,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76486,0
+1370242466362,8077,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-3,,true,76439,0
+1370242451331,24296,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83244,0
+1370242472401,6412,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12170,0
+1370242453791,25172,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,32299,0
+1370242472221,7569,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12170,0
+1370242462302,17659,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-1,,true,76438,0
+1370242474449,6650,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,12170,0
+1370242475630,8966,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,17730,0
+1370242464886,21028,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83243,0
+1370242466258,19698,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-2,,true,76438,0
+1370242485918,1272,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,16413,0
+1370242479964,7740,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12170,0
+1370242472129,16124,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-5,,true,76438,0
+1370242478967,9430,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-4,,true,76438,0
+1370242488258,307,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,12170,0
+1370242487194,2329,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,20504,0
+1370242465737,24414,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83244,0
+1370242484600,5881,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,24130,0
+1370242485960,4934,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,12170,0
+1370242490158,6064,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,19503,0
+1370242479793,17096,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83243,0
+1370242488403,8531,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,12170,0
+1370242496226,1004,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,23702,0
+1370242490486,7744,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76485,0
+1370242478816,20131,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83243,0
+1370242481102,19240,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83245,0
+1370242487712,12845,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83242,0
+1370242496894,7056,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,9000,0
+1370242498952,5029,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,5199,0
+1370242488568,15741,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83244,0
+1370242503985,1730,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-5,,false,1052,0
+1370242498234,8465,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12170,0
+1370242503955,3580,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,25683,0
+1370242489528,18359,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76486,0
+1370242500560,7912,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,11001,0
+1370242500347,8758,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,10850,0
+1370242497233,13350,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76485,0
+1370242508476,2131,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,25643,0
+1370242490899,19808,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83243,0
+1370242504313,6852,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,10828,0
+1370242505719,6386,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76485,0
+1370242507891,6061,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12170,0
+1370242509109,5433,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,25798,0
+1370242510587,4567,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12169,0
+1370242510711,4630,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,10889,0
+1370242507538,8272,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76485,0
+1370242511168,5844,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,24084,0
+1370242496937,20954,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83244,0
+1370242512109,7308,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12170,0
+1370242515342,4889,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,24130,0
+1370242517892,3423,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,11612,0
+1370242515811,7540,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12170,0
+1370242521316,6277,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,18811,0
+1370242506702,23353,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83243,0
+1370242513956,17537,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83245,0
+1370242531494,2844,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,18668,0
+1370242510611,24287,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,33226,0
+1370242515155,19952,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83245,0
+1370242530056,5862,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,5200,0
+1370242535919,2814,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-1,,false,1052,0
+1370242514543,24337,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,56322,0
+1370242534340,4881,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,26285,0
+1370242520232,20132,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,33190,0
+1370242535108,6088,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,18787,0
+1370242523352,18220,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83245,0
+1370242519418,22487,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83246,0
+1370242517013,25422,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,57154,0
+1370242541908,1406,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,16413,0
+1370242543318,426,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,20504,0
+1370242541576,2188,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19502,0
+1370242543767,2181,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,19651,0
+1370242534899,11725,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-1,,true,76439,0
+1370242539222,8475,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76486,0
+1370242527594,22595,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,29879,0
+1370242541200,9065,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,25691,0
+1370242546628,4218,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12171,0
+1370242540365,12599,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-2,,true,76440,0
+1370242542444,10790,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-5,,true,76440,0
+1370242553239,478,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,12171,0
+1370242538881,15233,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-3,,true,76439,0
+1370242538735,15946,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76487,0
+1370242545952,9738,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76486,0
+1370242554120,1665,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,12171,0
+1370242552970,3166,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,12171,0
+1370242547701,8654,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12171,0
+1370242543748,19259,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76488,0
+1370242554686,8419,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12171,0
+1370242555694,8852,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12171,0
+1370242550269,14606,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76486,0
+1370242563012,3871,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12170,0
+1370242550851,18011,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83245,0
+1370242555788,13751,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83244,0
+1370242550194,20183,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-4,,true,76440,0
+1370242564878,5917,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12171,0
+1370242568865,3038,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,10827,0
+1370242569542,2518,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,11821,0
+1370242556358,15714,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83243,0
+1370242556139,17608,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83245,0
+1370242570381,4707,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,12171,0
+1370242573750,1377,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,11559,0
+1370242572075,3520,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,5199,0
+1370242553720,22495,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83246,0
+1370242572064,4816,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,25712,0
+1370242571906,5188,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,25746,0
+1370242576218,1638,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,12004,0
+1370242575130,2732,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,19788,0
+1370242575598,3346,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-2,,false,1052,0
+1370242564549,14714,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83245,0
+1370242579267,301,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,8999,0
+1370242566886,14160,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83243,0
+1370242581050,3323,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,5199,0
+1370242577861,7379,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,20434,0
+1370242563109,23899,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83246,0
+1370242587011,1320,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19502,0
+1370242584376,4101,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-5,,false,1052,0
+1370242579572,8927,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,25684,0
+1370242575092,13738,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83245,0
+1370242578947,10987,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76487,0
+1370242589937,1927,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12170,0
+1370242577097,18537,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,34082,0
+1370242588834,7460,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,11006,0
+1370242576883,19823,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,34567,0
+1370242570798,26186,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83246,0
+1370242588335,8767,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19714,0
+1370242588481,10682,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76486,0
+1370242596298,3920,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,25915,0
+1370242599167,3270,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12108,0
+1370242596713,5853,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-3,,true,76377,0
+1370242588503,14601,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76424,0
+1370242602571,631,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,12109,0
+1370242603108,290,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12108,0
+1370242596988,7977,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,18668,0
+1370242577866,27162,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,30606,0
+1370242595638,10216,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-1,,true,76377,0
+1370242597106,9193,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76423,0
+1370242591867,14686,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83181,0
+1370242604970,1592,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,26216,0
+1370242606558,1210,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,16413,0
+1370242607772,570,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,20552,0
+1370242605858,4417,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12109,0
+1370242585244,27890,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,30892,0
+1370242606304,8520,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12109,0
+1370242606567,12302,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76423,0
+1370242608345,11567,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76424,0
+1370242603205,18361,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83183,0
+1370242621567,541,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,11796,0
+1370242602440,20489,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83181,0
+1370242605032,18922,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-2,,true,76378,0
+1370242600222,23738,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,33809,0
+1370242622109,1957,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,26338,0
+1370242618870,5536,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12109,0
+1370242603401,23656,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83244,0
+1370242627059,581,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,5199,0
+1370242619913,8291,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12171,0
+1370242627641,1434,view topic,,"Number of samples in transaction : 1, number of failing samples : 1",scenario1 1-4,,false,1052,0
+1370242613138,16003,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-5,,true,76441,0
+1370242623968,5387,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,12171,0
+1370242614825,15151,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83245,0
+1370242622931,8650,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,19168,0
+1370242610279,25312,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83246,0
+1370242629142,6788,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,12171,0
+1370242629977,6371,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,19161,0
+1370242636354,1930,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,26219,0
+1370242629077,9730,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-4,,true,76486,0
+1370242631583,8187,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,23612,0
+1370242635592,7090,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12009,0
+1370242623963,20754,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-4,,true,76440,0
+1370242629356,16155,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-2,,true,83244,0
+1370242638809,7016,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,12171,0
+1370242628205,18479,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83244,0
+1370242645513,1310,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,11796,0
+1370242624067,22850,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-3,,true,34225,0
+1370242646686,688,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,19167,0
+1370242642684,4892,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,21984,0
+1370242638286,10241,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76486,0
+1370242644719,4028,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,12171,0
+1370242648529,1678,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,12170,0
+1370242624408,27433,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83246,0
+1370242647376,7180,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,23612,0
+1370242635931,18655,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-5,,true,83244,0
+1370242646824,8136,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,26255,0
+1370242651843,5176,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,17416,0
+1370242639772,18764,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76487,0
+1370242654588,3979,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,11005,0
+1370242658569,564,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-5,,true,26184,0
+1370242658539,1973,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,12170,0
+1370242650208,10346,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83243,0
+1370242657020,4117,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,22214,0
+1370242646919,14600,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-3,,true,76439,0
+1370242661521,4959,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,12171,0
+1370242647577,19097,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-1,,true,31762,0
+1370242660555,6559,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,18414,0
+1370242645827,22119,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-4,,true,83246,0
+1370242648748,19810,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-4,,true,83246,0
+1370242654562,16413,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-2,,true,76486,0
+1370242667117,4522,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,23709,0
+1370242668560,3974,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,10796,0
+1370242672535,1335,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-4,,true,25824,0
+1370242661139,13613,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-3,,true,76486,0
+1370242666676,8322,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-1,,true,76439,0
+1370242667948,7428,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,18668,0
+1370242660517,14908,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83243,0
+1370242654962,20558,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-2,,true,33206,0
+1370242674999,1140,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,12171,0
+1370242670978,5900,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,12171,0
+1370242674755,4772,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-3,,true,12170,0
+1370242675427,4635,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,19167,0
+1370242680063,533,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,23604,0
+1370242675381,7366,view topic,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-4,,true,14921,0
+1370242671640,13867,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-1,,true,76424,0
+1370242676140,10087,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-1,,true,83182,0
+1370242659135,28137,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-5,,true,33441,0
+1370242666482,20827,login,200,"Number of samples in transaction : 4, number of failing samples : 0",Scenario2 2-3,,true,83121,0
+1370242686228,3243,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,10787,0
+1370242689473,292,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-1,,true,25463,0
+1370242673871,17080,post reply ,200,"Number of samples in transaction : 2, number of failing samples : 0",Scenario2 2-4,,true,56765,0
+1370242675523,16579,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-2,,true,76253,0
+1370242685508,6764,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-1,,true,11985,0
+1370242680597,12933,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",scenario1 1-5,,true,76301,0
+1370242692104,1812,home,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-2,,true,11985,0
+1370242693532,618,home,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-5,,true,11984,0
+1370242687310,7528,choose forum,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,11919,0
+1370242676879,21928,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-2,,true,83183,0
+1370242690953,10951,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-4,,true,76377,0
+1370242694839,9039,choose topic,200,"Number of samples in transaction : 1, number of failing samples : 0",Scenario2 2-3,,true,23548,0
+1370242687291,17610,logout,200,"Number of samples in transaction : 3, number of failing samples : 0",Scenario2 2-5,,true,76377,0
+1370242679528,26856,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-3,,true,83186,0
+1370242698808,8006,search forums,200,"Number of samples in transaction : 1, number of failing samples : 0",scenario1 1-2,,true,5200,0
+1370242692274,14881,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-1,,true,83181,0
+1370242694151,13168,login,200,"Number of samples in transaction : 4, number of failing samples : 0",scenario1 1-5,,true,83182,0

@@ -1,0 +1,6 @@
+sampler_label,aggregate_report_count,average,aggregate_report_median,aggregate_report_90%_line,aggregate_report_min,aggregate_report_max,aggregate_report_error%,aggregate_report_rate,aggregate_report_bandwidth
+home page,1,54,54,54,54,54,0.0,18.51851851851852,104.6730324074074
+Login,1,769,769,769,769,769,0.0,1.3003901170351106,159.6432054616385
+Add Status mesage,1,648,648,648,648,648,0.0,1.5432098765432098,14.898606288580247
+Logout,1,1093,1093,1093,1093,1093,0.0,0.9149130832570906,33.60697335315645
+TOTAL,4,641,648,1093,54,1093,0.0,1.554001554001554,67.91168900543902
