@@ -45,7 +45,7 @@ import org.apache.log.Logger;
  * Thus, the SleepMask provides a way to add a random component to the sleep
  * time.
  *
- * @version $Revision: 1516231 $
+ * @version $Revision$
  */
 public class SleepTest extends AbstractJavaSamplerClient implements Serializable {
 

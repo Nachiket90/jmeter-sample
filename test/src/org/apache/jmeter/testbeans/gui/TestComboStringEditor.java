@@ -32,6 +32,7 @@ public class TestComboStringEditor extends junit.framework.TestCase {
         }
 
         public void testSetGet() throws Exception {
+            @SuppressWarnings("deprecation") // test code, intentional
             ComboStringEditor e = new ComboStringEditor();
 
             testSetGet(e, "any string");
@@ -41,6 +42,7 @@ public class TestComboStringEditor extends junit.framework.TestCase {
         }
 
         public void testSetGetAsText() throws Exception {
+            @SuppressWarnings("deprecation") // test code, intentional
             ComboStringEditor e = new ComboStringEditor();
 
             testSetGetAsText(e, "any string");
@@ -49,7 +51,7 @@ public class TestComboStringEditor extends junit.framework.TestCase {
             testSetGetAsText(e, "${var}");
 
             // Check "Undefined" does not become a "reserved word":
-            e.setAsText(ComboStringEditor.UNDEFINED.toString());
+            e.setAsText(e.UNDEFINED.toString());
             assertNotNull(e.getAsText());
         }
 }

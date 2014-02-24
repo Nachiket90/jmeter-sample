@@ -20,7 +20,7 @@
 package org.apache.jmeter.monitor.model;
 
 /**
- * @version $Revision: 674365 $
+ * @version $Revision$
  */
 public interface Memory {
     long getMax();

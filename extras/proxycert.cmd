@@ -16,12 +16,30 @@ rem   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 rem   See the License for the specific language governing permissions and
 rem   limitations under the License.
 
-rem Generate proxyserver certificate for JMeter
+rem Generate temporary certificate for use with JMeter Proxy recorder
+rem Usage:  proxycert [validity(default 1)]
+rem e.g. proxycert 7
 
-set DNAME="cn=JMeter Proxy, ou=JMeter, o=Apache Software Foundation, c=US"
+setlocal
+
+set KEYSTORE=proxyserver.jks
+if not exist %KEYSTORE% goto NOTEXISTS
+echo %KEYSTORE% exists; please rename or delete it before creating a replacement
+goto :EOF
+:NOTEXISTS
+
+set DNAME="cn=JMeter Proxy (DO NOT TRUST)"
+
+set VALIDITY=1
+if not .%1 == . set VALIDITY=%1
+
+rem Must agree with property proxy.cert.keystorepass
+set STOREPASSWORD=password
+rem Must agree with proxy.cert.keypassword
+set KEYPASSWORD=password
 
 rem generate the keystore with the certificate
-keytool -genkey -alias jmeter -keystore proxyserver.jks -keypass password -storepass password -validity 1825 -keyalg RSA -dname %DNAME%
+keytool -genkeypair -alias jmeter -keystore %KEYSTORE% -keypass %KEYPASSWORD% -storepass %STOREPASSWORD% -validity %VALIDITY% -keyalg RSA -dname %DNAME%
 
 rem show the contents
-keytool -list -v -keystore proxyserver.jks -storepass password
+keytool -list -v -keystore %KEYSTORE% -storepass %STOREPASSWORD%

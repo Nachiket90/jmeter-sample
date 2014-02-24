@@ -27,5 +27,12 @@
 ##
 ##   ==============================================
 
-# Add Mac-specific property - should be ignored elsewhere (Bug 47064)
-java $JVM_ARGS -Dapple.laf.useScreenMenuBar=true -jar `dirname $0`/ApacheJMeter.jar "$@"
+JMETER_OPTS=""
+case $(uname) in
+   Darwin*)
+   # Add Mac-specific property - should be ignored elsewhere (Bug 47064)
+   JMETER_OPTS="-Xdock:name=JMeter -Xdock:icon="`dirname $0`/../docs/images/logo.jpg" -Dapple.laf.useScreenMenuBar=true -Dapple.eawt.quitStrategy=CLOSE_ALL_WINDOWS"
+   ;;
+esac
+
+java $JVM_ARGS $JMETER_OPTS -jar `dirname $0`/ApacheJMeter.jar "$@"

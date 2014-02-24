@@ -45,7 +45,7 @@ import org.apache.jmeter.testelement.property.TestElementProperty;
  * changing one or two method implementations there.
  *
  * @see ParamMask
- * @version $Revision: 1413957 $
+ * @version $Revision$
  */
 public class ParamModifier extends AbstractTestElement implements TestStateListener, PreProcessor, Serializable {
 

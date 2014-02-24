@@ -1,0 +1,38 @@
+2014/02/08 22:39:35 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: Loading user properties from: E:\apache-jmeter-2.11_src\apache-jmeter-2.11\bin\user.properties 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: Loading system properties from: E:\apache-jmeter-2.11_src\apache-jmeter-2.11\bin\system.properties 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: Copyright (c) 1998-2014 The Apache Software Foundation 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: Version 2.11.20140208 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: java.version=1.7.0_45 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: java.vm.name=Java HotSpot(TM) Client VM 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: os.name=Windows XP 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: os.arch=x86 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: os.version=5.1 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: file.encoding=Cp1252 
+2014/02/08 22:39:35 INFO  - jmeter.JMeter: Default Locale=English (United States) 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: JMeter  Locale=English (United States) 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: JMeterHome=E:\apache-jmeter-2.11_src\apache-jmeter-2.11 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: user.dir  =E:\apache-jmeter-2.11_src\apache-jmeter-2.11 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: PWD       =E:\apache-jmeter-2.11_src\apache-jmeter-2.11 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: IP: 192.168.100.10 Name: nachiket-d075fc FullName: NACHIKET-D075FC 
+2014/02/08 22:39:36 INFO  - jmeter.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties 
+2014/02/08 22:39:37 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must contain the string: '.functions.' 
+2014/02/08 22:39:37 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must not contain the string: '.gui.' 
+2014/02/08 22:39:38 INFO  - jmeter.gui.action.LookAndFeelCommand: Using look and feel: javax.swing.plaf.metal.MetalLookAndFeel [Metal, CrossPlatform] 
+2014/02/08 22:39:38 INFO  - jmeter.util.BSFTestElement: Registering JMeter version of JavaScript engine as work-round for BSF-22 
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Cannot find .className property for htmlParser, using default 
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/html is  
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xhtml+xml is  
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xml is  
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/xml is  
+2014/02/08 22:39:39 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser 
+2014/02/08 22:39:39 INFO  - jmeter.gui.util.MenuFactory: Skipping org.apache.jmeter.protocol.http.control.gui.WebServiceSamplerGui 
+2014/02/08 22:39:39 INFO  - jmeter.gui.util.MenuFactory: Skipping org.apache.jmeter.protocol.http.modifier.gui.ParamModifierGui 
+2014/02/08 22:39:40 INFO  - jorphan.exec.KeyToolUtils: keytool found at 'keytool' 
+2014/02/08 22:39:40 INFO  - jmeter.protocol.http.proxy.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file E:\apache-jmeter-2.11_src\apache-jmeter-2.11\bin\proxyserver.jks 
+2014/02/08 22:39:41 INFO  - jmeter.samplers.SampleResult: Note: Sample TimeStamps are START times 
+2014/02/08 22:39:41 INFO  - jmeter.samplers.SampleResult: sampleresult.default.encoding is set to ISO-8859-1 
+2014/02/08 22:39:41 INFO  - jmeter.samplers.SampleResult: sampleresult.useNanoTime=true 
+2014/02/08 22:39:41 INFO  - jmeter.samplers.SampleResult: sampleresult.nanoThreadSleep=5000 
+
+this is working

@@ -18,7 +18,7 @@ package org.apache.jmeter.monitor.model;
 
 /**
  *
- * @version $Revision: 1413262 $
+ * @version $Revision$
  */
 public class ConnectorImpl implements Connector {
     private ThreadInfo threadinfo = null;

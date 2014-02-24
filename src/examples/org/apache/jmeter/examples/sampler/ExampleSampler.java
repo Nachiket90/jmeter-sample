@@ -38,7 +38,7 @@ import org.apache.log.Logger;
  *
  * However, access to class fields must be synchronized.
  *
- * @version $Revision: 1413262 $
+ * @version $Revision$
  */
 public class ExampleSampler extends AbstractSampler {
 

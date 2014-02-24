@@ -39,7 +39,7 @@ import org.apache.jorphan.util.JOrphanUtils;
  * This class provides an interface to headers file to pass HTTP headers along
  * with a request.
  *
- * @version $Revision: 1457590 $
+ * @version $Revision$
  */
 public class HeaderManager extends ConfigTestElement implements Serializable {
 

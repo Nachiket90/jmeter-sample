@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  *
- * @version $Revision: 1413262 $
+ * @version $Revision$
  */
 public class StatusImpl implements Status {
     private Jvm jvm = null;

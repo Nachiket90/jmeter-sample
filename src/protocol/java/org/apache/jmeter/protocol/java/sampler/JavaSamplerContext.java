@@ -31,7 +31,7 @@ import org.apache.log.Logger;
  * initialization parameters which were specified in the GUI. Additional data
  * may be accessible through JavaSamplerContext in the future.
  *
- * @version $Revision: 901937 $
+ * @version $Revision$
  */
 public class JavaSamplerContext {
     /*

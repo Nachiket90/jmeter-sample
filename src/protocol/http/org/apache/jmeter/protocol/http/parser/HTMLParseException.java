@@ -23,7 +23,7 @@ package org.apache.jmeter.protocol.http.parser;
  * was to support chained Exceptions in JDK 1.3,
  * however it is now used in its own right.
  *
- * @version $Revision: 905028 $
+ * @version $Revision$
  */
 public class HTMLParseException extends Exception {
     private static final long serialVersionUID = 240L;

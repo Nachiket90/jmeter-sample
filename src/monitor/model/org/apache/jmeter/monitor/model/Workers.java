@@ -20,7 +20,7 @@ package org.apache.jmeter.monitor.model;
 import java.util.List;
 
 /**
- * @version $Revision: 805173 $
+ * @version $Revision$
  */
 public interface Workers {
 

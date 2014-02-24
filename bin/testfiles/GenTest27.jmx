@@ -126,7 +126,7 @@
             <stringProp name="filename"></stringProp>
             <boolProp name="quotedData">false</boolProp>
             <boolProp name="recycle">true</boolProp>
-            <stringProp name="shareMode">All threads</stringProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
             <boolProp name="stopThread">false</boolProp>
             <stringProp name="variableNames"></stringProp>
           </CSVDataSet>
@@ -324,7 +324,7 @@
           </BSFTimer>
           <hashTree/>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
-            <stringProp name="calcMode">this thread only</stringProp>
+            <intProp name="calcMode">0</intProp>
             <doubleProp>
               <name>throughput</name>
               <value>0.0</value>

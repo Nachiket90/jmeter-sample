@@ -33,7 +33,7 @@ import org.apache.jmeter.visualizers.MonitorStats;
 
 /**
  *
- * @version $Revision: 984221 $
+ * @version $Revision$
  */
 public class MemoryBenchmark {
 

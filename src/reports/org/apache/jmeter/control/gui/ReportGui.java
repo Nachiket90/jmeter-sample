@@ -44,7 +44,7 @@ import org.apache.jmeter.util.JMeterUtils;
  * JMeter GUI component representing the test plan which will be executed when
  * the test is run.
  *
- * @version $Revision: 1440040 $
+ * @version $Revision$
  */
 public class ReportGui extends AbstractReportGui {
 

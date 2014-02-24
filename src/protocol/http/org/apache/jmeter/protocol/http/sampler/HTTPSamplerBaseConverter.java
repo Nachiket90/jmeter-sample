@@ -39,7 +39,7 @@ public class HTTPSamplerBaseConverter extends TestElementConverter {
      * incompatibilities
      */
     public static String getVersion() {
-        return "$Revision: 1040356 $";  //$NON-NLS-1$
+        return "$Revision$";  //$NON-NLS-1$
     }
 
     public HTTPSamplerBaseConverter(Mapper arg0) {

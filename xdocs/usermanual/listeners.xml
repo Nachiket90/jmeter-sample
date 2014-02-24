@@ -21,7 +21,7 @@
 <!ENTITY sect-num '14'>
 ]>
 
-<document prev="build-monitor-test-plan.html" next="remote-test.html" id="$Id: listeners.xml 1436725 2013-01-22 01:59:13Z sebb $">
+<document prev="build-monitor-test-plan.html" next="remote-test.html" id="$Id: listeners.xml 1509908 2013-08-02 23:13:11Z milamber $">
 
 <properties>
   <title>User's Manual: Listeners</title>
@@ -84,7 +84,7 @@ output results like:.</p>
 timeStamp|time|label|responseCode|threadName|dataType|success|failureMessage
 02/06/03 08:21:42|1187|Home|200|Thread Group-1|text|true|
 02/06/03 08:21:42|47|Login|200|Thread Group-1|text|false|Test Failed: 
-	expected to contain: password etc.
+    expected to contain: password etc.
 </pre>
 </code></p>
 <p>
@@ -115,7 +115,7 @@ The full set of properties that affect result file output is shown below.
 # The commented out values are the defaults.
 
 # legitimate values: xml, csv, db.  Only xml and csv are currently supported.
-#jmeter.save.saveservice.output_format=xml
+#jmeter.save.saveservice.output_format=csv
 
 
 # true when field should be saved; false otherwise
@@ -199,9 +199,9 @@ The timestamp format is used for both writing and reading files.
 If the format is set to "ms", and the column does not parse as a long integer,
 JMeter (2.9+) will try the following formats:
 <ul>
-<li>yyyy/MM/dd HH:mm:ss.SSSS</li>
+<li>yyyy/MM/dd HH:mm:ss.SSS</li>
 <li>yyyy/MM/dd HH:mm:ss</li>
-<li>yyyy-MM-dd HH:mm:ss.SSSS</li>
+<li>yyyy-MM-dd HH:mm:ss.SSS</li>
 <li>yyyy-MM-dd HH:mm:ss</li>
 <li>MM/dd/yy HH:mm:ss (this is for compatibility with previous versions; it is not recommended as a format)</li>
 </ul> 
@@ -210,7 +210,7 @@ JMeter 2.8 and earlier used lenient mode which could result in timestamps with i
 (times were usually correct).</p>
 <subsection name="&sect-num;.1.1 Sample Variables" anchor="sample_variables">
 <p>
-Versions of JMeter after 2.3.1 allow one to use the <b>sample_variables</b> 
+JMeter supports the <b>sample_variables</b> 
 property to define a list of additional JMeter variables which are to be saved with
 each sample in the JTL files. The values are written to CSV files as additional columns,
 and as additional attributes in XML files. See above for an example.
@@ -479,7 +479,7 @@ use the menu item Run/Clear (Ctrl+Shift+E) or Run/Clear All (Ctrl+E) before load
 </section>
 <section name="&sect-num;.10 Saving Listener GUI data" anchor="screencap">
 <p>JMeter is capable of saving any listener as a PNG file. To do so, select the
-listener in the left panel. Click edit -> Save As Image. A file dialog will
+listener in the left panel. Click <b>Edit</b> &gt; <b>Save As Image</b>. A file dialog will
 appear. Enter the desired name and save the listener.
 </p>
 <p>
@@ -488,7 +488,7 @@ Select the desired cells in the table, and use the OS Copy short-cut (normally C
 The data will be saved to the clipboard, from where it can be pasted into another application,
 e.g. a spreadsheet or text editor.
 </p>
-<figure image="save_image.png">Figure 1 - Edit -> Save As Image</figure>
+<figure image="save_image.png">Figure 1 - Edit &gt; Save As Image</figure>
 
 </section>
 </body>

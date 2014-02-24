@@ -21,7 +21,7 @@ package org.apache.jmeter.protocol.http.proxy;
 /**
  * Utility class to generate HTTP responses of various types.
  *
- * @version $Revision: 1518164 $
+ * @version $Revision$
  */
 public final class HttpReplyHdr {
     /** String representing a carriage-return/line-feed pair. */

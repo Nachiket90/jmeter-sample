@@ -1,0 +1,5 @@
+package org.apache.jmeter.threads;
+
+public class CustomThreadGroup {
+
+}

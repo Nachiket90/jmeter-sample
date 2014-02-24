@@ -19,7 +19,7 @@
 [
 <!ENTITY sect-num '20'>
 ]>
-<document prev="functions.html" next="hints_and_tips.html" id="$Id: regular_expressions.xml 1412530 2012-11-22 12:45:06Z pmouawad $">
+<document prev="functions.html" next="hints_and_tips.html" id="$Id: regular_expressions.xml 1455736 2013-03-12 22:31:48Z pmouawad $">
 
 <properties>
   <title>User's Manual: Regular Expressions</title>
@@ -70,7 +70,7 @@ Note: unlike Perl, there is no need to (i.e. do not) enclose the regular express
 <p>
 So how does one use the modifiers ismx etc if there is no trailing /? 
 The solution is to use <i>extended regular expressions</i>, i.e. /abc/i becomes (?i)abc.
-See also <a href="placement">Placement of modifiers</a> below.
+See also <a href="#placement">Placement of modifiers</a> below.
 </p>
 </subsection>
 <subsection name="&sect-num;.2 Examples" anchor="examples">

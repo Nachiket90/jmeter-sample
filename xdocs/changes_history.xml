@@ -17,8 +17,8 @@
 -->
 <document>   
 <properties>     
-	<author email="dev AT jmeter.apache.org">JMeter developers</author>     
-	<title>History of Previous Changes</title>   
+    <author email="dev AT jmeter.apache.org">JMeter developers</author>     
+    <title>History of Previous Changes</title>   
 </properties> 
 <body> 
 <section name="History of Previous Changes"> 
@@ -29,6 +29,882 @@ Current changes are detailed in <a href="changes.html">Changes</a>.
 </note>
 <p><b>Changes sections are chronologically ordered from top (most recent) to bottom 
 (least recent)</b></p>  
+
+<!--  =================== 2.10 =================== -->
+
+<h1>Version 2.10</h1>
+
+Summary
+<ul>
+<li><a href="#New and Noteworthy">New and Noteworthy</a></li>
+<li><a href="#Known bugs">Known bugs</a></li>
+<li><a href="#Incompatible changes">Incompatible changes</a></li>
+<li><a href="#Bug fixes">Bug fixes</a></li>
+<li><a href="#Improvements">Improvements</a></li>
+<li><a href="#Non-functional changes">Non-functional changes</a></li>
+<li><a href="#Thanks">Thanks</a></li>
+
+</ul>
+
+<ch_section>New and Noteworthy</ch_section>
+
+<ch_category>Core Improvements</ch_category>
+
+<ch_title>New Performance improvements</ch_title>
+<p>
+<ul>
+<li>A Huge performance improvement has been made on High Throughput Tests (no pause), see <bugzilla>54777</bugzilla></li>
+<li>An issue with unnecessary SSL Context reset has been fixed which improves performances of pure HTTP tests, see <bugzilla>55023</bugzilla></li>
+<li>Important performance improvement in parsing of Embedded resource in HTML pages thanks to a switch to JODD/Lagarto HTML Parser, see <bugzilla>55632</bugzilla></li>
+</ul>
+</p>
+
+<ch_title>New CSS/JQuery Tester in View Tree Results</ch_title>
+<p>A new CSS/JQuery Tester in View Tree Results that makes CSS/JQuery Extractor a first class
+citizen in JMeter, you can now test your expressions very easily</p>
+<p>
+<figure width="1144" height="638" image="changes/2.10/01_css_jquery_tester.png"></figure>
+</p>
+
+<ch_title>Many improvements in HTTP(S) Recording have been made</ch_title>
+<p>
+<figure width="691" height="215" image="changes/2.10/18_https_test_script_recorder.png"></figure>
+<note>
+The "HTTP Proxy Server" test element has been renamed as "HTTP(S) Test Script Recorder".
+</note>
+<ul>
+<li>Better recording of HTTPS sites, embedded resources using subdomains will more easily be recorded when using JDK 7. See <bugzilla>55507</bugzilla>.
+See updated documentation: <complink name="HTTP(S) Test Script Recorder"/>
+</li>
+<li>Redirection are now more smartly detected by HTTP Proxy Server, see <bugzilla>55531</bugzilla></li>
+<li>Many fixes on edge cases with HTTPS have been made, see <bugzilla>55502</bugzilla>, <bugzilla>55504</bugzilla>, <bugzilla>55506</bugzilla></li>
+<li>Many encoding fixes have been made, see <bugzilla>54482</bugzilla>, <bugzilla>54142</bugzilla>, <bugzilla>54293</bugzilla></li>
+</ul>
+</p>
+
+<ch_title>You can now load test MongoDB through new MongoDB Source Config</ch_title>
+<p>
+<figure width="912" height="486" image="changes/2.10/02_mongodb_source_config.png"></figure>
+</p>
+<p>
+<figure width="850" height="687" image="changes/2.10/14_mongodb_jsr223.png"></figure>
+</p>
+
+<ch_title>Kerberos authentication has been added to Auth Manager</ch_title>
+<p>
+<figure width="1005" height="364" image="changes/2.10/15_kerberos.png"></figure>
+</p>
+
+<ch_title>Device can now be used in addition to source IP address</ch_title>
+
+<p>
+<figure width="1087" height="699" image="changes/2.10/16_device.png"></figure>
+</p>
+
+<ch_title>You can now do functional testing of MongoDB scripts through new MongoDB Script</ch_title>
+<p>
+<figure width="906" height="313" image="changes/2.10/03_mongodb_script_alpha.png"></figure>
+</p>
+
+<ch_title>Timeout has been added to OS Process Sampler</ch_title>
+<p>
+<figure width="684" height="586" image="changes/2.10/17_os_process_timeout.png"></figure>
+</p>
+
+<ch_title>Query timeout has been added to JDBC Request</ch_title>
+<p>
+<figure width="540" height="600" image="changes/2.10/04_jdbc_request_timeout.png"></figure>
+</p>
+
+<ch_title>New functions (__urlencode and __urldecode) are now available to encode/decode URL encoded chars</ch_title>
+<p>
+<figure width="512" height="240" image="changes/2.10/05_urlencode_function.png"></figure>
+</p>
+
+<ch_title>Continuous Integration is now eased by addition of a new flag that forces NON-GUI JVM to exit after test end</ch_title>
+<p>See jmeter property:</p>
+<code>jmeterengine.force.system.exit</code>
+<p></p>
+
+<ch_title>HttpSampler now allows DELETE Http Method to have a body (works for HC4 and HC31 implementations). This allows for example to test Elastic Search APIs</ch_title>
+<p>
+<figure width="573" height="444" image="changes/2.10/06_http_request_delete_method.png"></figure>
+</p>
+
+<ch_title>2 implementations of HtmlParser have been added to improve Embedded resources parsing</ch_title>
+<p>
+You can choose the implementation to use for parsing Embedded resources in HTML pages:
+See jmeter.properties and look at property "htmlParser.className".
+<ul>
+<li>org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser for optimal performances</li>
+<li>org.apache.jmeter.protocol.http.parser.JSoupBasedHtmlParser for most accurate parsing and functional testing</li>
+</ul>
+</p>
+
+<ch_title>Distributed testing has been improved</ch_title>
+<p>
+<ul>
+<li>
+Number of threads on each node are now reported to controller.
+<p>
+<figure width="988" height="355" image="changes/2.10/17_threads_summariser.png"></figure>
+</p>
+<p>
+<figure width="125" height="33" image="changes/2.10/17_threads_gui.png"></figure>
+</p>
+
+</li>
+<li>Performance improvement on BatchSampleSender(<bugzilla>55423</bugzilla>)</li>
+<li>Addition of 2 SampleSender modes (StrippedAsynch and StrippedDiskStore), see jmeter.properties</li>
+</ul>
+</p>
+
+<ch_title>ModuleController has been improved to better handle changes to referenced controllers</ch_title>
+
+<ch_title>Improved class loader configuration, see <bugzilla>55503</bugzilla></ch_title>
+<p>
+<ul>
+<li>New property "plugin_dependency_paths" for plugin dependencies</li>
+<li>Properties "search_paths", "user.classpath" and "plugin_dependency_paths"
+    now automatically add all jars from configured directories</li>
+</ul>
+</p>
+
+<ch_title>Best-practices section has been improved, ensure you read it to get the most out of JMeter</ch_title>
+<p>See <a href="usermanual/best-practices.html">Best Practices</a>
+</p>
+<ch_category>GUI and ergonomy Improvements</ch_category>
+
+
+<ch_title>New Templates feature that allows you to create test plan from existing template or merge
+template into your Test Plan</ch_title>
+<p>
+<figure width="428" height="130" image="changes/2.10/07_jmeter_templates_icon.png"></figure>
+</p>
+<p>
+<figure width="781" height="472" image="changes/2.10/08_jmeter_templates_box.png"></figure>
+</p>
+
+<ch_title>Workbench can now be saved</ch_title>
+<p>
+<figure width="489" height="198" image="changes/2.10/09_save_workbench.png"></figure>
+</p>
+
+<ch_title>Syntax color has been added to scripts elements (BeanShell, BSF, and JSR223), MongoDB and JDBC elements making code much more readable and allowing UNDO/REDO through CTRL+Z/CTRL+Y</ch_title>
+<p>BSF Sampler with syntax color
+<figure width="915" height="620" image="changes/2.10/10_color_syntax_bsf_sampler.png"></figure>
+</p>
+<p>JSR223 Pre Processor with syntax color
+<figure width="911" height="614" image="changes/2.10/11_color_syntax_jsr223_preprocessor.png"></figure>
+</p>
+
+<ch_title>Better editors are now available for Test Elements with large text content, like HTTP Sampler, and JMS related Test Element providing line numbering and allowing UNDO/REDO through CTRL+Z/CTRL+Y</ch_title>
+
+<ch_title>JMeter GUI can now be fully Internationalized, all remaining issues have been fixed</ch_title>
+<h5>Currently French has all its labels translated. Other languages are partly translated, feel free to 
+contribute translations by reading <a href="localising/index.html">Localisation (Translator's Guide)</a></h5>
+
+<ch_title>Moving elements in Test plan has been improved in many ways</ch_title>
+<h5>Drag and drop of elements in Test Plan tree is now much easier and possible on multiple nodes</h5>
+<p>
+<figure width="894" height="236" image="changes/2.10/12_drap_n-drop_multiple.png"></figure>
+</p>
+<p>
+<b>Note that due to this <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6560955">bug in Java</a>,
+you cannot drop a node after last node. The workaround is to drop it before this last node and then Drag and Drop the last node 
+before the one you just dropped.</b>
+</p>
+<h5>New shortcuts have been added to move elements in the tree. </h5>
+<p>(alt + Arrow Up) and (alt + Arrow Down) move the element within the parent node<br/>
+(alt + Arrow Left) and (alt + Arrow Right) move the element up and down in the tree depth</p>
+
+<ch_title>Response Time Graph Y axis can now be scaled</ch_title>
+<p>
+<figure width="947" height="596" image="changes/2.10/13_response_time_graph_y_scale.png"></figure>
+</p>
+
+<ch_title>JUnit Sampler gives now more details on configuration errors</ch_title>
+
+<!--  =================== Known bugs =================== -->
+
+
+<ch_section>Known bugs</ch_section>
+
+<ul>
+<li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+but otherwise its behaviour is not consistent (or clearly specified).</li>
+
+<li>Listeners don't show iteration counts when a If Controller has a condition which is always false from the first iteration (see <bugzilla>52496</bugzilla>).  
+A workaround is to add a sampler at the same level as (or superior to) the If Controller.
+For example a Test Action sampler with 0 wait time (which doesn't generate a sample),
+or a Debug Sampler with all fields set to False (to reduce the sample size).
+</li>
+
+<li>Webservice sampler does not consider the HTTP response status to compute the status of a response, thus a response 500 containing a non empty body will be considered as successful, see <bugzilla>54006</bugzilla>.
+To workaround this issue, ensure you always read the response and add a Response Assertion checking text inside the response.
+</li>
+
+<li>
+The numbers that appear to the left of the green box are the number of active threads / total number of threads, 
+these only apply to a locally run test; they do not include any threads started on remote systems when using client-server mode, (see <bugzilla>54152</bugzilla>).
+</li>
+
+<li>
+Note that there is a <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6396599 ">bug in Java</a>
+on some Linux systems that manifests itself as the following error when running the test cases or JMeter itself:
+<pre>
+ [java] WARNING: Couldn't flush user prefs:
+ java.util.prefs.BackingStoreException:
+ java.lang.IllegalArgumentException: Not supported: indent-number
+</pre>
+This does not affect JMeter operation. This issue is fixed since Java 7b05.
+</li>
+
+<li>
+With Java 1.6 and Gnome 3 on Linux systems, the JMeter menu may not work correctly (shift between mouse's click and the menu). 
+This is a known Java bug (see  <bugzilla>54477 </bugzilla>). 
+A workaround is to use a Java 7 runtime (OpenJDK or Oracle JDK).
+</li>
+
+<li>
+With Oracle Java 7 and Mac Book Pro Retina Display, the JMeter GUI may look blurry. 
+This is a known Java bug, see Bug <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=8000629" >JDK-8000629</a>.
+A workaround is to use a Java 7 update 40 runtime which fixes this issue.
+</li>
+</ul>
+
+<!-- =================== Incompatible changes =================== -->
+
+<ch_section>Incompatible changes</ch_section>
+
+<ul>
+<li><b>SMTP Sampler</b> now uses eml file subject if subject field is empty</li>
+
+<li>With this version autoFlush has been turned off on PrintWriter in charge of writing test results. 
+This results in improved throughput for intensive tests but can result in more test data loss in case
+of JMeter crash (extremely rare). To revert to previous behaviour set <code>jmeter.save.saveservice.autoflush</code> property to <code>true</code>.</li>
+
+<li>
+Shortcut for <b>Function Helper Dialog</b> is now <i>CTRL+SHIFT+F1 (CMD + SHIFT + F1 for Mac OS)</i>.
+The original key sequence <i>(Ctrl+F1)</i> did not work in some locations (it is consumed by the Java Swing ToolTipManager).
+It was therefore necessary to change the shortcut.
+</li>
+
+<li>
+<b>Webservice (SOAP) Request</b> has been removed by default from GUI as Element is deprecated. (Use <b>HTTP Request</b> 
+with <i>Body Data</i>, see also the Template <i>Building a SOAP Webservice Test Plan</i>), if you need to show it, see property <code>not_in_menu</code> in <i>jmeter.properties</i>
+</li>
+
+<li>
+<b>Transaction Controller</b> now sets <i>Response Code</i> of <i>Generated Parent Sampler</i> 
+(if <i>Generated Parent Sampler</i> is checked) to response code of first failing child in case of failure of one of the children, in previous versions <i>Response Code</i> was empty.
+</li>
+
+<li>
+In previous versions, <b>IncludeController</b> could run Test Elements located inside a <b>Thread Group</b>, this behaviour (<i>which was not documented</i>) 
+ould result in weird behaviour, it has been removed in this version (see <bugzilla>55464</bugzilla>). 
+The correct way to include Test Elements is to use <b>Test Fragment</b> as stated in documentation of <b>Include Controller</b>.
+</li>
+
+<li>
+The retry count for the HttpClient 3.1 and HttpClient 4.x samplers has been changed to <b>0</b>.
+Previously the default was 1, which could cause unexpected additional traffic.
+</li>
+
+<li>Starting with this version, the <b>HTTP(S) Test Script Recorder</b> tries to detect when a sample is the result of a previous
+redirect. If the current response is a redirect, JMeter will save the redirect URL. When the next request is received, 
+it is compared with the saved redirect URL and if there is a match, JMeter will disable the generated sample.
+To revert to previous behaviour, set the property <code>proxy.redirect.disabling=false</code>
+</li>
+
+<li>Starting with this version, in <b>HTTP(S) Test Script Recorder</b> if Grouping is set to <i>Put each group in a new Transaction Controller</i>, 
+the Recorder will create <b>Transaction Controller</b> instances with <i>Include duration of timer and pre-post processors in generated sample</i> set 
+to false. This default value reflect more accurately response time.
+</li>
+
+<li><code>__escapeOroRegexpChars</code> function (which escapes ORO reserved characters) no longer trims the value (see <bugzilla>55328</bugzilla>)
+</li>
+
+<li>The <i>commons-lang-2.6.jar</i> has been removed from embedded libraries in <code>jmeter/lib</code> folder as it is not needed by JMeter at run-time
+(it is only used by Apache Velocity for generating documentation).
+If you use any plugin or third-party code that depends on it, you need to add it in <code>jmeter/lib</code> folder
+</li>
+</ul>
+
+<!-- =================== Bug fixes =================== -->
+
+<ch_section>Bug fixes</ch_section>
+
+<h3>HTTP Samplers and Proxy</h3>
+<ul>
+<li><bugzilla>54627</bugzilla> - JMeter Proxy GUI: Type of sampler setting takes the whole screen when there are samplers with long names.</li>
+<li><bugzilla>54629</bugzilla> - HTMLParser does not extract &amp;lt;object&amp;gt; tag urls.</li>
+<li><bugzilla>55023</bugzilla> - SSL Context reuse feature (51380) adversely affects non-ssl request performance/throughput. based on analysis by Brent Cromarty (brent.cromarty at yahoo.ca)</li>
+<li><bugzilla>55092</bugzilla> - Log message "WARN - jmeter.protocol.http.sampler.HTTPSamplerBase: Null URL detected (should not happen)" displayed when embedded resource URL is malformed.</li>
+<li><bugzilla>55161</bugzilla> - Useless processing in SoapSampler.setPostHeaders. Contributed by Adrian Nistor (nistor1 at illinois.edu)</li>
+<li><bugzilla>54482</bugzilla> - HC fails to follow redirects with non-encoded chars.</li>
+<li><bugzilla>54142</bugzilla> - HTTP Proxy Server throws an exception when path contains "|" character.</li>
+<li><bugzilla>55388</bugzilla> - HC3 does not allow IP Source field to override httpclient.localaddress.</li>
+<li><bugzilla>55450</bugzilla> - HEAD redirects should remain as HEAD</li>
+<li><bugzilla>55455</bugzilla> - HTTPS with HTTPClient4 ignores cps setting</li>
+<li><bugzilla>55502</bugzilla> - Proxy generates empty http:/ entries when recording</li>
+<li><bugzilla>55504</bugzilla> - Proxy incorrectly issues CONNECT requests when browser prompts for certificate override</li>
+<li><bugzilla>55506</bugzilla> - Proxy should deliver failed requests to any configured Listeners</li>
+<li><bugzilla>55545</bugzilla> - HTTP Proxy Server GUI should not allow both Follow and Auto redirect to be selected</li>
+</ul>
+
+<h3>Other Samplers</h3>
+<ul>
+<li><bugzilla>54913</bugzilla> - JMSPublisherGui incorrectly restores its state. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>55027</bugzilla> - Test Action regression, duration value is not recorded (nightly build).</li>
+<li><bugzilla>55163</bugzilla> - BeanShellTestElement fails to quote string when calling testStarted(String)/testEnded(String).</li>
+<li><bugzilla>55349</bugzilla> - NativeCommand hangs if no input file is specified and the application requests input.</li>
+<li><bugzilla>55462</bugzilla> - System Sampler should not change the sampler label if a sample fails</li>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+<li><bugzilla>54467</bugzilla> - Loop Controller: compute loop value only once per parent iteration.</li>
+<li><bugzilla>54985</bugzilla> - Make Transaction Controller set Response Code of Generated Parent Sampler to response code of first failing child in case of failure of one of its children. Contributed by Mikhail Epikhin (epihin-m at yandex.ru)</li>
+<li><bugzilla>54950</bugzilla> - ModuleController : Changes to referenced Module are not taken into account if changes occur after first run and referenced node is disabled.</li>
+<li><bugzilla>55201</bugzilla> - ForEach controller excludes start index and includes end index (clarified documentation).</li>
+<li><bugzilla>55334</bugzilla> - Adding Include Controller to test plan (made of Include Controllers) without saving TestPlan leads to included code not being taken into account until save.</li>
+<li><bugzilla>55375</bugzilla> -  StackOverflowError with ModuleController in Non-GUI mode if its name is the same as the target node.</li>
+<li><bugzilla>55464</bugzilla> - Include Controller running included thread group</li>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+<li><bugzilla>54589</bugzilla> - View Results Tree have a lot of Garbage characters if html page uses double-byte charset.</li>
+<li><bugzilla>54753</bugzilla> - StringIndexOutOfBoundsException at SampleResult.getSampleLabel() if key_on_threadname=false when using Statistical mode.</li>
+<li><bugzilla>54685</bugzilla> - ArrayIndexOutOfBoundsException if "sample_variable" is set in client but not server.</li>
+<li><bugzilla>55111</bugzilla> - ViewResultsTree: text not refitted if vertical scrollbar is required. Contributed by Milamber</li>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+<li><bugzilla>54540</bugzilla> - "HTML Parameter Mask" are not marked deprecated in the IHM.</li>
+<li><bugzilla>54575</bugzilla> - CSS/JQuery Extractor : Choosing JODD Implementation always uses JSOUP.</li>
+<li><bugzilla>54901</bugzilla> - Response Assertion GUI behaves weirdly.</li>
+<li><bugzilla>54924</bugzilla> - XMLAssertion uses JMeter JVM file.encoding instead of response encoding and does not clean threadlocal variable.</li>
+<li><bugzilla>53679</bugzilla> -  Constant Throughput Timer bug with localization. Reported by Ludovic Garcia</li>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+<li><bugzilla>55328</bugzilla> - __escapeOroRegexpChars trims spaces.</li>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+<li><bugzilla>55437</bugzilla> - ComboStringEditor does not translate EDIT and UNDEFINED strings on language change</li>
+<li><bugzilla>55501</bugzilla> - Incorrect encoding for French description of __char function. Contributed by Antonio Gomes Rodrigues (ra0077 at gmail.com)</li>
+</ul>
+
+<h3>General</h3>
+<ul>
+<li><bugzilla>54504</bugzilla> - Resource string not found: [clipboard_node_read_error].</li>
+<li><bugzilla>54538</bugzilla> - GUI: context menu is too big.</li>
+<li><bugzilla>54847</bugzilla> - Cut &amp; Paste is broken with tree multi-selection. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54870</bugzilla> - Tree drag and drop may lose leaf nodes (affected nightly build). Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>55056</bugzilla> - wasted work in Data.append(). Contributed by Adrian Nistor (nistor1 at illinois.edu)</li>
+<li><bugzilla>55129</bugzilla> -  Change Javadoc generation per CVE-2013-1571, VU#225657.</li>
+<li><bugzilla>55187</bugzilla> - Integer overflow when computing ONE_YEAR_MS in HTTP CacheManager.</li>
+<li><bugzilla>55208</bugzilla> - JSR223 language entries are duplicated; fold to lower case.</li>
+<li><bugzilla>55203</bugzilla> - TestBeanGUI - wrong language settings found.</li>
+<li><bugzilla>55065</bugzilla> - Useless processing in Spline3.converge(). Contributed by Adrian Nistor (nistor1 at illinois.edu)</li>
+<li><bugzilla>55064</bugzilla> - Useless processing in ReportTreeListener.isValidDragAction(). Contributed by Adrian Nistor (nistor1 at illinois.edu)</li>
+<li><bugzilla>55242</bugzilla> - BeanShell Client jar throws exceptions after upgrading to 2.8.</li>
+<li><bugzilla>55288</bugzilla> - JMeter should default to 0 retries for HTTP requests.</li>
+<li><bugzilla>55405</bugzilla> - ant download_jars task fails if lib/api or lib/doc are missing. Contributed by Antonio Gomes Rodrigues.</li>
+<li><bugzilla>55427</bugzilla> - TestBeanHelper should ignore properties not supported by GenericTestBeanCustomizer</li>
+<li><bugzilla>55459</bugzilla> - Elements using ComboStringEditor lose the input value if user selects another Test Element</li>
+<li><bugzilla>54152</bugzilla> - In distributed testing : activeThreads always show 0 in GUI and Summariser</li>
+<li><bugzilla>55509</bugzilla> - Allow Plugins to be notified of remote thread number progression</li>
+<li><bugzilla>55572</bugzilla> - Detail popup of parameter does not show a Scrollbar when content exceeds display</li>
+<li><bugzilla>55580</bugzilla> -  Help pane does not scroll to start for &lt;a href="#"&gt; links</li>
+<li><bugzilla>55600</bugzilla> - JSyntaxTextArea : Strange behaviour on first undo</li>
+<li><bugzilla>55655</bugzilla> - NullPointerException when Remote stopping /shutdown all if one engine did not start correctly. Contributed by UBIK Load Pack (support at ubikloadpack.com)</li>
+<li><bugzilla>55657</bugzilla> - Remote and Local Stop/Shutdown buttons state does not take into account local / remote status </li>
+</ul>
+
+<!-- =================== Improvements =================== -->
+
+<ch_section>Improvements</ch_section>
+
+<h3>HTTP Samplers and Proxy</h3>
+<ul>
+<li>HTTP Request: Small user interaction improvements in Row parameter Detail Box. Contributed by Milamber</li>
+<li><bugzilla>55255</bugzilla> - Allow Body in HTTP DELETE method to support API that use it (like ElasticSearch).</li>
+<li><bugzilla>53480</bugzilla> - Add Kerberos support to Http Sampler (HttpClient4). Based on patch by Felix Schumacher (felix.schumacher at internetallee.de)</li>
+<li><bugzilla>54874</bugzilla> - Support device in addition to source IP address. Based on patch by Dan Fruehauf (malkodan at gmail.com)</li>
+<li><bugzilla>55488</bugzilla> - Add .ico and .woff file extension to default suggested exclusions in proxy recorder. Contributed by Antonio Gomes Rodrigues</li>
+<li><bugzilla>55525</bugzilla> - Proxy should support alias for keyserver entry</li>
+<li><bugzilla>55531</bugzilla> - Proxy recording and redirects. Added code to disable redirected samples.</li>
+<li><bugzilla>55507</bugzilla> - Proxy SSL recording does not handle external embedded resources well</li>
+<li><bugzilla>55632</bugzilla> - Have a new implementation of htmlParser for embedded resources parsing with better performances</li>
+<li><bugzilla>55653</bugzilla> - HTTP(S) Test Script Recorder should set TransactionController property "Include duration of timer and pre-post processors in generated sample" to false</li>
+</ul>
+
+<h3>Other samplers</h3>
+<ul>
+<li><bugzilla>54788</bugzilla> - JMS Point-to-Point Sampler - GUI enhancements to increase readability and ease of use. Contributed by Bruno Antunes (b.m.antunes at gmail.com)</li>
+<li><bugzilla>54798</bugzilla> - Using subject from EML-file for SMTP Sampler. Contributed by Mikhail Epikhin (epihin-m at yandex.ru)</li>
+<li><bugzilla>54759</bugzilla> - SSLPeerUnverifiedException using HTTPS , property documented.</li>
+<li><bugzilla>54896</bugzilla> - JUnit sampler gives only "failed to create an instance of the class" message with constructor problems.</li>
+<li><bugzilla>55084</bugzilla> - Add timeout support for JDBC Request. Contributed by Mikhail Epikhin (epihin-m at yandex.ru)</li>
+<li><bugzilla>55403</bugzilla> - Enhancement to OS sampler: Support for timeout</li>
+<li><bugzilla>55518</bugzilla> - Add ability to limit number of cached PreparedStatements per connection when "Prepared Select Statement", "Prepared Update Statement" or "Callable Statement" query type is selected</li>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+<li><bugzilla>54271</bugzilla> - Module Controller breaks if test plan is renamed.</li>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+<li><bugzilla>54532</bugzilla> - Improve Response Time Graph Y axis scale with huge values or small values (&amp;lt; 1000ms). Add a new field to define increment scale. Contributed by Milamber based on patch by Luca Maragnani (luca.maragnani at gmail.com)</li>
+<li><bugzilla>54576</bugzilla> - View Results Tree : Add a CSS/JQuery Tester.</li>
+<li><bugzilla>54777</bugzilla> - Improve Performance of default ResultCollector. Based on patch by Mikhail Epikhin (epihin-m at yandex.ru)</li>
+<li><bugzilla>55389</bugzilla> - Show IP source address in request data</li>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+<li><bugzilla>54789</bugzilla> - XPath Assertion - GUI enhancements to increase readability and ease of use.</li>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+<li><bugzilla>54991</bugzilla> - Add functions to encode/decode URL encoded chars (__urlencode and __urldecode). Contributed by Milamber.</li>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+<li><bugzilla>55241</bugzilla> - Need GUI Editor to process fields which are based on Enums with localised display strings</li>
+<li><bugzilla>55440</bugzilla> - ComboStringEditor should allow tags to be language dependent</li>
+<li><bugzilla>55432</bugzilla> - CSV Dataset Config loses sharing mode when switching languages</li>
+</ul>
+
+<h3>General</h3>
+<ul>
+<li><bugzilla>54584</bugzilla> - MongoDB plugin. Based on patch by Jan Paul Ettles (janpaulettles at gmail.com)</li>
+<li><bugzilla>54669</bugzilla> - Add flag forcing non-GUI JVM to exit after test. Contributed by Scott Emmons</li>
+<li><bugzilla>42428</bugzilla> - Workbench not saved with Test Plan. Contributed by Dzmitry Kashlach (dzmitrykashlach at gmail.com)</li>
+<li><bugzilla>54825</bugzilla> - Add shortcuts to move elements in the tree. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54834</bugzilla> - Improve Drag &amp; Drop in the jmeter tree. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54839</bugzilla> - Set the application name on Mac. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54841</bugzilla> - Correctly handle the quit shortcut on Mac Os (CMD-Q). Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54844</bugzilla> - Set the application icon on Mac Os. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54864</bugzilla> - Enable multi selection drag &amp; drop in the tree without having to start dragging before releasing Shift or Control. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54945</bugzilla> - Add Shutdown Hook to enable trapping kill or CTRL+C signals.</li>
+<li><bugzilla>54990</bugzilla> - Download large files avoiding outOfMemory.</li>
+<li><bugzilla>55085</bugzilla> - UX Improvement : Ability to create New Test Plan from Templates. Contributed by UBIK Load Pack (support at ubikloadpack.com)</li>
+<li><bugzilla>55172</bugzilla> - Provide plugins a way to add Top Menu and menu items.</li>
+<li><bugzilla>55202</bugzilla> - Add syntax color for scripts elements (BeanShell, BSF, and JSR223) and JDBC elements with RSyntaxTextArea. Contributed by Milamber based on patch by Marko Vlahovic (vlahovic74 at gmail.com)</li>
+<li><bugzilla>55175</bugzilla> - HTTPHC4Impl refactoring to allow better inheritance.</li>
+<li><bugzilla>55236</bugzilla> - Templates - provide button to reload template details.</li>
+<li><bugzilla>55237</bugzilla> - Template system should support relative fileName entries.</li>
+<li><bugzilla>55423</bugzilla> - BatchSampleSender: Reduce locking granularity by moving listener.processBatch outside of synchronized block</li>
+<li><bugzilla>55424</bugzilla> - Add Stripping to existing SampleSenders</li>
+<li><bugzilla>55451</bugzilla> - Test Element GUI with JSyntaxTextArea scroll down when text content is long enough to add a Scrollbar</li>
+<li><bugzilla>55513</bugzilla> - StreamCopier cannot be used with System.err or System.out as it closes the output stream</li>
+<li><bugzilla>55514</bugzilla> - SystemCommand should support arbitrary input and output streams</li>
+<li><bugzilla>55515</bugzilla> - SystemCommand should support chaining of commands</li>
+<li><bugzilla>55606</bugzilla> - Use JSyntaxtTextArea for Http Request, JMS Test Elements</li>
+<li><bugzilla>55651</bugzilla> - Change JMeter application icon to Apache plume icon</li>
+</ul>
+
+<ch_section>Non-functional changes</ch_section>
+<ul>
+<li>Updated to jsoup-1.7.2</li>
+<li><bugzilla>54776</bugzilla> - Update the dependency on Bouncy Castle to 1.48. Contributed by Emmanuel Bourg (ebourg at apache.org)</li>
+<li>Updated to HttpComponents Client 4.2.6 (from 4.2.3)</li>
+<li>Updated to HttpComponents Core 4.2.5 (from 4.2.3)</li>
+<li>Updated to commons-codec 1.8 (from 1.6)</li>
+<li>Updated to commons-io 2.4 (from 2.2)</li>
+<li>Updated to commons-logging 1.1.3 (from 1.1.1)</li>
+<li>Updated to commons-net 3.3 (from 3.1)</li>
+<li>Updated to jdom-1.1.3 (from 1.1.2)</li>
+<li>Updated to jodd-lagarto and jodd-core 3.4.8 (from 3.4.1)</li>
+<li>Updated to junit 4.11 (from 4.10)</li>
+<li>Updated to slf4j-api 1.7.5 (from 1.7.2)</li>
+<li>Updated to tika 1.4 (from 1.3)</li>
+<li>Updated to xmlgraphics-commons 1.5 (from 1.3.1)</li>
+<li>Updated to xstream 1.4.4 (from 1.4.2)</li>
+<li>Updated to BouncyCastle 1.49 (from 1.48)</li>
+<li><bugzilla>54912</bugzilla> - JMeterTreeListener should use constants. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>54903</bugzilla> - Remove the dependency on the Activation Framework. Contributed by Emmanuel Bourg (ebourg at apache.org)</li>
+<li>Moved commons-lang (2.6) to lib/doc as it's only needed by Velocity.</li>
+<li>Re-organised and simplified NOTICE and LICENSE files.</li>
+<li><bugzilla>55411</bugzilla> -  NativeCommand could be useful elsewhere. Copied code to o.a.jorphan.exec.</li>
+<li><bugzilla>55435</bugzilla> - ComboStringEditor could be simplified to make most settings final</li>
+<li><bugzilla>55436</bugzilla> - ComboStringEditor should implement ClearGui</li>
+<li><bugzilla>55463</bugzilla> - Component.requestFocus() is discouraged; use requestFocusInWindow() instead</li>
+<li><bugzilla>55486</bugzilla> - New JMeter Logo. Contributed by UBIK Load Pack (support at ubikloadpack.com)</li>
+<li><bugzilla>55548</bugzilla> - Tidy up use of TestElement.ENABLED; use TestElement.isEnabled()/setEnabled() throughout</li>
+<li><bugzilla>55617</bugzilla> - Improvements to jorphan collection. Contributed by Benoit Wiart (benoit.wiart at gmail.com)</li>
+<li><bugzilla>55623</bugzilla> - Invalid/unexpected configuration values should not be silently ignored</li>
+<li><bugzilla>55626</bugzilla> - Rename HTTP Proxy Server as HTTP(S) Test Script Recorder</li>
+</ul>
+
+<ch_section>Thanks</ch_section>
+<p>We thank all contributors mentioned in bug and improvement sections above:
+<ul>
+<li>Bruno Antunes (b.m.antunes at gmail.com)</li>
+<li>Emmanuel Bourg (ebourg at apache.org)</li>
+<li>Scott Emmons</li>
+<li>Mikhail Epikhin (epihin-m at yandex.ru)</li>
+<li>Dzmitry Kashlach (dzmitrykashlach at gmail.com)</li>
+<li>Luca Maragnani (luca.maragnani at gmail.com)</li>
+<li>Milamber</li>
+<li>Adrian Nistor (nistor1 at illinois.edu)</li>
+<li>Antonio Gomes Rodrigues (ra0077 at gmail.com)</li>
+<li>UBIK Load Pack (support at ubikloadpack.com)</li>
+<li>Benoit Wiart (benoit.wiart at gmail.com)</li>
+</ul>
+<br/>
+We also thank bug reporters who helped us improve JMeter. <br/>
+For this release we want to give special thanks to the following reporters for the clear reports and tests made after our fixes:
+<ul>
+<li>Immanuel Hayden (immanuel.hayden at gmail.com)</li>
+<li>Danny Lade (dlade at web.de)</li>
+<li>Brent Cromarty (brent.cromarty at yahoo.ca)</li>
+<li>Wolfgang Heider (wolfgang.heider at racon.at)</li>
+<li>Shmuel Krakower (shmulikk at gmail.com)</li>
+</ul>
+
+
+Apologies if we have omitted anyone else.
+ </p>
+ 
+<!--  =================== 2.9 =================== -->
+
+<h1>Version 2.9</h1>
+
+<h2>New and Noteworthy</h2>
+
+<h3><u>Core Improvements:</u></h3>
+
+<h4>* A new Extractor that uses CSS or jquery-like selector syntax has been introduced, 
+it allows using either JODD or JSOUP implementations</h4>
+<p>
+<figure width="762" height="277" image="changes/2.9/01_css_jquery_extractor.png"></figure>
+</p>
+<p>Result: the title of the page in a JMeter variable
+<figure width="719" height="171" image="changes/2.9/01_css_jquery_extractor_resul.png"></figure>
+</p>
+<h4>* JMeter can now handle different types of documents (PDF, MsOffice files, Apache OpenOffice's files...)
+ within different elements </h4>
+<ul>
+    <li>Regular Expression Extractor, extract text from documents</li>
+    <li>Assertion Response, check text in documents</li>
+    <li>View Results Tree, view as a text the documents</li>
+</ul>
+<p>
+<figure width="761" height="345" image="changes/2.9/02_document_render_view_results_tree.png"></figure>
+</p>
+
+<h4>* A new Regex User Parameters Pre-Processor that enables injecting input parameter names and values 
+using a reference extracted by Regular Expression Extractor from a previous response</h4>
+<p>
+<figure width="727" height="138" image="changes/2.9/13_regex_user_params.png"></figure>
+</p>
+
+<h4>* TCP Sampler: new options</h4>
+<p>TCP Sampler has been enhanced with new options to allow setting <b>Close Connection</b>, 
+ <b>SO_LINGER</b> and  <b>End of line(EOL) byte value</b>
+<figure width="1147" height="302" image="changes/2.9/03_new_options_tcp_sampler.png"></figure>
+</p>
+<h4>* A new function <i>__escapeOroRegexpChars(,)</i> has been introduced quote ORO regexp meta characters</h4>
+<h4>* ForEach Controller: new fields</h4>
+<p>ForEach Controller has now 2 new fields to control start and end of loop
+<figure width="320" height="203" image="changes/2.9/04_for_each_new_fields.png"></figure>
+</p>
+<h4>* Result Status Action Handler now has a new option to "Start next thread loop"</h4>
+<p>
+<figure width="722" height="132" image="changes/2.9/05_result_status_action_handler.png"></figure>
+</p>
+
+<h4>* JMS Publisher: new option</h4>
+<p>JMS Publisher can now send Bytes Messages</p>
+<figure width="833" height="701" image="changes/2.9/11_jms_publisher_bytes.png"></figure>
+
+<h4>* Memory and performance improvements</h4>
+<p>Significant improvements have been done in this version on memory usage per Thread and CPU when more 
+than one Post Processor is used as child of a Sampler</p>
+<p>JSR223 Elements (enable using Groovy, Scala... as scripting languages) have been improved to enable caching 
+of Compilation results when scripts are passed in Text area</p>
+<figure width="841" height="470" image="changes/2.9/12_jsr223_sampler.png"></figure>
+
+<p>Some configuration defaults have changed to improve performances by default(see <bugzilla>54412</bugzilla>), 
+see description in New and Noteworthy section.
+<ul>
+    <li>Distributed testing now uses MODE_STRIPPED_BATCH, which returns samples in batch mode (every 100 samples
+     or every minute by default). Note also that MODE_STRIPPED_BATCH strips response data from SampleResult, 
+     so if you need it change to another mode (mode property in jmeter.properties)</li>
+    <li>Result data are now saved to CSV by default (jmeter.save.saveservice.output_format in jmeter.properties)</li>
+</ul>
+</p>
+
+<h4>* XPath Assertion now enables using a JMeter variable as input</h4>
+<p>
+<figure width="800" height="317" image="changes/2.9/14_xpath_assertion.png"></figure>
+</p>
+
+<h3><u>GUI and ergonomy Improvements:</u></h3>
+<h4>* Search feature has been improved to search within more internal fields of elements and expand search results</h4>
+<h4>* Copy/paste is now possible between 2 JMeter instances &gt;= 2.9 version</h4>
+<p>Copy element(s) from one JMeter instance:
+<figure width="618" height="262" image="changes/2.9/06_copy_paste_between_2_jmeter1.png"></figure>
+</p>
+<p>Paste element(s) into a second JMeter instance:
+<figure width="617" height="278" image="changes/2.9/06_copy_paste_between_2_jmeter2.png"></figure>
+</p>
+<h4>* HTTP Header Manager</h4>
+<p>Allow copy from clipboard to HeaderPanel, headers are supposed to be separated by new line
+ and have the following form <i>name:value</i>
+<figure width="661" height="263" image="changes/2.9/07_header_panel_add_from_clipboard.png"></figure>
+</p>
+<h4>* Module Controller</h4>
+<p>Module Controller has been improved to better render referenced controller and expand it by clicking on a new button
+<figure width="832" height="274" image="changes/2.9/08_module_controller_improvements.png"></figure>
+</p>
+<h4>* HTTP Proxy Server</h4>
+<p>HTTP Proxy Server now has a button to add a set of default exclusions for URL patterns, 
+this list can be configured through property : <i>proxy.excludes.suggested</i>
+<figure width="811" height="214" image="changes/2.9/09_proxy_excludes_suggested.png"></figure>
+</p>
+<h4>* Rendering of target controller has been improved in HTTP Proxy Server</h4>
+
+<h3><u>HTTP Proxy Server recording:</u></h3>
+<p>* HTTP Proxy Server now automatically uses HTTP Request with Raw Post Body mode for 
+samples that only have one unnamed argument (JSON, XML, GWT...)</p>
+<p>* HTTP Proxy Server does not force user to select the type of Sampler in HTTP Sampler Settings,
+ this allows easier switch between implementations as Sampler do not have this information set anymore</p>
+ <p>
+<figure width="484" height="307" image="changes/2.9/10_http_proxy_dont_force_http_type.png"></figure>
+</p>
+<p>* SamplerCreator interface has been enriched to meet new requirements for plug-in providers</p>
+<p>* It is now possible to create binary sampler for x-www-form-urlencoded POST request by 
+modifying <i>proxy.binary.types</i> property to add application/x-www-form-urlencoded </p>
+<p>* Improved timestamp format auto-detection when reading CSV files</p>
+
+<!--  =================== Known bugs =================== -->
+
+<h2>Known bugs</h2>
+
+<p>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+but otherwise its behaviour is not consistent (or clearly specified).</p>
+
+<p>Listeners don't show iteration counts when a If Controller has a condition which is always false from the first iteration (see <bugzilla>52496</bugzilla>).  
+A workaround is to add a sampler at the same level as (or superior to) the If Controller.
+For example a Test Action sampler with 0 wait time (which doesn't generate a sample),
+or a Debug Sampler with all fields set to False (to reduce the sample size).
+</p>
+
+<p>Webservice sampler does not consider the HTTP response status to compute the status of a response, thus a response 500 containing a non empty body will be considered as successful, see <bugzilla>54006</bugzilla>.
+To workaround this issue, ensure you always read the response and add a Response Assertion checking text inside the response.
+</p>
+
+<p>
+Changing language can break part of the configuration of the following elements (see <bugzilla>53679</bugzilla>):
+<ul>
+    <li>CSV Data Set Config (sharing mode will be lost)</li>
+    <li>Constant Throughput Timer (Calculate throughput based on will be lost)</li>
+</ul>
+</p>
+
+<p>
+The numbers that appear to the left of the green box are the number of active threads / total number of threads, 
+these only apply to a locally run test; they do not include any threads started on remote systems when using client-server mode, (see <bugzilla>54152</bugzilla>).
+</p>
+
+<p>
+Note that there is a bug in Java on some Linux systems that manifests
+itself as the following error when running the test cases or JMeter itself:
+<pre>
+ [java] WARNING: Couldn't flush user prefs:
+ java.util.prefs.BackingStoreException:
+ java.lang.IllegalArgumentException: Not supported: indent-number
+</pre>
+This does not affect JMeter operation.
+</p>
+
+<!-- =================== Incompatible changes =================== -->
+
+<h2>Incompatible changes</h2>
+
+<p><b>JMeter requires now a Java 6 runtime or higher.</b></p>
+
+<p>Some configuration defaults have changed to improve performances by default (see <bugzilla>54412</bugzilla>), 
+see description in New and Noteworthy section.</p>
+
+<p>Webservice sampler now adds to request the headers that are set through Header Manager, these were previously ignored</p>
+
+<p><i>jdbcsampler.cachesize</i> property has been removed, it previously limited the size of a per connection cache of Map &lt; String, 
+PreparedStatement &gt; , it also limited the size of this
+map which held the PreparedStatement for SQL queries. This limitation provoked a bug <bugzilla>53995</bugzilla>. 
+It has been removed so now size of these 2 maps is not limited anymore. This change changes behaviour as starting from 
+this version no PreparedStatement will be closed during the test.</p>
+
+<p>Starting with this version, there are some important changes on JSR223 Test Elements:
+<ul>
+    <li>JSR223 Test Elements that have an invalid filename (not existing or unreadable) will make test fail instead of 
+    making the element silently work</li>
+    <li>In JSR223 Test Elements: responseCodeOk, responseMessageOK and successful are set before
+     script is executed, if responseData is set it will not be overriden anymore by a toString() on script return value</li>
+</ul>
+</p>
+
+<p>View Results Tree now considers response with missing content type as text.</p>
+
+<p>In remote Test mode, JMeter now exits in error if one of the remote engines cannot be configured, 
+previously it started the test with available engines.</p>
+
+<!-- =================== Bug fixes =================== -->
+
+<h2>Bug fixes</h2>
+
+<h3>HTTP Samplers and Proxy</h3>
+<ul>
+<li>Don't log spurious warning messages when using concurrent pool embedded downloads with Cache Manager or CookieManager</li>
+<li><bugzilla>54057</bugzilla>- Proxy option to set user and password at startup (-u and -a) not working with HTTPClient 4</li>
+<li><bugzilla>54187</bugzilla> - Request tab does not show headers if request fails</li>
+<li><bugzilla>53840</bugzilla> - Proxy Recording : Response message: URLDecoder: Illegal hex characters in escape (%) pattern - For input string: "" "</li>
+<li><bugzilla>54351</bugzilla> - HC4 and URI fragments is failing</li>
+</ul>
+
+<h3>Other Samplers</h3>
+<ul>
+<li><bugzilla>53997</bugzilla> - LDAP Extended Request: Escape ampersand (&amp;), left angle bracket (&lt;) 
+and right angle bracket (&gt;) in search filter tag in XML response data</li>
+<li><bugzilla>53995</bugzilla> - AbstractJDBCTestElement shares PreparedStatement between multi-threads</li>
+<li><bugzilla>54119</bugzilla> - HTTP 307 response is not redirected</li>
+<li><bugzilla>54326</bugzilla> - AjpSampler send file in post throws FileNotFoundException</li>
+<li><bugzilla>54331</bugzilla> - AjpSampler throws null pointer on GET request that are protected</li>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+<li><bugzilla>54088</bugzilla> - The type video/f4m is text, not binary</li>
+<li><bugzilla>54166</bugzilla> - ViewResultsTree could not render the HTML response: handle failure to parse HTML</li>
+<li><bugzilla>54287</bugzilla> - Incorrect Timestamp in Response Time Graph when using a date with time in Date format field</li>
+<li><bugzilla>54451</bugzilla> - Response Time Graph reports wrong times when the are many samples for same time</li>
+<li><bugzilla>54459</bugzilla> - CSVSaveService does not handle date parsing very well</li>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+<li><bugzilla>54058</bugzilla> - In HTTP Request Defaults, the value of field "Embedded URLs must match: is not saved if the check box "Retrieve All  Embedded Resources" is not checked.</li>
+<li><bugzilla>54375</bugzilla> - Regular Expression Extractor : When regex syntax is wrong, post processing is stopped</li>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+</ul>
+
+<h3>General</h3>
+<ul>
+<li><bugzilla>53975</bugzilla> - Variables replacement doesn't work with option "Delay thread creation until needed"</li>
+<li><bugzilla>54055</bugzilla> - View Results tree: = signs are stripped from parameter values at HTTP tab</li>
+<li><bugzilla>54129</bugzilla> - Search Feature does not find text although existing in elements </li>
+<li><bugzilla>54023</bugzilla> - Unable to start JMeter from a root directory and if the full path of JMeter installation contains one or more spaces (Unix/linux)</li>
+<li><bugzilla>54172</bugzilla> - Duplicate shortcut key not working and CTRL+C / CTRL+V / CTRL+V do not cancel default event</li>
+<li><bugzilla>54057</bugzilla> - Proxy option to set user and password at startup (-u and -a) not working with HTTPClient 4</li>
+<li><bugzilla>54267</bugzilla> - Start Next Thread Loop setting doesn't work in custom thread groups</li>
+<li><bugzilla>54413</bugzilla> - DataStrippingSampleSender returns 0 for number of bytes of any response</li>
+</ul>
+
+<!-- =================== Improvements =================== -->
+
+<h2>Improvements</h2>
+
+<h3>HTTP Samplers</h3>
+<ul>
+<li><bugzilla>54185</bugzilla> - Allow query strings in paths that start with HTTP or HTTPS</li>
+</ul>
+
+<h3>Other samplers</h3>
+<ul>
+<li><bugzilla>54004</bugzilla> - Webservice Sampler : Allow adding headers to request with Header Manager</li>
+<li><bugzilla>54106</bugzilla> - JSR223TestElement should check for file existence when a filename is set instead of using Text Area content </li>
+<li><bugzilla>54107</bugzilla> - JSR223TestElement : Enable compilation and caching of Script Text</li>
+<li><bugzilla>54109</bugzilla> - JSR223TestElement : SampleResult properties should be set before entering script to allow user setting different code</li>
+<li><bugzilla>54230</bugzilla> - TCP Sampler, additions of "Close Connection", "SO_LINGER" and "End of line(EOL) byte value" options</li>
+<li><bugzilla>54182</bugzilla> - Support sending of ByteMessage for JMS Publisher.</li>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+<li><bugzilla>54131</bugzilla> - ForEach Controller : Add start and end index for looping over variables</li>
+<li><bugzilla>54132</bugzilla> - Module Controller GUI : Improve rendering of referenced controller</li>
+<li><bugzilla>54155</bugzilla> - ModuleController : Add a shortcut button to unfold the tree up to referenced controller and highlight it</li>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+<li><bugzilla>54200</bugzilla> - Add support of several document types (like Apache OpenOffice's files, MS Office's files, PDF's files, etc.) 
+to the elements View Results Tree, Assertion Response and Regular Expression Extractor (using Apache Tika)</li>
+<li><bugzilla>54226</bugzilla> - View Results Tree : Show response even when server does not return ContentType header</li>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+<li><bugzilla>54259</bugzilla> - Introduce a new Extractor that uses CSS or jquery-like selector syntax</li>
+<li><bugzilla>45772</bugzilla> - RegEx User Parameters Post Processor</li>
+<li><bugzilla>54160</bugzilla> - Add support for xpath assertion to apply to a JMeter variable.</li>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+<li><bugzilla>54189</bugzilla> - Add a function to quote ORO regexp meta characters</li>
+<li><bugzilla>54418</bugzilla> - UUID Function</li>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+</ul>
+
+<h3>General</h3>
+<ul>
+<li><bugzilla>54005</bugzilla> - HTTP Mirror Server : Add special headers "X-" to control Response status and response content</li>
+<li><bugzilla>53875</bugzilla> - Include suggested defaults for URL filters on HTTP Proxy</li>
+<li><bugzilla>54031</bugzilla> - Add tooltip to running/total threads indicator </li>
+<li>Webservice (SOAP) Request has been deprecated</li>
+<li><bugzilla>54161</bugzilla> - Proxy : be able to create binary sampler for x-www-form-urlencoded POST request</li>
+<li><bugzilla>54154</bugzilla> - HTTP Proxy Server should not force user to select the type of Sampler in HTTP Sampler Settings</li>
+<li><bugzilla>54165</bugzilla> - Proxy Server: Improve rendering of target controller</li>
+<li><bugzilla>46677</bugzilla> - Copying Test Elements between test plans</li>
+<li><bugzilla>54204</bugzilla> - Result Status Action Handler : Add start next thread loop option</li>
+<li><bugzilla>54232</bugzilla> - Search Feature : Add a button to search and expand results</li>
+<li><bugzilla>54251</bugzilla> - Add tristate checkbox implementation</li>
+<li><bugzilla>54257</bugzilla> - Enhance SamplerCreator interface to meet new requirements</li>
+<li><bugzilla>54258</bugzilla> - Proxy : Use Raw Post Body when Sampler has one unnamed argument, useful for Samplers using POST method by of type JSON, XML, GWT body</li>
+<li><bugzilla>54268</bugzilla> - Improve CPU and memory usage</li>
+<li><bugzilla>54376</bugzilla> - ScopePanel : Allow configuring more precisely scopes</li>
+<li><bugzilla>54412</bugzilla> - Changing JMeter defaults to ensure better performances by default</li>
+<li><bugzilla>54414</bugzilla> - Remote Test should not start if one of the engines fails to start correctly</li>
+</ul>
+
+<h2>Non-functional changes</h2>
+<ul>
+<li><bugzilla>53956</bugzilla> - Add ability to paste (a list of values) from clipboard for Header Manager</li>
+<li>Updated to HttpComponents Client 4.2.3 (from 4.2.1)</li>
+<li>Updated to HttpComponents Core 4.2.3 (from 4.2.2)</li>
+<li><bugzilla>54110</bugzilla> - BSFTestElement and JSR223TestElement should use shared super-class for common fields</li>
+<li><bugzilla>54199</bugzilla> - Move to Java 6</li>
+<li>Upgraded to rhino 1.7R4</li>
+</ul>
 
 <!--  =================== 2.8 =================== -->
 
@@ -3100,8 +3976,8 @@ The XSL stylesheets also now accept either "rc" or "rs"</li>
 <li><bugzilla>39677</bugzilla> - allow for space in JMETER_BIN variable</li>
 <li>Use Commons HttpClient cookie parsing and management. Fix various problems with cookie handling.</li>
 <li><bugzilla>39773</bugzilla> - NTCredentials needs host name</li>
-</ul>	
-	
+</ul>
+
 <h4>Other changes</h4>
 <ul>
 <li>Updated to HTTPClient 3.0 (from 2.0)</li>
@@ -3137,8 +4013,8 @@ The XSL stylesheets also now accept either "rc" or "rs"</li>
 <li><bugzilla>36642</bugzilla> - Summariser stopped working in 2.1</li>
 <li><bugzilla>36618</bugzilla> - CSV header line did not match saved data</li>
 <li>JMeter should now run under JVM 1.3 (but does not build with 1.3)</li>
-</ul>	
-	
+</ul>
+
 
 <!--  ===================  -->
 
@@ -3200,7 +4076,7 @@ The XSL stylesheets also now accept either "rc" or "rs"</li>
 <li><bugzilla>31184</bugzilla> - make sure encoding is specified in JDBC sampler</li>
 <li>TCP sampler - only share sockets with same host:port details; correct the manual</li>
 <li>Extract src attribute for embed tags in JTidy and Html Parsers</li>
-</ul>	
+</ul>
 
 <!--  ===================  -->
 
@@ -3290,7 +4166,7 @@ The XSL stylesheets also now accept either "rc" or "rs"</li>
 <p>Bug fix release. TBA.</p>
 <h3>Version 2.0</h3>
 <ul>
-	<li>HTML parsing improved; now has choice of 3 parsers, and most embedded elements can now be detected and downloaded.</li>
+    <li>HTML parsing improved; now has choice of 3 parsers, and most embedded elements can now be detected and downloaded.</li>
 <li>Redirects can now be delegated to URLConnection by defining the JMeter property HTTPSamper.delegateRedirects=true (default is false) </li>
 <li>Stop Thread and Stop Test methods added for Samplers and Assertions etc. Samplers can call setStopThread(true) or setStopTest(true) if they detect an error that needs to stop the thread of the test after the sample has been processed </li>
 <li>Thread Group Gui now has an extra pane to specify what happens after a Sampler error: Continue (as now), Stop Thread or Stop Test. 
@@ -3308,30 +4184,30 @@ Create all samplers with keep-alive disabled
 Add Separator markers between sets of samples 
 Add Response Assertion to first sampler in each set </li>
 <li>Test Plan has a comment field</li>
-	
-	<li>Help Page can now be pushed to background</li>
-	<li>Separate Function help page</li>
-	<li>New / amended functions</li>
-	<ul>
-	  <li>__property() and __P() functions</li>
-	  <li>__log() and __logn() - for writing to the log file</li>
+
+    <li>Help Page can now be pushed to background</li>
+    <li>Separate Function help page</li>
+    <li>New / amended functions</li>
+    <ul>
+      <li>__property() and __P() functions</li>
+      <li>__log() and __logn() - for writing to the log file</li>
       <li>_StringFromFile can now process a sequence of files, e.g. dir/file01.txt, dir/file02.txt etc </li>
       <li>_StringFromFile() funtion can now use a variable or function for the file name </li>
-	</ul>
-	<li>New / amended Assertions</li>
-	<ul>
+    </ul>
+    <li>New / amended Assertions</li>
+    <ul>
         <li>Response Assertion now works for URLs, and it handles null data better </li>
         <li>Response Assertion can now match on Response Code and Response message as well </li>
-		<li>HTML Assertion using JTidy to check for well-formed HTML</li>
-	</ul>
-	<li>If Controller (not fully functional yet)</li>
-	<li>Transaction Controller (aggregates the times of its children)</li>
-	<li>New Samplers</li>
-		<ul>
-			<li>Basic BSF Sampler (optional)</li>
-			<li>BeanShell Sampler (optional, needs to be downloaded from www.beanshell.org</li>
-			<li>Basic TCP Sampler</li>
-		</ul>
+        <li>HTML Assertion using JTidy to check for well-formed HTML</li>
+    </ul>
+    <li>If Controller (not fully functional yet)</li>
+    <li>Transaction Controller (aggregates the times of its children)</li>
+    <li>New Samplers</li>
+        <ul>
+            <li>Basic BSF Sampler (optional)</li>
+            <li>BeanShell Sampler (optional, needs to be downloaded from www.beanshell.org</li>
+            <li>Basic TCP Sampler</li>
+        </ul>
      <li>Optionally start BeanShell server (allows remote access to JMeter variables and methods) </li>
 </ul>
 <h3>Version 1.9.1</h3>
@@ -3448,84 +4324,84 @@ test engine code.</li>
 
 <h3>Version 1.7Beta</h3> 
 <ul> 
-	<li>Better XML support for special characters (Tushar Bhatia) </li> 
-	<li>Non-GUI functioning  &amp; Non-GUI test plan execution  (Tushar Bhatia)</li> 
-	<li>Removing Swing dependence from base JMeter classes</li> 
-	<li>Internationalization (Takashi Okamoto)</li> 
-	<li>AllTests bug fix (neth6@atozasia.com)</li> 
-	<li>ClassFinder bug fix (neth6@atozasia.com)</li> 
-	<li>New Loop Controller</li> 
-	<li>Proxy Server records HTTP samples from browser 
-		(and documented in the user manual)</li> <li>Multipart Form support</li> 
-	<li>HTTP Header class for Header customization</li> 
-	<li>Extracting HTTP Header information from responses (Jamie Davidson)</li> 
-	<li>Mailer Visualizer re-added to JMeter</li> 
-	<li>JMeter now url encodes parameter names and values</li> 
-	<li>listeners no longer give exceptions if their gui's haven't been initialized</li> 
-	<li>HTTPS and Authorization working together</li> 
-	<li>New Http sampling that automatically parses HTML response 
-		for images to download, and includes the downloading of these 
-		images in total time for request (Neth neth6@atozasia.com) </li> 
-	<li>HTTP responses from server can be parsed for links and forms, 
-		and dynamic data can be extracted and added to test samples 
-		at run-time (documented)</li>  
-	<li>New Ramp-up feature (Jonathan O'Keefe)</li> 
-	<li>New visualizers (Neth)</li> 
-	<li>New Assertions for functional testing</li> 
+    <li>Better XML support for special characters (Tushar Bhatia) </li> 
+    <li>Non-GUI functioning  &amp; Non-GUI test plan execution  (Tushar Bhatia)</li> 
+    <li>Removing Swing dependence from base JMeter classes</li> 
+    <li>Internationalization (Takashi Okamoto)</li> 
+    <li>AllTests bug fix (neth6@atozasia.com)</li> 
+    <li>ClassFinder bug fix (neth6@atozasia.com)</li> 
+    <li>New Loop Controller</li> 
+    <li>Proxy Server records HTTP samples from browser 
+        (and documented in the user manual)</li> <li>Multipart Form support</li> 
+    <li>HTTP Header class for Header customization</li> 
+    <li>Extracting HTTP Header information from responses (Jamie Davidson)</li> 
+    <li>Mailer Visualizer re-added to JMeter</li> 
+    <li>JMeter now url encodes parameter names and values</li> 
+    <li>listeners no longer give exceptions if their gui's haven't been initialized</li> 
+    <li>HTTPS and Authorization working together</li> 
+    <li>New Http sampling that automatically parses HTML response 
+        for images to download, and includes the downloading of these 
+        images in total time for request (Neth neth6@atozasia.com) </li> 
+    <li>HTTP responses from server can be parsed for links and forms, 
+        and dynamic data can be extracted and added to test samples 
+        at run-time (documented)</li>  
+    <li>New Ramp-up feature (Jonathan O'Keefe)</li> 
+    <li>New visualizers (Neth)</li> 
+    <li>New Assertions for functional testing</li> 
 </ul>  
 
 <h3>Version 1.6.1</h3> 
 <ul> 
-	<li>Fixed saving and loading of test scripts (no more extra lines)</li> 
-	<li>Can save and load special characters (such as &quot;&amp;&quot; and &quot;&lt;&quot;).</li> 
-	<li>Can save and load timers and listeners.</li> 
-	<li>Minor bug fix for cookies (if you cookie value 
-		contained an &quot;=&quot;, then it broke).</li> 
-	<li>URL's can sample ports other than 80, and can test HTTPS, 
-		provided you have the necessary jars (JSSE)</li> 
+    <li>Fixed saving and loading of test scripts (no more extra lines)</li> 
+    <li>Can save and load special characters (such as &quot;&amp;&quot; and &quot;&lt;&quot;).</li> 
+    <li>Can save and load timers and listeners.</li> 
+    <li>Minor bug fix for cookies (if you cookie value 
+        contained an &quot;=&quot;, then it broke).</li> 
+    <li>URL's can sample ports other than 80, and can test HTTPS, 
+        provided you have the necessary jars (JSSE)</li> 
 </ul> 
 
 <h3>Version 1.6 Alpha</h3> 
 <ul> 
-	<li>New UI</li> 
-	<li>Separation of GUI and Logic code</li> 	
-	<li>New Plug-in framework for new modules</li> 
-	<li>Enhanced performance</li> 
-	<li>Layering of test logic for greater flexibility</li> 
-	<li>Added support for saving of test elements</li> 
-	<li>Added support for distributed testing using a single client</li> 
+    <li>New UI</li> 
+    <li>Separation of GUI and Logic code</li>
+    <li>New Plug-in framework for new modules</li> 
+    <li>Enhanced performance</li> 
+    <li>Layering of test logic for greater flexibility</li> 
+    <li>Added support for saving of test elements</li> 
+    <li>Added support for distributed testing using a single client</li> 
 
 </ul> 
 <h3>Version 1.5.1</h3> 
 <ul> 
-	<li>Fixed bug that caused cookies not to be read if header name case not as expected.</li> 
-	<li>Clone entries before sending to sampler - prevents relocations from messing up 
-		information across threads</li> 
-	<li>Minor bug fix to convenience dialog for adding paramters to test sample.  
-		Bug prevented entries in dialog from appearing in test sample.</li> 
-	<li>Added xerces.jar to distribution</li> 
-	<li>Added junit.jar to distribution and created a few tests.</li> 
-	<li>Started work on new framework.  New files in cvs, but do not effect program yet.</li> 
-	<li>Fixed bug that prevent HTTPJMeterThread from delaying according to chosen timer.</li> 
+    <li>Fixed bug that caused cookies not to be read if header name case not as expected.</li> 
+    <li>Clone entries before sending to sampler - prevents relocations from messing up 
+        information across threads</li> 
+    <li>Minor bug fix to convenience dialog for adding paramters to test sample.  
+        Bug prevented entries in dialog from appearing in test sample.</li> 
+    <li>Added xerces.jar to distribution</li> 
+    <li>Added junit.jar to distribution and created a few tests.</li> 
+    <li>Started work on new framework.  New files in cvs, but do not effect program yet.</li> 
+    <li>Fixed bug that prevent HTTPJMeterThread from delaying according to chosen timer.</li> 
 </ul>  
 <p> 
 <h3>Version 1.5</h3> 
 <ul>   
-	<li>Abstracted out the concept of the Sampler, SamplerController, and TestSample.   
-		A Sampler represents code that understands a protocol (such as HTTP, 
-		or FTP, RMI,   SMTP, etc..).  It is the code that actually makes the 
-		connection to whatever is   being tested.   A SamplerController 
-		represents code that understands how to organize and run a group   
-		of test samples.  It is what binds together a Sampler and its test 
-		samples and runs them.   A TestSample represents code that understands 
-		how to gather information from the   user about a particular test.  
-		For a website, it would represent a URL and any   information to be sent 
-		with the URL.</li>   
-	<li>The UI has been updated to make entering test samples more convenient.</li>   
-	<li>Thread groups have been added, allowing a user to setup multiple test to run   
-		concurrently, and to allow sharing of test samples between those tests.</li>   
-	<li>It is now possible to save and load test samples.</li>   
-	<li>....and many more minor changes/improvements...</li> 
+    <li>Abstracted out the concept of the Sampler, SamplerController, and TestSample.   
+        A Sampler represents code that understands a protocol (such as HTTP, 
+        or FTP, RMI,   SMTP, etc..).  It is the code that actually makes the 
+        connection to whatever is   being tested.   A SamplerController 
+        represents code that understands how to organize and run a group   
+        of test samples.  It is what binds together a Sampler and its test 
+        samples and runs them.   A TestSample represents code that understands 
+        how to gather information from the   user about a particular test.  
+        For a website, it would represent a URL and any   information to be sent 
+        with the URL.</li>   
+    <li>The UI has been updated to make entering test samples more convenient.</li>   
+    <li>Thread groups have been added, allowing a user to setup multiple test to run   
+        concurrently, and to allow sharing of test samples between those tests.</li>   
+    <li>It is now possible to save and load test samples.</li>   
+    <li>....and many more minor changes/improvements...</li> 
 </ul> 
 </p> 
 <p> 

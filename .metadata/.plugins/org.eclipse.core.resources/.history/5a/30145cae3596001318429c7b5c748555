@@ -1,0 +1,27 @@
+package org.apache.jmeter.threads;
+
+import org.apache.jmeter.samplers.SampleEvent;
+import org.apache.jmeter.samplers.SampleListener;
+
+public class CustomThreadGroup extends ThreadGroup implements SampleListener{
+
+	@Override
+	public void sampleOccurred(SampleEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sampleStarted(SampleEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sampleStopped(SampleEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+

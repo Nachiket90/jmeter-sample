@@ -16,15 +16,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * @version $Id: index.xml 1203914 2011-11-19 00:23:36Z sebb $
+ * @version $Id: index.xml 1457570 2013-03-17 21:48:24Z sebb $
 -->
 <document>
 
   <properties>
 
-	 <author email="jsalvata@atg.com">Jordi Salvat i Alabart</author>
+     <author email="jsalvata@atg.com">Jordi Salvat i Alabart</author>
 
-	 <title>JMeter Localisation (Translator's Guide)</title>
+     <title>JMeter Localisation (Translator's Guide)</title>
 
   </properties>
 

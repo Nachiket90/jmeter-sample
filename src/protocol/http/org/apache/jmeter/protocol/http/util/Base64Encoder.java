@@ -22,7 +22,7 @@ package org.apache.jmeter.protocol.http.util;
  * This class provides an implementation of Base64 encoding without relying on
  * the the sun.* packages.
  *
- * @version $Revision: 1380893 $
+ * @version $Revision$
  */
 public final class Base64Encoder {
     private static final char[] pem_array = { 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82,

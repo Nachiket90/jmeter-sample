@@ -48,7 +48,7 @@ import org.apache.log.Logger;
  *
  * @see JavaSamplerClient#runTest(JavaSamplerContext)
  *
- * @version $Revision: 1413958 $
+ * @version $Revision$
  */
 public abstract class AbstractJavaSamplerClient implements JavaSamplerClient {
 

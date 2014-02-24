@@ -31,7 +31,7 @@ import javax.jms.QueueSession;
  * 
  * Created on: October 28, 2004
  *
- * @version $Revision: 1413958 $
+ * @version $Revision$
  */
 public class TemporaryQueueExecutor implements QueueExecutor {
     /** The sender and receiver. */

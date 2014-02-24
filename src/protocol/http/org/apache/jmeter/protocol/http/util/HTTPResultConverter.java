@@ -45,7 +45,7 @@ public class HTTPResultConverter extends SampleResultConverter {
      * incompatibilities
      */
     public static String getVersion() {
-        return "$Revision: 1381737 $";  //$NON-NLS-1$
+        return "$Revision$";  //$NON-NLS-1$
     }
 
     /**

@@ -18,7 +18,7 @@
 package org.apache.jmeter.monitor.model;
 
 /**
- * @version $Revision: 1377071 $
+ * @version $Revision$
  */
 public interface Worker {
     int getRequestProcessingTime();

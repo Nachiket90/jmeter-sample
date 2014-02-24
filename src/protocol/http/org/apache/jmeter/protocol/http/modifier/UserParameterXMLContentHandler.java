@@ -32,7 +32,7 @@ import org.xml.sax.SAXException;
 /**
  * The handler used to read in XML parameter data.
  *
- * @version $Revision: 1413957 $
+ * @version $Revision$
  */
 public class UserParameterXMLContentHandler implements ContentHandler {
     // -------------------------------------------

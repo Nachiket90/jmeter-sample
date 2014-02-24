@@ -25,7 +25,7 @@ import java.net.URL;
  * cost of the hostname lookup performed by the URL methods equals() and
  * hashCode() URL is a final class, so cannot be extended ...
  *
- * @version $Revision: 1493403 $
+ * @version $Revision$
  */
 public class URLString implements Comparable<URLString> {
 

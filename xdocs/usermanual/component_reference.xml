@@ -21,7 +21,7 @@
 <!ENTITY sect-num '18'>
 ]>
 <document index="yes" index-level-2="yes" index-numbers="no" colbreak="&sect-num;.4"
-  prev="boss.html" next="functions.html" id="$Id: component_reference.xml 1439628 2013-01-28 21:00:28Z milamber $">
+  prev="boss.html" next="functions.html" id="$Id: component_reference.xml 1554378 2013-12-31 07:27:24Z milamber $">
 
 <properties>
   <title>User's Manual: Component Reference</title>
@@ -30,12 +30,12 @@
 <body>
 
 <!--
-	Because this is an XML document, all tags must be properly closed, including ones
-	which are passed unchanged into the HTML output, e.g. <br/>, not just <br>.
-	
-	Unfortunately Java does not currently allow for this - it outputs the trailing > -
-	which messes up the Help display. 
-	To avoid these artefacts, use the form <br></br>, which Java does seem to handle OK.
+    Because this is an XML document, all tags must be properly closed, including ones
+    which are passed unchanged into the HTML output, e.g. <br/>, not just <br>.
+
+    Unfortunately Java does not currently allow for this - it outputs the trailing > -
+    which messes up the Help display. 
+    To avoid these artefacts, use the form <br></br>, which Java does seem to handle OK.
 
  -->
 <section name="&sect-num;.0 Introduction" anchor="introduction">
@@ -55,13 +55,13 @@
  
 <section name="&sect-num;.1 Samplers" anchor="samplers">
 <description>
-	<p>
-	Samplers perform the actual work of JMeter.
-	Each sampler (except Test Action) generates one or more sample results.
-	The sample results have various attributes (success/fail, elapsed time, data size etc) and can be viewed in the various listeners.
-	</p>
+    <p>
+    Samplers perform the actual work of JMeter.
+    Each sampler (except Test Action) generates one or more sample results.
+    The sample results have various attributes (success/fail, elapsed time, data size etc) and can be viewed in the various listeners.
+    </p>
 </description>
-<component name="FTP Request" index="&sect-num;.1.1" width="519" height="289" screenshot="ftptest/ftp-request.png">
+<component name="FTP Request" index="&sect-num;.1.1" width="861" height="278" screenshot="ftptest/ftp-request.png">
 <description>
 This controller lets you send an FTP "retrieve file" or "upload file" request to an FTP server.
 If you are going to send multiple requests to the same FTP server, consider
@@ -96,7 +96,7 @@ Latency is set to the time it takes to login (versions of JMeter after 2.3.1).
 
 </component>
 
-<component name="HTTP Request" index="&sect-num;.1.2" width="907" height="674" screenshot="http-request.png">
+<component name="HTTP Request" index="&sect-num;.1.2" width="900" height="686" screenshot="http-request.png">
 
 <description>
         <p>This sampler lets you send an HTTP/HTTPS request to a web server.  It
@@ -122,7 +122,7 @@ Latency is set to the time it takes to login (versions of JMeter after 2.3.1).
         HTTP Request.</p>
 
         <p>Or, instead of manually adding HTTP Requests, you may want to use
-        JMeter's <complink name="HTTP Proxy Server"/> to create
+        JMeter's <complink name="HTTP(S) Test Script Recorder"/> to create
         them.  This can save you time if you have a lot of HTTP requests or requests with many
         parameters.</p>
 
@@ -146,7 +146,7 @@ Latency is set to the time it takes to login (versions of JMeter after 2.3.1).
          <ul>
          <li>There is no control over how connections are re-used. 
          When a connection is released by JMeter, it may or may not be re-used by the same thread.</li>
-         <li>The API is best suited to single-threaded usage - various settings (e.g. proxy) 
+         <li>The API is best suited to single-threaded usage - various settings 
          are defined via system properties, and therefore apply to all connections.</li>
          <li>There is a bug in the handling of HTTPS via a Proxy (the CONNECT is not handled correctly).
          See Java bugs 6226610 and 6208335.
@@ -209,44 +209,48 @@ https.default.protocol=SSLv3
         </property>
         <property name="Port" required="No">Port the web server is listening to. Default: 80</property>
         <property name="Connect Timeout" required="No">Connection Timeout. Number of milliseconds to wait for a connection to open.</property>
-        <property name="Response Timeout" required="No">Response Timeout. Number of milliseconds to wait for a response.</property>
+        <property name="Response Timeout" required="No">Response Timeout. Number of milliseconds to wait for a response. 
+        Note that this appplies to each wait for a response. If the server response is sent in several chunks, the overall
+        elapsed time may be longer than the timeout.
+        A <complink name="Duration Assertion"/> can be used to detect overlong responses.
+        </property>
         <property name="Server (proxy)" required="No">Hostname or IP address of a proxy server to perform request. [Do not include the http:// prefix.]</property>
         <property name="Port" required="No, unless proxy hostname is specified">Port the proxy server is listening to.</property>
         <property name="Username" required="No">(Optional) username for proxy server.</property>
         <property name="Password" required="No">(Optional) password for proxy server. (N.B. this is stored unencrypted in the test plan)</property>
         <property name="Implementation" required="No">Java, HttpClient3.1, HttpClient4. 
         If not specified (and not defined by HTTP Request Defaults), the default depends on the value of the JMeter property
-        <code>jmeter.httpsampler</code>, failing that, the Java implementation is used.</property>
+        <code>jmeter.httpsampler</code>, failing that, the HttpClient4 implementation is used.</property>
         <property name="Protocol" required="No">HTTP, HTTPS or FILE. Default: HTTP</property>
         <property name="Method" required="Yes">GET, POST, HEAD, TRACE, OPTIONS, PUT, DELETE, PATCH (not supported for JAVA implementation)</property>
         <property name="Content Encoding" required="No">
         Content encoding to be used (for POST, PUT, PATCH and FILE). 
         This the the character encoding to be used, and is not related to the Content-Encoding HTTP header.
         </property>
-		<property name="Redirect Automatically" required="No">
-		Sets the underlying http protocol handler to automatically follow redirects,
-		so they are not seen by JMeter, and thus will not appear as samples.
-		Should only be used for GET and HEAD requests.
-		The HttpClient sampler will reject attempts to use it for POST or PUT.
-		<b>Warning: see below for information on cookie and header handling.</b>
+        <property name="Redirect Automatically" required="No">
+        Sets the underlying http protocol handler to automatically follow redirects,
+        so they are not seen by JMeter, and thus will not appear as samples.
+        Should only be used for GET and HEAD requests.
+        The HttpClient sampler will reject attempts to use it for POST or PUT.
+        <b>Warning: see below for information on cookie and header handling.</b>
         </property>
-		<property name="Follow Redirects" required="No">
-		This only has any effect if "Redirect Automatically" is not enabled.
-		If set, the JMeter sampler will check if the response is a redirect and follow it if so.
-		The initial redirect and further responses will appear as additional samples.
+        <property name="Follow Redirects" required="No">
+        This only has any effect if "Redirect Automatically" is not enabled.
+        If set, the JMeter sampler will check if the response is a redirect and follow it if so.
+        The initial redirect and further responses will appear as additional samples.
         The URL and data fields of the parent sample will be taken from the final (non-redirected)
         sample, but the parent byte count and elapsed time include all samples.
         The latency is taken from the initial response (versions of JMeter after 2.3.4 - previously it was zero).
-		Note that the HttpClient sampler may log the following message:<br/>
-		"Redirect requested but followRedirects is disabled"<br/>
-		This can be ignored.
+        Note that the HttpClient sampler may log the following message:<br/>
+        "Redirect requested but followRedirects is disabled"<br/>
+        This can be ignored.
         <br/>
         In versions after 2.3.4, JMeter will collapse paths of the form '/../segment' in
         both absolute and relative redirect URLs. For example http://host/one/../two => http://host/two.
         If necessary, this behaviour can be suppressed by setting the JMeter property
         <code>httpsampler.redirect.removeslashdotdot=false</code>
-		</property>
-		<property name="Use KeepAlive" required="No">JMeter sets the Connection: keep-alive header. This does not work properly with the default HTTP implementation, as connection re-use is not under user-control. 
+        </property>
+        <property name="Use KeepAlive" required="No">JMeter sets the Connection: keep-alive header. This does not work properly with the default HTTP implementation, as connection re-use is not under user-control. 
                   It does work with the Apache HttpComponents HttpClient implementations.</property>
         <property name="Use multipart/form-data for HTTP POST" required="No">
         Use a multipart/form-data or application/x-www-form-urlencoded post request
@@ -261,7 +265,9 @@ resource requires query string parameters, add them below in the
 <b>
 As a special case, if the path starts with "http://" or "https://" then this is used as the full URL.
 </b>
-In this case, the server, port and protocol are ignored; parameters are also ignored for GET and DELETE methods.
+In this case, the server, port and protocol fields are ignored; parameters are also ignored for GET and DELETE methods.
+Also please note that the path is not encoded - apart from replacing spaces with %20 -
+so unsafe characters may need to be encoded to avoid errors such as URISyntaxException.
 </property>
         <property name="Send Parameters With the Request" required="No">The query string will
         be generated from the list of parameters you provide.  Each parameter has a <i>name</i> and
@@ -317,10 +323,22 @@ and send HTTP/HTTPS requests for all images, Java applets, JavaScript files, CSS
         </property>
         <property name="Use concurrent pool" required="No">Use a pool of concurrent connections to get embedded resources.</property>
         <property name="Size" required="No">Pool size for concurrent connections used to get embedded resources.</property>
-        <property name="Source IP address:" required="No">
-        [Only for HTTP Request HTTPClient] 
+        <property name="Source address type" required="No">
+        <i>[Only for HTTP Request with HTTPClient implementation]</i> <br></br>
+        To distinguish the source address value, select the type of these:
+        <ul>
+        <li>Select <i>IP/Hostname</i> to use a specific IP address or a (local) hostname</li>
+        <li>Select <i>Device</i> to pick the first available address for that interface which
+        this may be either IPv4 or IPv6</li>
+        <li>Select <i>Device IPv4</i>To select the IPv4 address of the device name (like eth0, lo, em0, etc.)</li>
+        <li>Select <i>Device IPv6</i>To select the IPv6 address of the device name (like eth0, lo, em0, etc.)</li>
+        </ul>
+        </property>
+        <property name="Source address field" required="No">
+        <i>[Only for HTTP Request with HTTPClient implementation]</i> <br></br>
         Override the default local IP address for this sample.
-        The JMeter host must have multiple IP addresses (i.e. IP aliases or network interfaces). 
+        The JMeter host must have multiple IP addresses (i.e. IP aliases, network interfaces, devices).
+        The value can be a host name, IP address, or a network interface device such as "eth0" or "lo" or "wlan0".<br></br>
         If the property <b>httpclient.localaddress</b> is defined, that is used for all HttpClient requests.
         </property>
 </properties>
@@ -368,7 +386,7 @@ To send a CRLF after the last line of data, just ensure that there is an empty l
 </p>
 <figure width="902" height="421" image="http-request-raw-single-parameter.png">Figure 1 - HTTP Request with one unnamed parameter</figure>
 <figure width="908" height="212" image="http-request-confirm-raw-body.png">Figure 2 - Confirm dialog to switch</figure>
-<figure width="905" height="423" image="http-request-raw-body.png">Figure 3 - HTTP Request using RAW Post body</figure>
+<figure width="905" height="423" image="http-request-raw-body.png">Figure 3 - HTTP Request using Body Data</figure>
 
 <p>
 <b>Method Handling:</b><br></br>
@@ -397,8 +415,8 @@ JMeter 2.1.2 introduces the a new property <b>HTTPResponse.parsers</b>, which is
  <p>See jmeter.properties file for the details of the settings. 
  If the HTTPResponse.parser property is not set, JMeter reverts to the previous behaviour,
  i.e. only text/html responses will be scanned</p>
-<b>Emulating slow connections (HttpClient only):</b><br></br>
-The HttpClient version of the sampler supports emulation of slow connections; see the following entries in jmeter.properties:
+<b>Emulating slow connections:</b><br></br>
+HttpClient31, HttpClient4 and Java Sampler support emulation of slow connections; see the following entries in jmeter.properties:
 <pre>
 # Define characters per second > 0 to emulate slow connections
 #httpclient.socket.http.cps=0
@@ -439,7 +457,7 @@ httpclient3.retrycount=3
         <complink name="HTTP Cookie Manager"/>
         <complink name="HTTP Header Manager"/>
         <complink name="HTML Link Parser"/>
-        <complink name="HTTP Proxy Server"/>
+        <complink name="HTTP(S) Test Script Recorder"/>
         <complink name="HTTP Request Defaults"/>
         <link href="build-adv-web-test-plan.html#session_url_rewriting">HTTP Requests and Session ID's: URL Rewriting</link>
 </links>
@@ -478,24 +496,29 @@ the additional variables for rows 4, 5 and 6 will be removed.
 
 <properties>
         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
-		<property name="Variable Name" required="Yes">
-		Name of the JMeter variable that the connection pool is bound to.
-		This must agree with the 'Variable Name' field of a JDBC Connection Configuration.
-		</property>
-		<property name="Query Type" required="Yes">Set this according to the statement type:
-		    <ul>
-		    <li>Select Statement</li>
-		    <li>Update Statement - use this for Inserts as well</li>
-		    <li>Callable Statement</li>
-		    <li>Prepared Select Statement</li>
-		    <li>Prepared Update Statement - use this for Inserts as well</li>
-		    <li>Commit</li>
-		    <li>Rollback</li>
-		    <li>Autocommit(false)</li>
-		    <li>Autocommit(true)</li>
-		    <li>Edit - this should be a variable reference that evaluates to one of the above</li>
-		    </ul>
-		</property>
+        <property name="Variable Name" required="Yes">
+        Name of the JMeter variable that the connection pool is bound to.
+        This must agree with the 'Variable Name' field of a JDBC Connection Configuration.
+        </property>
+        <property name="Query Type" required="Yes">Set this according to the statement type:
+            <ul>
+            <li>Select Statement</li>
+            <li>Update Statement - use this for Inserts as well</li>
+            <li>Callable Statement</li>
+            <li>Prepared Select Statement</li>
+            <li>Prepared Update Statement - use this for Inserts as well</li>
+            <li>Commit</li>
+            <li>Rollback</li>
+            <li>Autocommit(false)</li>
+            <li>Autocommit(true)</li>
+            <li>Edit - this should be a variable reference that evaluates to one of the above</li>
+            </ul>
+            <note>
+            When "Prepared Select Statement", "Prepared Update Statement" or "Callable Statement" types are selected, a Statement Cache per connection is used by JDBC Request. 
+            It stores by default up to 100 PreparedStatements per connection, this can impact your database (Open Cursors). 
+            This can be changed by defining the property "jdbcsampler.nullmarker".
+            </note>
+        </property>
         <property name="SQL Query" required="Yes">
         SQL query.
         Do not enter a trailing semi-colon.
@@ -754,7 +777,7 @@ Webservice Soap Sampler assumes that empty response means failure.
               <li>Modify Test</li>
               <ol><li>Inbuilt test :
                 <p>This will create a pre-defined entry first, then will modify the
-                  created	entry in the LDAP Server.And calculate the execution time. After
+                  created entry in the LDAP Server.And calculate the execution time. After
                   execution
                   of the test, the created entry will be deleted from the LDAP Server.</p></li>
                   <li>User defined test
@@ -845,16 +868,16 @@ Webservice Soap Sampler assumes that empty response means failure.
      
  <br />       
       <li><b>Single bind/unbind</b></li>
-		<p> This is a combination of the LDAP "bind" and "unbind" operations.
-		It can be used for an authentication request/password check for any user. It will open an new session, just to
-		check the validity of the user/password combination, and end the session again.</p>
+        <p> This is a combination of the LDAP "bind" and "unbind" operations.
+        It can be used for an authentication request/password check for any user. It will open an new session, just to
+        check the validity of the user/password combination, and end the session again.</p>
     <properties>
      <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
       <property name="Username" required="Yes">Full distinguished name of the user as which you want to bind.</property>
      <property name="Password" required="No">Password for the above user. If omitted it will result in an anonymous bind. 
      If is is incorrect, the sampler will return an error. (N.B. this is stored unencrypted in the test plan)</property>
      </properties>
-		
+
  <br />       
       <li><b>Rename entry</b></li>
        <p>This is the LDAP "moddn" operation. It can be used to rename an entry, but 
@@ -1020,8 +1043,8 @@ to configure this via the GUI, so it cannot really be used.
 </p>
 </component>
 
-<component name="BeanShell Sampler" index="&sect-num;.1.10"  width="1034" height="505" screenshot="beanshellsampler.png">
-	<description><p>This sampler allows you to write a sampler using the BeanShell scripting language.		
+<component name="BeanShell Sampler" index="&sect-num;.1.10"  width="848" height="566" screenshot="beanshellsampler.png">
+    <description><p>This sampler allows you to write a sampler using the BeanShell scripting language.
 </p><p>
 <b>For full details on using BeanShell, please see the <a href="http://www.beanshell.org/">BeanShell website.</a></b>
 </p>
@@ -1034,9 +1057,9 @@ See the file BeanShellListeners.bshrc for example definitions.
 From JMeter version 2.5.1, the BeanShell sampler also supports the Interruptible interface.
 The interrupt() method can be defined in the script or the init file.
 </p>
-	</description>
+    </description>
 <properties>
-	<property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.
+    <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.
     The name is stored in the script variable Label</property>
     <property name="Reset bsh.Interpreter before each call" required="Yes">
     If this option is selected, then the interpreter will be recreated for each sample.
@@ -1046,11 +1069,11 @@ The interrupt() method can be defined in the script or the init file.
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
     This is intended for use with script files; for scripts defined in the GUI, you can use whatever
     variable and function references you need within the script itself.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul></property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul></property>
     <property name="Script file" required="No">A file containing the BeanShell script to run.
     The file name is stored in the script variable FileName</property>
     <property name="Script" required="Yes (unless script file is provided)">The BeanShell script to run. 
@@ -1076,45 +1099,45 @@ e.g. props.get("START.HMS"); props.put("PROP1","1234");
 <br/>
 BeanShell does not currently support Java 5 syntax such as generics and the enhanced for loop.
 </note>
-		<p>Before invoking the script, some variables are set up in the BeanShell interpreter:
-			</p>
-				<p>The contents of the Parameters field is put into the variable "Parameters".
-			The string is also split into separate tokens using a single space as the separator, and the resulting list
-			is stored in the String array bsh.args.</p>
-			<p>The full list of BeanShell variables that is set up is as follows:</p>
-		<ul>
-		<li>log - the Logger</li>
-		<li>Label - the Sampler label</li>
-		<li>FileName - the file name, if any</li>
-		<li>Parameters - text from the Parameters field</li>
-		<li>bsh.args - the parameters, split as described above</li>
-		<li>SampleResult - pointer to the current SampleResult</li>
-			<li>ResponseCode = 200</li>
-			<li>ResponseMessage = "OK"</li>
-			<li>IsSuccess = true</li>
-			<li>ctx - <a href="../api/org/apache/jmeter/threads/JMeterContext.html">JMeterContext</a></li>
-			<li>vars - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. vars.get("VAR1"); vars.put("VAR2","value"); vars.remove("VAR3"); vars.putObject("OBJ1",new Object());</li>
+        <p>Before invoking the script, some variables are set up in the BeanShell interpreter:
+            </p>
+                <p>The contents of the Parameters field is put into the variable "Parameters".
+            The string is also split into separate tokens using a single space as the separator, and the resulting list
+            is stored in the String array bsh.args.</p>
+            <p>The full list of BeanShell variables that is set up is as follows:</p>
+        <ul>
+        <li>log - the Logger</li>
+        <li>Label - the Sampler label</li>
+        <li>FileName - the file name, if any</li>
+        <li>Parameters - text from the Parameters field</li>
+        <li>bsh.args - the parameters, split as described above</li>
+        <li>SampleResult - pointer to the current SampleResult</li>
+            <li>ResponseCode = 200</li>
+            <li>ResponseMessage = "OK"</li>
+            <li>IsSuccess = true</li>
+            <li>ctx - <a href="../api/org/apache/jmeter/threads/JMeterContext.html">JMeterContext</a></li>
+            <li>vars - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. vars.get("VAR1"); vars.put("VAR2","value"); vars.remove("VAR3"); vars.putObject("OBJ1",new Object());</li>
             <li>props - JMeterProperties (class java.util.Properties)- e.g. props.get("START.HMS"); props.put("PROP1","1234");</li>
-		</ul>
-		<p>When the script completes, control is returned to the Sampler, and it copies the contents
-			of the following script variables into the corresponding variables in the <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a>:</p>
-			<ul>
-			<li>ResponseCode - for example 200</li>
-			<li>ResponseMessage - for example "OK"</li>
-			<li>IsSuccess - true/false</li>
-			</ul>
-			<p>The SampleResult ResponseData is set from the return value of the script.
-			Since version 2.1.2, if the script returns null, it can set the response directly, by using the method 
-			SampleResult.setResponseData(data), where data is either a String or a byte array.
-			The data type defaults to "text", but can be set to binary by using the method
-			SampleResult.setDataType(SampleResult.BINARY).
-			</p>
-			<p>The SampleResult variable gives the script full access to all the fields and
-				methods in the SampleResult. For example, the script has access to the methods
-				setStopThread(boolean) and setStopTest(boolean).
-				
-				Here is a simple (not very useful!) example script:</p>
-				
+        </ul>
+        <p>When the script completes, control is returned to the Sampler, and it copies the contents
+            of the following script variables into the corresponding variables in the <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a>:</p>
+            <ul>
+            <li>ResponseCode - for example 200</li>
+            <li>ResponseMessage - for example "OK"</li>
+            <li>IsSuccess - true/false</li>
+            </ul>
+            <p>The SampleResult ResponseData is set from the return value of the script.
+            Since version 2.1.2, if the script returns null, it can set the response directly, by using the method 
+            SampleResult.setResponseData(data), where data is either a String or a byte array.
+            The data type defaults to "text", but can be set to binary by using the method
+            SampleResult.setDataType(SampleResult.BINARY).
+            </p>
+            <p>The SampleResult variable gives the script full access to all the fields and
+                methods in the SampleResult. For example, the script has access to the methods
+                setStopThread(boolean) and setStopTest(boolean).
+
+                Here is a simple (not very useful!) example script:</p>
+
 <pre>
 if (bsh.args[0].equalsIgnoreCase("StopThread")) {
     log.info("Stop Thread detected!");
@@ -1138,30 +1161,35 @@ Beware however that misuse of any methods can cause subtle faults that may be di
 </component>
 
 
-<component name="BSF Sampler" index="&sect-num;.1.11"  width="865" height="412" screenshot="bsfsampler.png">
-	<description><p>This sampler allows you to write a sampler using a BSF scripting language.<br></br>
-		See the <a href="http://commons.apache.org/bsf/index.html">Apache Bean Scripting Framework</a>
-		website for details of the languages supported.
-		You may need to download the appropriate jars for the language; they should be put in the JMeter <b>lib</b> directory.
-		</p>
-		<p>By default, JMeter supports the following languages:</p>
-		<ul>
-		<li>javascript</li>
+<component name="BSF Sampler" index="&sect-num;.1.11"  width="848" height="590" screenshot="bsfsampler.png">
+    <description><p>This sampler allows you to write a sampler using a BSF scripting language.<br></br>
+        See the <a href="http://commons.apache.org/bsf/index.html">Apache Bean Scripting Framework</a>
+        website for details of the languages supported.
+        You may need to download the appropriate jars for the language; they should be put in the JMeter <b>lib</b> directory.
+        </p>
+        <note>
+        The BSF API has been largely superseded by JSR-223, which is included in Java 1.6 onwards.
+        Most scripting languages now include support for JSR-223; please use the JSR223 Sampler instead.
+        The BSF Sampler should only be needed for supporting legacy languages/test scripts.
+        </note>
+        <p>By default, JMeter supports the following languages:</p>
+        <ul>
+        <li>javascript</li>
         <li>jexl (JMeter version 2.3.2 and later)</li>
         <li>xslt</li>
-		</ul>
+        </ul>
         <note>Unlike the BeanShell sampler, the interpreter is not saved between invocations.</note>
-	</description>
+    </description>
 <properties>
-	<property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
-	<property name="Scripting Language" required="Yes">Name of the BSF scripting language to be used.
-	N.B. Not all the languages in the drop-down list are supported by default.
-	The following are supported: jexl, javascript, xslt.
-	Others may be available if the appropriate jar is installed in the JMeter lib directory.
-	</property>
-	<property name="Script File" required="No">Name of a file to be used as a BSF script, if a relative file path is used, then it will be relative to directory referenced by "user.dir" System property</property>
-	<property name="Parameters" required="No">List of parameters to be passed to the script file or the script.</property>
-	<property name="Script" required="Yes (unless script file is provided)">Script to be passed to BSF language</property>
+    <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+    <property name="Scripting Language" required="Yes">Name of the BSF scripting language to be used.
+    N.B. Not all the languages in the drop-down list are supported by default.
+    The following are supported: jexl, javascript, xslt.
+    Others may be available if the appropriate jar is installed in the JMeter lib directory.
+    </property>
+    <property name="Script File" required="No">Name of a file to be used as a BSF script, if a relative file path is used, then it will be relative to directory referenced by "user.dir" System property</property>
+    <property name="Parameters" required="No">List of parameters to be passed to the script file or the script.</property>
+    <property name="Script" required="Yes (unless script file is provided)">Script to be passed to BSF language</property>
 </properties>
 <p>
 If a script file is supplied, that will be used, otherwise the script will be used.</p>
@@ -1213,15 +1241,17 @@ Currently the only way to changes these is via the <a href="../api/org/apache/jm
 </p>
 </component>
 
-<component name="JSR223 Sampler" index="&sect-num;.1.11.1" width="752" height="507" screenshot="jsr223-sampler.png">
+<component name="JSR223 Sampler" index="&sect-num;.1.11.1" width="846" height="630" screenshot="jsr223-sampler.png">
 <description>
 <p>
 The JSR223 Sampler allows JSR223 script code to be used to perform a sample.
-JSR223 related elements have a feature that increases highly their performances.
+</p>
+<p>
+The JSR223 test elements have a feature (compilation) that can significantly increase performance.
 To benefit from this feature:
 <ul>
     <li>Use Script files instead of inlining them. This will make JMeter compile them if this feature is available on ScriptEngine and cache them.</li>
-    <li>Or Use Script Text and fill in script cache key property, ensure it is unique accross Test Plan as JMeter will use it to cache result of compilation.
+    <li>Or Use Script Text and fill in script cache key property, ensure it is unique across Test Plan as JMeter will use it to cache result of compilation.
     <note>When using this feature, ensure you script code does not use JMeter variables directly in script code as caching would only cache first replacement. Instead use script parameters.</note>
     <note>To benefit fomr Caching and compilation, language engine used for scripting must implement JSR223 Compilable interface (Groovy is one of these, java, beanshell and javascript are not)</note>
     </li>
@@ -1247,46 +1277,46 @@ e.g. props.get("START.HMS"); props.put("PROP1","1234");
 </note>
 </component>
 
-<component name="TCP Sampler" index="&sect-num;.1.12"  width="826" height="336" screenshot="tcpsampler.png">
-	<description>
-		<p>
-		The TCP Sampler opens a TCP/IP connection to the specified server.
-		It then sends the text, and waits for a response.
-		<br></br>
-		If "Re-use connection" is selected, connections are shared between Samplers in the same thread,
-		provided that the exact same host name string and port are used. 
-		Different hosts/port combinations will use different connections, as will different threads. 
-		If both of "Re-use connection" and "Close connetion" are selected, the socket will be closed after running the sampler. 
-		On the next sampler, another socket will be created. You may want to close a socket at the end of each thread loop.
-		<br></br>
-		If an error is detected - or "Re-use connection" is not selected - the socket is closed. 
-		Another socket will be reopened on the next sample.
-		<br></br>
-		The following properties can be used to control its operation:
-		</p>
-		<ul>
-			<li>tcp.status.prefix - text that precedes a status number</li>
-			<li>tcp.status.suffix - text that follows a status number</li>
-			<li>tcp.status.properties - name of property file to convert status codes to messages</li>
-			<li>tcp.handler - Name of TCP Handler class (default TCPClientImpl) - only used if not specified on the GUI</li>
-		</ul>
-		The class that handles the connection is defined by the GUI, failing that the property tcp.handler. 
-		If not found, the class is then searched for in the package org.apache.jmeter.protocol.tcp.sampler.
-		<p>
-		Users can provide their own implementation.
-		The class must extend org.apache.jmeter.protocol.tcp.sampler.TCPClient.
-		</p>
-		<p>
-		The following implementations are currently provided.
-		<ul>
-		<li>TCPClientImpl</li>
+<component name="TCP Sampler" index="&sect-num;.1.12"  width="827" height="521" screenshot="tcpsampler.png">
+    <description>
+        <p>
+        The TCP Sampler opens a TCP/IP connection to the specified server.
+        It then sends the text, and waits for a response.
+        <br></br>
+        If "Re-use connection" is selected, connections are shared between Samplers in the same thread,
+        provided that the exact same host name string and port are used. 
+        Different hosts/port combinations will use different connections, as will different threads. 
+        If both of "Re-use connection" and "Close connection" are selected, the socket will be closed after running the sampler. 
+        On the next sampler, another socket will be created. You may want to close a socket at the end of each thread loop.
+        <br></br>
+        If an error is detected - or "Re-use connection" is not selected - the socket is closed. 
+        Another socket will be reopened on the next sample.
+        <br></br>
+        The following properties can be used to control its operation:
+        </p>
+        <ul>
+            <li>tcp.status.prefix - text that precedes a status number</li>
+            <li>tcp.status.suffix - text that follows a status number</li>
+            <li>tcp.status.properties - name of property file to convert status codes to messages</li>
+            <li>tcp.handler - Name of TCP Handler class (default TCPClientImpl) - only used if not specified on the GUI</li>
+        </ul>
+        The class that handles the connection is defined by the GUI, failing that the property tcp.handler. 
+        If not found, the class is then searched for in the package org.apache.jmeter.protocol.tcp.sampler.
+        <p>
+        Users can provide their own implementation.
+        The class must extend org.apache.jmeter.protocol.tcp.sampler.TCPClient.
+        </p>
+        <p>
+        The following implementations are currently provided.
+        <ul>
+        <li>TCPClientImpl</li>
         <li>BinaryTCPClientImpl</li>
         <li>LengthPrefixedBinaryTCPClientImpl</li>
-		</ul>
-		The implementations behave as follows:
-		</p>
-		<p><b>TCPClientImpl</b><br></br>
-		This implementation is fairly basic.
+        </ul>
+        The implementations behave as follows:
+        </p>
+        <p><b>TCPClientImpl</b><br></br>
+        This implementation is fairly basic.
         When reading the response, it reads until the end of line byte, if this is defined
         by setting the property <b>tcp.eolByte</b>, otherwise until the end of the input stream.
         You can control charset encoding by setting <b>tcp.charset</b>, which will default to Platform default encoding.
@@ -1306,25 +1336,25 @@ e.g. props.get("START.HMS"); props.put("PROP1","1234");
         If the timeout is set, the read will be terminated when this expires. 
         So if you are using an eolByte/eomByte, make sure the timeout is sufficiently long,
         otherwise the read will be terminated early.    
-		</p>
-		<p><b>Response handling</b>
-		<br></br>
-		If tcp.status.prefix is defined, then the response message is searched for the text following
-		that up to the suffix. If any such text is found, it is used to set the response code.
-		The response message is then fetched from the properties file (if provided).
-		<br></br>
-		For example, if the prefix = "[" and the suffix = "]", then the following repsonse:
-		<br></br>
-		[J28] XI123,23,GBP,CR
-		<br></br>
-		would have the response code J28.
-		<br></br>
-		Response codes in the range "400"-"499" and "500"-"599" are currently regarded as failures;
-		all others are successful. [This needs to be made configurable!]
-		</p>
+        </p>
+        <p><b>Response handling</b>
+        <br></br>
+        If tcp.status.prefix is defined, then the response message is searched for the text following
+        that up to the suffix. If any such text is found, it is used to set the response code.
+        The response message is then fetched from the properties file (if provided).
+        <br></br>
+        For example, if the prefix = "[" and the suffix = "]", then the following repsonse:
+        <br></br>
+        [J28] XI123,23,GBP,CR
+        <br></br>
+        would have the response code J28.
+        <br></br>
+        Response codes in the range "400"-"499" and "500"-"599" are currently regarded as failures;
+        all others are successful. [This needs to be made configurable!]
+        </p>
 <note>The login name/password are not used by the supplied TCP implementations.</note>
-		<br></br>
-		Sockets are disconnected at the end of a test run.
+        <br></br>
+        Sockets are disconnected at the end of a test run.
 </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
@@ -1345,17 +1375,17 @@ e.g. props.get("START.HMS"); props.put("PROP1","1234");
 </properties>
 </component>
 
-<component name="JMS Publisher" index="&sect-num;.1.13" width="790" height="702" screenshot="jmspublisher.png">
+<component name="JMS Publisher" index="&sect-num;.1.13" width="946" height="776" screenshot="jmspublisher.png">
 <note>BETA CODE - the code is still subject to change</note>
-	<description>
-		<p>
-		JMS Publisher will publish messages to a given destination (topic/queue). For those not
-		familiar with JMS, it is the J2EE specification for messaging. There are
-		numerous JMS servers on the market and several open source options.
-		</p>
-		<br></br>
+    <description>
+        <p>
+        JMS Publisher will publish messages to a given destination (topic/queue). For those not
+        familiar with JMS, it is the J2EE specification for messaging. There are
+        numerous JMS servers on the market and several open source options.
+        </p>
+        <br></br>
 <note>JMeter does not include any JMS implementation jar; this must be downloaded from the JMS provider and put in the lib directory</note>
-	</description>
+    </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
   <property name="use JNDI properties file" required="Yes">use jndi.properties. 
@@ -1384,6 +1414,7 @@ e.g. props.get("START.HMS"); props.put("PROP1","1234");
   </property>
   <property name="JMS Properties" required="No">
       The JMS Properties are properties specific for the underlying messaging system.
+      You can setup the name, the value and the class (type) of value. Default type is String.
       For example: for WebSphere 5.1 web services you will need to set the JMS Property targetService to test
       webservices through JMS.
   </property>
@@ -1441,15 +1472,15 @@ The following table shows some values which may be useful when configuring JMS:
 
 <component name="JMS Subscriber" index="&sect-num;.1.14"  width="709" height="498" screenshot="jmssubscriber.png">
 <note>BETA CODE - the code is still subject to change</note>
-	<description>
-		<p>
-		JMS Publisher will subscribe to messages in a given destination (topic or queue). For those not
-		familiar with JMS, it is the J2EE specification for messaging. There are
-		numerous JMS servers on the market and several open source options.
-		</p>
-		<br></br>
+    <description>
+        <p>
+        JMS Publisher will subscribe to messages in a given destination (topic or queue). For those not
+        familiar with JMS, it is the J2EE specification for messaging. There are
+        numerous JMS servers on the market and several open source options.
+        </p>
+        <br></br>
 <note>JMeter does not include any JMS implementation jar; this must be downloaded from the JMS provider and put in the lib directory</note>
-	</description>
+    </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
   <property name="use JNDI properties file" required="Yes">use jndi.properties. 
@@ -1503,25 +1534,25 @@ completed, so the net effect was similar to the MessageListener.onMessage() stra
 </p>
 </component>
 
-<component name="JMS Point-to-Point" index="&sect-num;.1.15"  width="746" height="662" screenshot="jms/JMS_Point-to-Point.png">
+<component name="JMS Point-to-Point" index="&sect-num;.1.15"  width="924" height="797" screenshot="jms/JMS_Point-to-Point.png">
 <note>BETA CODE - the code is still subject to change</note>
-	<description>
-		<p>
-		This sampler sends and optionally receives JMS Messages through point-to-point connections (queues).
+    <description>
+        <p>
+        This sampler sends and optionally receives JMS Messages through point-to-point connections (queues).
         It is different from pub/sub messages and is generally used for handling transactions.
-		</p>
-		<p>
-		<b>Request Only</b> will typically used to put load on a JMS System.<br></br>
-        <b>Request Response</b> will be used when you want to test response time of a JMS service that processes messages sent to the Request Queue as this mode will wait for the response on the Reply queue sent by this service.<br></br>		
-		</p>
-		<p>
-		Versions of JMeter after 2.3.2 use the properties java.naming.security.[principal|credentials] - if present -
-		when creating the Queue Connection. If this behaviour is not desired, set the JMeter property
-		<b>JMSSampler.useSecurity.properties=false</b>
-		</p>
-		<br></br>
+        </p>
+        <p>
+        <b>Request Only</b> will typically used to put load on a JMS System.<br></br>
+        <b>Request Response</b> will be used when you want to test response time of a JMS service that processes messages sent to the Request Queue as this mode will wait for the response on the Reply queue sent by this service.<br></br>
+        </p>
+        <p>
+        Versions of JMeter after 2.3.2 use the properties java.naming.security.[principal|credentials] - if present -
+        when creating the Queue Connection. If this behaviour is not desired, set the JMeter property
+        <b>JMSSampler.useSecurity.properties=false</b>
+        </p>
+        <br></br>
 <note>JMeter does not include any JMS implementation jar; this must be downloaded from the JMS provider and put in the lib directory</note>
-	</description>
+    </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
   <property name="QueueConnection Factory" required="Yes">
@@ -1590,6 +1621,7 @@ completed, so the net effect was similar to the MessageListener.onMessage() stra
   </property>
   <property name="JMS Properties" required="No">
       The JMS Properties are properties specific for the underlying messaging system.
+      You can setup the name, the value and the class (type) of value. Default type is String.
       For example: for WebSphere 5.1 web services you will need to set the JMS Property targetService to test
       webservices through JMS.
   </property>
@@ -1816,7 +1848,7 @@ Note: If the message body is not empty, and there is at least one attached file,
 </properties>
 </component>
 
-<component name="OS Process Sampler"  index="&sect-num;.1.20"  width="783" height="593" screenshot="os_process_sampler.png">
+<component name="OS Process Sampler"  index="&sect-num;.1.20"  width="683" height="582" screenshot="os_process_sampler.png">
 <description>
 <p>
 The OS Process Sampler is a sampler that can be used to execute commands on the local machine.<br></br>
@@ -1857,9 +1889,45 @@ Param 3:   C:\TEMP
 If omitted, output is captured and returned as the response data.</property>
 <property name="Standard error (stderr)" required="No">Name of output file for standard error (STDERR). 
 If omitted, output is captured and returned as the response data.</property>
-</properties>
 <property name="Check Return Code" required="No">If checked, sampler will compare return code with Expected Return Code.</property>
 <property name="Expected Return Code" required="No">Expected return code for System Call, required if "Check Return Code" is checked.</property>
+<property name="Timeout" required="No">Timeout for command in milliseconds, defaults to 0, which means NO timeout.</property>
+</properties>
+</component>
+
+<component name="MongoDB Script" index="&sect-num;.1.21" width="847" height="635" screenshot="mongodb-script.png">
+<center><h2>(Alpha Code)</h2></center>
+
+<description><p>This sampler lets you send an Request to a MongoDB.</p>
+<p>Before using this you need to set up a
+<complink name="MongoDB Source Config"/> Configuration element
+</p>
+<note>This Element currently uses com.mongodb.DB#eval which takes a global write lock causing a performance impact on the database, see <a href="http://docs.mongodb.org/manual/reference/method/db.eval/">db.eval()</a>. 
+So it is better to avoid using this element for load testing and use JSR223+Groovy scripting using <a href="../api/org/apache/jmeter/protocol/mongodb/config/MongoDBHolder.html">MongoDBHolder</a> instead.
+MongoDB Script is more suitable for functionnal testing or test setup (setup/teardown threads)</note>
+</description>
+
+<properties>
+        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        <property name="MongoDB Source" required="Yes">
+        Name of the JMeter variable that the MongoDB connection is bound to.
+        This must agree with the 'MongoDB Source' field of a MongoDB Source Config.
+        </property>
+        <property name="Database Name" required="Yes">Database Name, will be used in your script
+        </property>
+        <property name="Username" required="No">
+        </property>
+        <property name="Password" required="No">
+        </property>        
+        <property name="Script" required="Yes">
+        Mongo script as it would be used in MongoDB shell
+        </property>        
+</properties>
+
+<links>
+        <complink name="MongoDB Source Config"/>
+</links>
+<note>Ensure Variable Name is unique accross Test Plan.</note>
 </component>
 
 <a href="#">^</a>
@@ -1868,7 +1936,7 @@ If omitted, output is captured and returned as the response data.</property>
 
 <section name="&sect-num;.2 Logic Controllers" anchor="logic_controllers">
 <description>
-	<br>Logic Controllers determine the order in which Samplers are processed.</br>
+    <br>Logic Controllers determine the order in which Samplers are processed.</br>
 </description>
 
 <component name="Simple Controller" index="&sect-num;.2.1" anchor="simple_controller" width="330" height="77" screenshot="logic-controller/simple-controller.png">
@@ -2059,12 +2127,12 @@ what results any given interaction will give</note>
 
 
 <component name="Random Order Controller" index="&sect-num;.2.6" width="328" height="76" screenshot="randomordercontroller.png">
-	<description>
-		<p>The Random Order Controller is much like a Simple Controller in that it will execute each child
-		 element at most once, but the order of execution of the nodes will be random.</p>
-	</description>
+    <description>
+        <p>The Random Order Controller is much like a Simple Controller in that it will execute each child
+         element at most once, but the order of execution of the nodes will be random.</p>
+    </description>
 <properties>
-	<property name="Name" required="No">Descriptive name for this controller that is shown in the tree.</property>
+    <property name="Name" required="No">Descriptive name for this controller that is shown in the tree.</property>
 </properties>
 </component>
 
@@ -2090,42 +2158,42 @@ setting is reset when a parent Loop Controller restarts.
 </component>
 
 <component name="Runtime Controller" index="&sect-num;.2.8" width="328" height="100" screenshot="runtimecontroller.png">
-	<description>
-		<p>The Runtime Controller controls how long its children are allowed to run.
-		</p>
-	</description>
+    <description>
+        <p>The Runtime Controller controls how long its children are allowed to run.
+        </p>
+    </description>
 <properties>
-	<property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
-	<property name="Runtime (seconds)" required="Yes">Desired runtime in seconds</property>
+    <property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
+    <property name="Runtime (seconds)" required="Yes">Desired runtime in seconds</property>
 </properties>
 </component>
 
 <component name="If Controller" index="&sect-num;.2.9" width="497" height="131" screenshot="ifcontroller.png">
-	<description>
-		<p>The If Controller allows the user to control whether the test elements below it (its children) are run or not.</p>
-		<p>
-		Prior to JMeter 2.3RC3, the condition was evaluated for every runnable element contained in the controller.
-		This sometimes caused unexpected behaviour, so 2.3RC3 was changed to evaluate the condition only once on initial entry.
-		However, the original behaviour is also useful, so versions of JMeter after 2.3RC4 have an additional
-		option to select the original behaviour.
-		</p>
-		<p>
-		Versions of JMeter after 2.3.2 allow the script to be processed as a variable expression, rather than requiring Javascript.
-		It was always possible to use functions and variables in the Javascript condition, so long as they evaluated to "true" or "false";
-		now this can be done without the overhead of using Javascript as well. For example, previously one could use the condition:
-		<code>${__jexl(${VAR} == 23)}</code> and this would be evaluated as true/false, the result would then be passed to Javascript
-		which would then return true/false. If the Variable Expression option is selected, then the expression is evaluated
-		and compared with "true", without needing to use Javascript. 
-		Also, variable expressions can return any value, whereas the
-		Javascript condition must return "true"/"false" or an error is logged.
-		</p>
-		<note>
-		No variables are made available to the script when the condition is interpreted as Javascript.
-		If you need access to such variables, then select "Interpret Condition as Variable Expression?" and use
-		a __javaScript() function call. You can then use the objects "vars", "log", "ctx" etc. in the script.
-		</note>
-		<note>
-		To test if a variable is undefined (or null) do the following, suppose var is named myVar, expression will be:
+    <description>
+        <p>The If Controller allows the user to control whether the test elements below it (its children) are run or not.</p>
+        <p>
+        Prior to JMeter 2.3RC3, the condition was evaluated for every runnable element contained in the controller.
+        This sometimes caused unexpected behaviour, so 2.3RC3 was changed to evaluate the condition only once on initial entry.
+        However, the original behaviour is also useful, so versions of JMeter after 2.3RC4 have an additional
+        option to select the original behaviour.
+        </p>
+        <p>
+        Versions of JMeter after 2.3.2 allow the script to be processed as a variable expression, rather than requiring Javascript.
+        It was always possible to use functions and variables in the Javascript condition, so long as they evaluated to "true" or "false";
+        now this can be done without the overhead of using Javascript as well. For example, previously one could use the condition:
+        <code>${__jexl(${VAR} == 23)}</code> and this would be evaluated as true/false, the result would then be passed to Javascript
+        which would then return true/false. If the Variable Expression option is selected, then the expression is evaluated
+        and compared with "true", without needing to use Javascript. 
+        Also, variable expressions can return any value, whereas the
+        Javascript condition must return "true"/"false" or an error is logged.
+        </p>
+        <note>
+        No variables are made available to the script when the condition is interpreted as Javascript.
+        If you need access to such variables, then select "Interpret Condition as Variable Expression?" and use
+        a __javaScript() function call. You can then use the objects "vars", "log", "ctx" etc. in the script.
+        </note>
+        <note>
+        To test if a variable is undefined (or null) do the following, suppose var is named myVar, expression will be:
         <br></br>
         <code>"${myVar}" == "\${myVar}"</code>
         <br></br>
@@ -2134,35 +2202,35 @@ setting is reset when a parent Loop Controller restarts.
         <code>"${myVar}" != "\${myVar}"</code>
         <br></br>
         to test if a variable is defined and is not null.
-		</note>
-	</description>
+        </note>
+    </description>
 <properties>
     <property name="Name" required="No">Descriptive name for this controller that is shown in the tree.</property>
-	<property name="Condition (default Javascript)" required="Yes">By default the condition is interpreted as <b>Javascript</b> code that returns "true" or "false",
-	but this can be overriden (see below)</property>
-	<property name="Interpret Condition as Variable Expression?" required="Yes">If this is selected, then the condition must be an expression that evaluates to "true" (case is ignored).
-	For example, <code>${FOUND}</code> or <code>${__jexl(${VAR} > 100)}</code>.
-	Unlike the Javascript case, the condition is only checked to see if it matches "true" (case is ignored). 
-	</property>
-	<property name="Evaluate for all children" required="Yes">
-	Should condition be evaluated for all children?
-	If not checked, then the condition is only evaluated on entry.
-	</property>
+    <property name="Condition (default Javascript)" required="Yes">By default the condition is interpreted as <b>Javascript</b> code that returns "true" or "false",
+    but this can be overriden (see below)</property>
+    <property name="Interpret Condition as Variable Expression?" required="Yes">If this is selected, then the condition must be an expression that evaluates to "true" (case is ignored).
+    For example, <code>${FOUND}</code> or <code>${__jexl(${VAR} > 100)}</code>.
+    Unlike the Javascript case, the condition is only checked to see if it matches "true" (case is ignored). 
+    </property>
+    <property name="Evaluate for all children" required="Yes">
+    Should condition be evaluated for all children?
+    If not checked, then the condition is only evaluated on entry.
+    </property>
 </properties>
-	<p><b>Examples (Javascript):</b>
-		<ul>
-			<li>${COUNT} &lt; 10</li>
-			<li>"${VAR}" == "abcd"</li>
-			<li>${JMeterThread.last_sample_ok} (check if last sample succeeded)</li>
-		</ul>
-		If there is an error interpreting the code, the condition is assumed to be false, and a message is logged in jmeter.log.
-	</p>
+    <p><b>Examples (Javascript):</b>
+        <ul>
+            <li>${COUNT} &lt; 10</li>
+            <li>"${VAR}" == "abcd"</li>
+            <li>${JMeterThread.last_sample_ok} (check if last sample succeeded)</li>
+        </ul>
+        If there is an error interpreting the code, the condition is assumed to be false, and a message is logged in jmeter.log.
+    </p>
     <p><b>Examples (Variable Expression):</b>
         <ul>
             <li>${__jexl(${COUNT} &lt; 10)}</li>
             <li>${RESULT}</li>
         </ul>
-	</p>
+    </p>
 </component>
 
 
@@ -2173,7 +2241,7 @@ setting is reset when a parent Loop Controller restarts.
 
 
 <component name="While Controller" index="&sect-num;.2.10" width="362" height="102" screenshot="whilecontroller.png">
-	<description>
+    <description>
 <p>
 The While Controller runs its children until the condition is "false".
 </p>
@@ -2197,20 +2265,20 @@ non idempotent functions in Condition (like __counter) can introduce issues.
 <br></br>
 For example:
 <ul>
-	<li>${VAR} - where VAR is set to false by some other test element</li>
-	<li>${__javaScript(${C}==10)}</li>
-	<li>${__javaScript("${VAR2}"=="abcd")}</li>
-	<li>${_P(property)} - where property is set to "false" somewhere else</li>
+    <li>${VAR} - where VAR is set to false by some other test element</li>
+    <li>${__javaScript(${C}==10)}</li>
+    <li>${__javaScript("${VAR2}"=="abcd")}</li>
+    <li>${_P(property)} - where property is set to "false" somewhere else</li>
 </ul>
-	</description>
+    </description>
 <properties>
-	<property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
-	<property name="Condition" required="Yes">blank, LAST, or variable/function</property>
+    <property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
+    <property name="Condition" required="Yes">blank, LAST, or variable/function</property>
 </properties>
 </component>
 
 <component name="Switch Controller" index="&sect-num;.2.11" width="361" height="106" screenshot="switchcontroller.png">
-	<description>
+    <description>
 <p>
 The Switch Controller acts like the <complink name="Interleave Controller"/> 
 in that it runs one of the subordinate elements on each iteration, but rather than
@@ -2230,8 +2298,8 @@ If there is no default, then no element is selected, and the controller will not
 </p>
 </description>
 <properties>
-	<property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
-	<property name="Switch Value" required="Yes">The number (or name) of the subordinate element to be invoked. Elements are numbered from 0.</property>
+    <property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
+    <property name="Switch Value" required="Yes">The number (or name) of the subordinate element to be invoked. Elements are numbered from 0.</property>
 </properties>
 </component>
 
@@ -2242,13 +2310,13 @@ is executed one or more times, where during every loop the variable has a new va
 The input should consist of several variables, each extended with an underscore and a number.
 Each such variable must have a value.
 So for example when the input variable has the name inputVar, the following variables should have been defined:
-		<ul>
-		<li>inputVar_1 = wendy</li>
-		<li>inputVar_2 = charles</li>
-		<li>inputVar_3 = peter</li>
-		<li>inputVar_4 = john</li>
-		</ul>
-		<p>Note: the "_" separator is now optional.</p>
+        <ul>
+        <li>inputVar_1 = wendy</li>
+        <li>inputVar_2 = charles</li>
+        <li>inputVar_3 = peter</li>
+        <li>inputVar_4 = john</li>
+        </ul>
+        <p>Note: the "_" separator is now optional.</p>
 When the return variable is given as "returnVar", the collection of samplers and controllers under the ForEach controller will be executed 4 consecutive times,
 with the return variable having the respective above values, which can then be used in the samplers.
 </p>
@@ -2266,11 +2334,11 @@ This would be the case if the Regular Expression returned no matches.</note>
 <properties>
         <property name="Name" required="No">Descriptive name for this controller that is shown in the tree.</property>
         <property name="Input variable prefix" required="Yes">Prefix for the variable names to be used as input.</property>
-        <property name="Start index for loop" required="No">Start index (inclusive) for loop over variables</property>
-        <property name="End index for loop" required="No">End index (exclusive) for loop over variables</property>
+        <property name="Start index for loop" required="No">Start index (exclusive) for loop over variables (first element is at start index + 1)</property>
+        <property name="End index for loop" required="No">End index (inclusive) for loop over variables</property>
         <property name="Output variable" required="Yes">
                 The name of the variable which can be used in the loop for replacement in the samplers</property>
-		<property required="Yes" name="Use Separator">If not checked, the "_" separator is omitted.</property>
+        <property required="Yes" name="Use Separator">If not checked, the "_" separator is omitted.</property>
 </properties>
 
 <example title="ForEach Example" anchor="foreach_example">
@@ -2338,7 +2406,6 @@ For this reason it is best to ensure that the Controller name is changed from th
 - as shown in the example above -
 otherwise a duplicate may be accidentally created when new elements are added to the test plan. 
 </p>
-<note>Renaming any element used in ModuleController implies updating Module to Run field</note>
 </description>
 <note>The Module Controller should not be used with remote testing or non-gui testing in conjunction with Workbench components since the Workbench test elements are not part of test plan .jmx files.  Any such test will fail.</note>
 <properties>
@@ -2349,7 +2416,7 @@ otherwise a duplicate may be accidentally created when new elements are added to
 </component>
 
 <component name="Include Controller" index="&sect-num;.2.14" width="417" height="130" screenshot="includecontroller.png">
-	<description>
+    <description>
 <p>
 The include controller is designed to use an external jmx file. To use it, create a Test Fragment 
 underneath the Test Plan and add any desired samplers, controllers etc. below it.
@@ -2370,7 +2437,7 @@ However, if the property <b>includecontroller.prefix</b> is defined,
 the contents are used to prefix the pathname.
 </note>
 <note>
-When using IncludeController and including the same JMX file, ensure you name the IncludeController differently to avoid facing known issue 50898.
+When using IncludeController and including the same JMX file, ensure you name the IncludeController differently to avoid facing known issue <bugzilla>50898</bugzilla>.
 </note>
 <p>
 If the file cannot be found at the location given by prefix+filename, then the controller
@@ -2378,56 +2445,57 @@ attempts to open the fileName relative to the JMX launch directory (versions of 
 </p>
 </description>
 <properties>
-	<property name="Filename" required="Yes">The file to include.</property>
+    <property name="Filename" required="Yes">The file to include.</property>
 </properties>
 </component>
 
-<component name="Transaction Controller" index="&sect-num;.2.15" width="378" height="129" screenshot="transactioncontroller.png">
-	<description>
-	    <p>
-	    The Transaction Controller generates an additional
-	    sample which measures the overall time taken to perform the nested test elements.
-	    Note that this time by default includes all processing within the controller scope, not just
-	    the samples, this can be changed by unchecking "Include duration of timer and pre-post processors in generated sample".
-	    </p>
-	    <p>
-	    For JMeter versions after 2.3, there are two modes of operation
-	    <ul>
-	    <li>additional sample is added after the nested samples</li>
-	    <li>additional sample is added as a parent of the nested samples</li>
-	    </ul>
-	    </p>
-		<p>
-		The generated sample time includes all the times for the nested samplers, <b>and any timers etc.</b>
-		Depending on the clock resolution, it may be slightly longer than the sum of the individual samplers plus timers.
-		The clock might tick after the controller recorded the start time but before the first sample starts.
-		Similarly at the end.
-		</p>
-		<p>The generated sample is only regarded as successful if all its sub-samples are successful.</p>
-		<p>
-		In parent mode, the individual samples can still be seen in the Tree View Listener,
-		but no longer appear as separate entries in other Listeners.
-		Also, the sub-samples do not appear in CSV log files, but they can be saved to XML files.
-		</p>
-		<note>
-		In parent mode, Assertions (etc) can be added to the Transaction Controller.
-		However by default they will be applied to both the individual samples and the overall transaction sample.
-		To limit the scope of the Assertions, use a Simple Controller to contain the samples, and add the Assertions
-		to the Simple Controller.
-		Parent mode controllers do not currently properly support nested transaction controllers of either type.
-		</note>
-	</description>
+<component name="Transaction Controller" index="&sect-num;.2.15" width="622" height="140" screenshot="transactioncontroller.png">
+    <description>
+        <p>
+        The Transaction Controller generates an additional
+        sample which measures the overall time taken to perform the nested test elements.
+        </p>
+        <note>
+        Note: when the check box "Include duration of timer and pre-post processors in generated sample" is checked,
+        the time includes all processing within the controller scope, not just the samples.
+        </note>
+        <p>
+        For JMeter versions after 2.3, there are two modes of operation
+        <ul>
+        <li>additional sample is added after the nested samples</li>
+        <li>additional sample is added as a parent of the nested samples</li>
+        </ul>
+        </p>
+        <p>
+        The generated sample time includes all the times for the nested samplers, <b>and any timers etc.</b>
+        Depending on the clock resolution, it may be slightly longer than the sum of the individual samplers plus timers.
+        The clock might tick after the controller recorded the start time but before the first sample starts.
+        Similarly at the end.
+        </p>
+        <p>The generated sample is only regarded as successful if all its sub-samples are successful.</p>
+        <p>
+        In parent mode, the individual samples can still be seen in the Tree View Listener,
+        but no longer appear as separate entries in other Listeners.
+        Also, the sub-samples do not appear in CSV log files, but they can be saved to XML files.
+        </p>
+        <note>
+        In parent mode, Assertions (etc) can be added to the Transaction Controller.
+        However by default they will be applied to both the individual samples and the overall transaction sample.
+        To limit the scope of the Assertions, use a Simple Controller to contain the samples, and add the Assertions
+        to the Simple Controller.
+        Parent mode controllers do not currently properly support nested transaction controllers of either type.
+        </note>
+    </description>
 <properties>
-	<property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
-	<property name="Generate Parent Sample" required="Yes">
-	If checked, then the sample is generated as a parent of the other samples,
-	otherwise the sample is generated as an independent sample.
-	</property>
-	<property name="Include duration of timer and pre-post processors in generated sample" required="Yes">
-	Whether to include timer, pre- and post-processing delays in the generated sample.
-	Default is true to be compatible with the behaviour in previous versions of JMeter.
-	Setting it to false is a better option to get only response time of the sample.
-	</property>
+    <property name="Name" required="Yes">Descriptive name for this controller that is shown in the tree, and used to name the transaction.</property>
+    <property name="Generate Parent Sample" required="Yes">
+    If checked, then the sample is generated as a parent of the other samples,
+    otherwise the sample is generated as an independent sample.
+    </property>
+    <property name="Include duration of timer and pre-post processors in generated sample" required="Yes">
+    Whether to include timer, pre- and post-processing delays in the generated sample.
+    Default is false (since JMeter 2.11, in previous versions the default value is true).
+    </property>
 </properties>
 </component>
 
@@ -2435,7 +2503,7 @@ attempts to open the fileName relative to the JMX launch directory (versions of 
 <description>
 <p>The Recording Controller is a place holder indicating where the proxy server should
 record samples to.  During test run, it has no effect, similar to the Simple Controller.  But during
-recording using the <complink name="HTTP Proxy Server" />, all recorded samples will by default
+recording using the <complink name="HTTP(S) Test Script Recorder" />, all recorded samples will by default
 be saved under the Recording Controller.</p>
 
 </description>
@@ -2452,7 +2520,7 @@ be saved under the Recording Controller.</p>
 
 <section name="&sect-num;.3 Listeners" anchor="listeners">
 <description>
-	<br></br>
+    <br></br>
 Most of the listeners perform several roles in addition to "listening"
 to the test results.  
 They also provide means to view, save, and read saved test results.
@@ -2528,7 +2596,7 @@ The settings in jmeter.properties also apply to the listener that is added
 by using the -l command-line flag.
 </note>
 <p>
-	The figure below shows an example of the result file configuration panel
+    The figure below shows an example of the result file configuration panel
 <figure width="741" height="141" image="simpledatawriter.png">Result file configuration panel</figure>
 </p>
 <properties>
@@ -2642,6 +2710,27 @@ There are several ways to view the response, selectable by a drop-down box at th
 
 <table>
 <tr><th><b>Renderer</b></th><th><b>Description</b></th></tr>
+<tr><td><b>CSS/JQuery Tester</b></td>
+<td>The <i>CSS/JQuery Tester</i> only works for text responses. It shows the plain text in the upper panel.
+The "Test" button allows the user to apply the CSS/JQuery to the upper panel and the results
+will be displayed in the lower panel.<br/>
+The engine of CSS/JQuery expression can be JSoup or Jodd, syntax of these 2 implementation differs slightly.<br/>
+For example, the Selector <b>a[class=sectionlink]</b> with attribute <b>href</b> applied to the current JMeter functions page gives the following output:
+<br/>
+<pre>
+Match count: 74
+Match[1]=#functions
+Match[2]=#what_can_do
+Match[3]=#where
+Match[4]=#how
+Match[5]=#function_helper
+Match[6]=#functions
+Match[7]=#__regexFunction
+Match[8]=#__regexFunction_parms
+Match[9]=#__counter
+... and so on ...
+</pre>
+<br/></td></tr>
 <tr><td><b>Document</b></td>
 <td>The <i>Document view</i> will show the extract text from various type of documents like Microsoft Office
 (Word, Excel, PowerPoint 97-2003, 2007-2010 (openxml), Apache OpenOffice (writer, calc, impress), HTML,
@@ -2707,6 +2796,11 @@ video/
 <td>The <i>XML view</i> will show response in tree style. 
 Any DTD nodes or Prolog nodes will not show up in tree; however, response may contain those nodes.
 <br/></td></tr>
+<tr><td><b>XPath Tester</b></td>
+<td>The <i>XPath Tester</i> only works for text responses. It shows the plain text in the upper panel.
+The "Test" button allows the user to apply the XPath query to the upper panel and the results
+will be displayed in the lower panel.<br/>
+</td></tr>
 </table>
 <p><i>Scroll automatically?</i> option permit to have last node display in tree selection</p>
 <p>
@@ -2736,11 +2830,11 @@ compiled code must be available to JMeter (e.g. by adding it to the lib/ext dire
 </p>
 </description>
 <p>
-	The Control Panel (above) shows an example of an HTML display.<br/>
-	Figure 9 (below) shows an example of an XML display.<br/>
-	Figure 9a (below) shows an example of an Regexp tester display.<br/>
-	Figure 9b (below) shows an example of an Document display.<br/>
-	<div align="center">
+    The Control Panel (above) shows an example of an HTML display.<br/>
+    Figure 9 (below) shows an example of an XML display.<br/>
+    Figure 9a (below) shows an example of an Regexp tester display.<br/>
+    Figure 9b (below) shows an example of an Document display.<br/>
+    <div align="center">
 <figure width="873" height="653" image="view_results_tree_xml.png">Figure 9 Sample XML display</figure>
 <figure width="858" height="643" image="view_results_tree_regex.png">Figure 9a Sample Regexp Test display</figure>
 <figure width="961" height="623" image="view_results_tree_document.png">Figure 9b Sample Document (here PDF) display</figure>
@@ -2796,7 +2890,7 @@ i.e. 30.0 requests/minute is saved as 0.5.
 </description>
 <div align="center">
 <p>
-	The figure below shows an example of selecting the "Include group name" checkbox.
+    The figure below shows an example of selecting the "Include group name" checkbox.
 <figure width="784" height="287" image="aggregate_report_grouped.png">Sample "Include group name" display</figure>
 </p>
 </div>
@@ -2909,7 +3003,7 @@ the graph as a PNG file.</description>
 </properties>
 </component>
 
-<component name="Response Time Graph" index="&sect-num;.3.13"  width="869" height="620" screenshot="response_time_graph.png">
+<component name="Response Time Graph" index="&sect-num;.3.13"  width="921" height="616" screenshot="response_time_graph.png">
 <description>
 The Response Time Graph draws a line chart showing the evolution of response time during the test, for each labelled request. 
 If many samples exist for the same timestamp, the mean value is displayed.
@@ -2917,7 +3011,7 @@ If many samples exist for the same timestamp, the mean value is displayed.
 <div align="center">
 <p>
     The figure below shows an example of settings to draw this graph.
-<figure width="871" height="489" image="response_time_graph_settings.png">Response time graph settings</figure>
+<figure width="919" height="481" image="response_time_graph_settings.png">Response time graph settings</figure>
 </p>
 </div>
 <p><i>Please note: All this parameters <b>aren't</b> saved in JMeter jmx script.</i></p>
@@ -2933,7 +3027,7 @@ If many samples exist for the same timestamp, the mean value is displayed.
         Use Width and Height fields to define a custom size. The unit is pixel. </property>
         <property name="X Axis settings" required="No">Customize the date format of  X axis label.
         The syntax is the Java <a href="http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat API</a>.</property>
-        <property name="Y Axis settings" required="No">Define a custom maximum value for Y Axis. Show or not the number grouping in Y Axis labels.</property>
+        <property name="Y Axis settings" required="No">Define a custom maximum value for Y Axis in milli-seconds. Define the increment for the scale (in ms) Show or not the number grouping in Y Axis labels.</property>
         <property name="Legend" required="Yes">Define the placement and font settings for chart legend</property>
 </properties>
 </component>
@@ -2966,7 +3060,7 @@ failed responses from the server.</p></description>
 </properties>
 </component>
 
-<component name="BeanShell Listener"  index="&sect-num;.3.15"  width="553" height="382" screenshot="beanshell_listener.png">
+<component name="BeanShell Listener"  index="&sect-num;.3.15"  width="844" height="633" screenshot="beanshell_listener.png">
 <description>
 <p>
 The BeanShell Listener allows the use of BeanShell for processing samples for saving etc.
@@ -2989,11 +3083,11 @@ See the file BeanShellListeners.bshrc for example definitions.
     For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </property>
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul></property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul></property>
     <property name="Script file" required="No">A file containing the BeanShell script to run.
     The file name is stored in the script variable FileName</property>
     <property name="Script" required="Yes (unless script file is provided)">The BeanShell script to run. The return value is ignored.</property>
@@ -3047,7 +3141,7 @@ i.e. 30.0 requests/minute is saved as 0.5.
 </description>
 <div align="center">
 <p>
-	The figure below shows an example of selecting the "Include group name" checkbox.
+    The figure below shows an example of selecting the "Include group name" checkbox.
 <figure width="784" height="287" image="summary_report_grouped.png">Sample "Include group name" display</figure>
 </p>
 </div>
@@ -3096,7 +3190,7 @@ i.e. 30.0 requests/minute is saved as 0.5.
  </properties>
 </component>
 
-<component name="BSF Listener" index="&sect-num;.3.18"  width="736" height="369" screenshot="bsf_listener.png">
+<component name="BSF Listener" index="&sect-num;.3.18"  width="847" height="634" screenshot="bsf_listener.png">
 <description>
 <p>
 The BSF Listener allows BSF script code to be applied to sample results.
@@ -3224,28 +3318,28 @@ The Comparison Assertion Visualizer shows the results of any <complink name="Com
 
 <section name="&sect-num;.4 Configuration Elements" anchor="config_elements">
 <description>
-	<br></br>
-	Configuration elements can be used to set up defaults and variables for later use by samplers.
-	Note that these elements are processed at the start of the scope in which they are found, 
-	i.e. before any samplers in the same scope.
-	<br></br>
+    <br></br>
+    Configuration elements can be used to set up defaults and variables for later use by samplers.
+    Note that these elements are processed at the start of the scope in which they are found, 
+    i.e. before any samplers in the same scope.
+    <br></br>
 </description>
 
 <component name="CSV Data Set Config" index="&sect-num;.4.1"  width="433" height="281" screenshot="csvdatasetconfig.png">
 <description>
     <p>
-	CSV Data Set Config is used to read lines from a file, and split them into variables.
-	It is easier to use than the __CSVRead() and _StringFromFile() functions.
-	It is well suited to handling large numbers of variables, and is also useful for tesing with
-	"random" and unique values.
-	Generating unique random values at run-time is expensive in terms of CPU and memory, so just create the data
-	in advance of the test. If necessary, the "random" data from the file can be used in conjunction with
-	a run-time parameter to create different sets of values from each run - e.g. using concatenation - which is
-	much cheaper than generating everything at run-time.
+    CSV Data Set Config is used to read lines from a file, and split them into variables.
+    It is easier to use than the __CSVRead() and _StringFromFile() functions.
+    It is well suited to handling large numbers of variables, and is also useful for tesing with
+    "random" and unique values.
+    Generating unique random values at run-time is expensive in terms of CPU and memory, so just create the data
+    in advance of the test. If necessary, the "random" data from the file can be used in conjunction with
+    a run-time parameter to create different sets of values from each run - e.g. using concatenation - which is
+    much cheaper than generating everything at run-time.
     </p>
     <p>
-	Versions of JMeter after 2.3.1 allow values to be quoted; this allows the value to contain a delimiter.
-	Previously it was necessary to choose a delimiter that was not used in any values.
+    Versions of JMeter after 2.3.1 allow values to be quoted; this allows the value to contain a delimiter.
+    Previously it was necessary to choose a delimiter that was not used in any values.
     If "allow quoted data" is enabled, a value may be enclosed in double-quotes.
     These are removed. To include double-quotes within a quoted field, use two double-quotes.
     For example:<pre>
@@ -3254,46 +3348,46 @@ The Comparison Assertion Visualizer shows the results of any <complink name="Com
 2,3
 4"5
 </pre>
-	</p>
-	<p>
-	Versions of JMeter after 2.3.4 support CSV files which have a header line defining the column names.
-	To enable this, leave the "Variable Names" field empty. The correct delimiter must be provided.
-	</p>
+    </p>
+    <p>
+    Versions of JMeter after 2.3.4 support CSV files which have a header line defining the column names.
+    To enable this, leave the "Variable Names" field empty. The correct delimiter must be provided.
+    </p>
     <p>
     Versions of JMeter after 2.7 support CSV files with quoted data that includes new-lines.
     </p>
-	<p>
-	By default, the file is only opened once, and each thread will use a different line from the file.
-	However the order in which lines are passed to threads depends on the order in which they execute,
-	which may vary between iterations.
-	Lines are read at the start of each test iteration.
+    <p>
+    By default, the file is only opened once, and each thread will use a different line from the file.
+    However the order in which lines are passed to threads depends on the order in which they execute,
+    which may vary between iterations.
+    Lines are read at the start of each test iteration.
     The file name and mode are resolved in the first iteration.
-	</p>
-	<p>
-	See the description of the Share mode below for additional options (JMeter 2.3.2+).
-	If you want each thread to have its own set of values, then you will need to create a set of files,
-	one for each thread. For example test1.csv, test2.csv,... testn.csv. Use the filename 
-	<code>test${__threadNum}.csv</code> and set the "Sharing mode" to "Current thread".
-	</p>
-	<note>CSV Dataset variables are defined at the start of each test iteration.
-	As this is after configuration processing is completed,
-	they cannot be used for some configuration items - such as JDBC Config - 
-	that process their contents at configuration time (see <a href="http://issues.apache.org/bugzilla/show_bug.cgi?id=40934">Bug 40394 </a>)
-	However the variables do work in the HTTP Auth Manager, as the username etc are processed at run-time.
-	</note>
-	<p>
-	As a special case, the string "\t" (without quotes) in the delimiter field is treated as a Tab.
-	</p>
-	<p>
-	When the end of file (EOF) is reached, and the recycle option is true, reading starts again with the first line of the file.
-	</p>
-	<p>
-	If the recycle option is false, and stopThread is false, then all the variables are set to <b>&amp;lt;EOF&gt;</b> when the end of file is reached.
-	This value can be changed by setting the JMeter property <b>csvdataset.eofstring</b>.
-	</p>
-	<p>
-	If the Recycle option is false, and Stop Thread is true, then reaching EOF will cause the thread to be stopped.
-	</p>
+    </p>
+    <p>
+    See the description of the Share mode below for additional options (JMeter 2.3.2+).
+    If you want each thread to have its own set of values, then you will need to create a set of files,
+    one for each thread. For example test1.csv, test2.csv,... testn.csv. Use the filename 
+    <code>test${__threadNum}.csv</code> and set the "Sharing mode" to "Current thread".
+    </p>
+    <note>CSV Dataset variables are defined at the start of each test iteration.
+    As this is after configuration processing is completed,
+    they cannot be used for some configuration items - such as JDBC Config - 
+    that process their contents at configuration time (see <bugzilla>40394</bugzilla>)
+    However the variables do work in the HTTP Auth Manager, as the username etc are processed at run-time.
+    </note>
+    <p>
+    As a special case, the string "\t" (without quotes) in the delimiter field is treated as a Tab.
+    </p>
+    <p>
+    When the end of file (EOF) is reached, and the recycle option is true, reading starts again with the first line of the file.
+    </p>
+    <p>
+    If the recycle option is false, and stopThread is false, then all the variables are set to <b>&amp;lt;EOF&gt;</b> when the end of file is reached.
+    This value can be changed by setting the JMeter property <b>csvdataset.eofstring</b>.
+    </p>
+    <p>
+    If the Recycle option is false, and Stop Thread is true, then reaching EOF will cause the thread to be stopped.
+    </p>
 </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
@@ -3339,7 +3433,7 @@ The Comparison Assertion Visualizer shows the results of any <complink name="Com
 <description></description>
 </component>
 
-<component name="HTTP Authorization Manager" index="&sect-num;.4.3"  width="439" height="238" screenshot="http-config/http-auth-manager.png">
+<component name="HTTP Authorization Manager" index="&sect-num;.4.3"  width="538" height="340" screenshot="http-config/http-auth-manager.png">
 <note>If there is more than one Authorization Manager in the scope of a Sampler,
 there is currently no way to specify which one is to be used.</note>
 
@@ -3375,6 +3469,9 @@ These can be set up using a <complink name="CSV Data Set Config"/> Element (for 
 
 <properties>
         <property name="Name" required="No">Descriptive name for this element that is shown in the tree. </property>
+        <property name="Clear auth on each iteration ?" required="Yes">Used by Kerberos authentication. If checked, authentication will be done on each iteration of Main Thread Group loop even if it has already been done in a previous one.
+        This is usually useful if each main thread group iteration represents behaviour of one Virtual User.
+        </property>
   <property name="Base URL" required="Yes">A partial or complete URL that matches one or more HTTP Request URLs.  As an example,
 say you specify a Base URL of "http://jmeter.apache.org/restricted/" with a username of "jmeter" and
 a password of "jmeter".  If you send an HTTP request to the URL
@@ -3384,6 +3481,14 @@ information for the user named, "jmeter".</property>
   <property name="Password" required="Yes">The password for the user. (N.B. this is stored unencrypted in the test plan)</property>
   <property name="Domain" required="No">The domain to use for NTLM.</property>
   <property name="Realm" required="No">The realm to use for NTLM.</property>
+  <property name="Mechanism" required="No">Type of authentication to perform. JMeter can perform different types of authentications based on used Http Samplers:
+<table>
+<tr><th>Sampler</th><th>Authentications</th></tr>
+<tr><td>Java</td><td>BASIC</td></tr>
+<tr><td>HttpClient 3.1</td><td>BASIC, DIGEST</td></tr>
+<tr><td>HttpClient 4</td><td>BASIC, DIGEST and Kerberos</td></tr>
+</table>
+</property>
 </properties>
 <note>
 The Realm only applies to the HttpClient sampler.
@@ -3391,6 +3496,17 @@ In JMeter 2.2, the domain and realm did not have separate columns, and were enco
 the user name in the form: [domain\]username[@realm].
 This was an experimental feature and has been removed.
 </note>
+<br></br>
+<b>Kerberos Configuration:</b>
+<p>To configure Kerberos you need to setup at least two JVM system properties:
+<ul>
+    <li>-Djava.security.krb5.conf=krb5.conf</li>
+    <li>-Djava.security.auth.login.config=jaas.conf</li>
+</ul>
+You can also configure those two properties in file bin/system.properties.
+Look at the two sample configuration files (krb5.conf and jaas.conf) located in the jmeter bin folder for references to more documentation, and tweak them to match 
+your Kerberos configuration.
+</p>
 <br></br>
 <b>Controls:</b>
 <ul>
@@ -3415,7 +3531,7 @@ to "/secret/index.html" and "/secret/index2.html".  The other HTTP request, name
 "/index.html".</p>
 
 <figure width="289" height="201" image="http-config/auth-manager-example1a.gif">Figure 10 - Test Plan</figure>
-<figure width="539" height="241" image="http-config/auth-manager-example1b.png">Figure 11 - Authorization Manager Control Panel</figure>
+<figure width="641" height="329" image="http-config/auth-manager-example1b.png">Figure 11 - Authorization Manager Control Panel</figure>
 
 <p>When we run the Test Plan, JMeter looks in the Authorization table for the URL it is requesting.  If the Base URL matches
 the URL, then JMeter passes this information along with the request.</p>
@@ -3649,43 +3765,44 @@ instead. (see figures 12 and 13).</p>
 
 <component name="JDBC Connection Configuration" index="&sect-num;.4.8" 
                  width="474" height="458" screenshot="jdbc-config/jdbc-conn-config.png">
-	<description>Creates a database connection (used by <complink name="JDBC Request"/>Sampler)
-	 from the supplied JDBC Connection settings. The connection may be optionally pooled between threads.
+    <description>Creates a database connection (used by <complink name="JDBC Request"/>Sampler)
+     from the supplied JDBC Connection settings. The connection may be optionally pooled between threads.
      Otherwise each thread gets its own connection.
      The connection configuration name is used by the JDBC Sampler to select the appropriate
      connection.
-	</description>
-	<properties>
-		<property name="Name" required="No">Descriptive name for the connection configuration that is shown in the tree.</property>
-		<property name="Variable Name" required="Yes">The name of the variable the connection is tied to.  
-		Multiple connections can be used, each tied to a different variable, allowing JDBC Samplers
-		to select the appropriate connection.
-		<b>Each name must be different. If there are two configuration elements using the same name,
-		only one will be saved. JMeter versions after 2.3 log a message if a duplicate name is detected.</b>
-		</property>
-		<property name="Max Number of Connections" required="Yes">
+    </description>
+    <properties>
+        <property name="Name" required="No">Descriptive name for the connection configuration that is shown in the tree.</property>
+        <property name="Variable Name" required="Yes">The name of the variable the connection is tied to.  
+        Multiple connections can be used, each tied to a different variable, allowing JDBC Samplers
+        to select the appropriate connection.
+        <b>Each name must be different. If there are two configuration elements using the same name,
+        only one will be saved. JMeter versions after 2.3 log a message if a duplicate name is detected.</b>
+        </property>
+        <property name="Max Number of Connections" required="Yes">
         Maximum number of connections allowed in the pool.
         In most cases, <b>set this to zero (0)</b>.
         This means that each thread will get its own pool with a single connection in it, i.e.
         the connections are not shared betweeen threads.
         <br />
-		If you really want to use shared pooling (why?), then set the max count to the same as the number of threads
+        If you really want to use shared pooling (why?), then set the max count to the same as the number of threads
         to ensure threads don't wait on each other.
-		</property>
-		<property name="Pool timeout" required="Yes">Pool throws an error if the timeout period is exceeded in the 
-		process of trying to retrieve a connection</property>
-		<property name="Idle Cleanup Interval (ms)" required="Yes">This is used to specify how long idle connections will be maintained in the pool before being closed. For a complete explanation on how this works, see <a href="http://excalibur.apache.org/apidocs/org/apache/avalon/excalibur/pool/ResourceLimitingPool.html#trim%28%29">ResourceLimitingPool.trim()</a> (Defaults to "60000", 1 minute)</property>
-		<property name="Auto Commit" required="Yes">Turn auto commit on or off for the connections.</property>
-		<property name="Keep-alive" required="Yes">Uncertain what exactly this does.</property>
-		<property name="Max Connection Age (ms)" required="Yes">Uncertain what exactly this does.</property>
-		<property name="Validation Query" required="Yes">A simple query used to determine if the database is still
-		responding.</property>
-		<property name="Database URL" required="Yes">JDBC Connection string for the database.</property>
-		<property name="JDBC Driver class" required="Yes">Fully qualified name of driver class. (Must be in
-		JMeter's classpath - easiest to copy .jar file into JMeter's /lib directory).</property>
-		<property name="Username" required="No">Name of user to connect as.</property>
-		<property name="Password" required="No">Password to connect with. (N.B. this is stored unencrypted in the test plan)</property>
-	</properties>
+        </property>
+        <property name="Pool timeout" required="Yes">Pool throws an error if the timeout period is exceeded in the 
+        process of trying to retrieve a connection</property>
+        <property name="Idle Cleanup Interval (ms)" required="Yes">This is used to specify how long idle connections will be maintained in the pool before being closed. For a complete explanation on how this works, see <a href="http://excalibur.apache.org/apidocs/org/apache/avalon/excalibur/pool/ResourceLimitingPool.html#trim%28%29">ResourceLimitingPool.trim()</a> (Defaults to "60000", 1 minute)</property>
+        <property name="Auto Commit" required="Yes">Turn auto commit on or off for the connections.</property>
+        <property name="Keep-alive" required="Yes">The keep-alive is used enable a mechanism to monitor the health of connections. If a connection has not been used for Max Connection Age (ms) then before returning the connection from a call to getConnection(), the connection is first used to ping the database to make sure that it is still alive. 
+        Setting the age allows the 5 second age to be overridden. Validation Query will be used to test it.</property>
+        <property name="Max Connection Age (ms)" required="Yes">Controls the age mentionned in "Keep-Alive" property. It means connections not used for more than Max Connection Age will be tested</property>
+        <property name="Validation Query" required="Yes">A simple query used to determine if the database is still
+        responding.</property>
+        <property name="Database URL" required="Yes">JDBC Connection string for the database.</property>
+        <property name="JDBC Driver class" required="Yes">Fully qualified name of driver class. (Must be in
+        JMeter's classpath - easiest to copy .jar file into JMeter's /lib directory).</property>
+        <property name="Username" required="No">Name of user to connect as.</property>
+        <property name="Password" required="No">Password to connect with. (N.B. this is stored unencrypted in the test plan)</property>
+    </properties>
 <p>Different databases and JDBC drivers require different JDBC settings. 
 The Database URL and JDBC Driver class are defined by the provider of the JDBC implementation.</p>
 <p>Some possible settings are shown below. Please check the exact details in the JDBC driver documentation.</p>
@@ -3712,7 +3829,7 @@ OR<br/>jdbc:oracle:thin:@(description=(address=(host={mc-name})(protocol=tcp)(po
 </component>
 
 
-<component name="Keystore Configuration" index="&sect-num;.4.9"  width="530" height="171" screenshot="keystore_config.png">
+<component name="Keystore Configuration" index="&sect-num;.4.9"  width="441" height="189" screenshot="keystore_config.png">
 <description><p>The Keystore Config Element lets you configure how Keystore will be loaded and which keys it will use.
 This component is typically used in HTTPS scenarios where you don't want to take into account keystore initialization into account in response time.</p>
 <p>To use this element, you need to setup first a Java Key Store with the client certificates you want to test, to do that:
@@ -3729,11 +3846,20 @@ This component is typically used in HTTPS scenarios where you don't want to take
 </p>
 </description>
 
+preload.shortDescription=Preload Keystore before test. Setting is to true is usually the best option.
+startIndex.displayName=Alias Start index (0-based)
+startIndex.shortDescription=First index of Alias in Keystore
+endIndex.displayName=Alias End index (0-based)
+endIndex.shortDescription=Last index of Alias in Keystore. When using Variable name ensure it is large enough so that all keys are loaded at startup.
+clientCertAliasVarName.displayName=Variable name holding certificate alias
+clientCertAliasVarName.shortDescription=Variable name that will contain the alias to use for Cert authentication. Var content can come from CSV Data Set.
+
 <properties>
   <property name="Name" required="No">Descriptive name for this element that is shown in the tree. </property>
-  <property name="Preload" required="Yes">Wether or not to preload Keystore.</property>
+  <property name="Preload" required="Yes">Wether or not to preload Keystore. Setting is to true is usually the best option.</property>
+  <property name="Variable name holding certificate alias" required="False">Variable name that will contain the alias to use for authentication by client certificate. Variable value will be filled from CSV Data Set for example. In the screenshot, "certificat_ssl" will also be a variable in CSV Data Set.</property>
   <property name="Alias Start Index" required="Yes">The index of the first key to use in Keystore, 0-based.</property>
-  <property name="Alias End Index" required="Yes">The index of the last key to use in Keystore, 0-based.</property>
+  <property name="Alias End Index" required="Yes">The index of the last key to use in Keystore, 0-based. When using "Variable name holding certificate alias" ensure it is large enough so that all keys are loaded at startup.</property>
 </properties>
 <note>
 To make JMeter use more than one certificate you need to ensure that:
@@ -3756,23 +3882,23 @@ To make JMeter use more than one certificate you need to ensure that:
 
 </component>
 
-<component name="LDAP Request Defaults" index="&sect-num;.4.11"  width="465" height="375" screenshot="ldap_defaults.png">
+<component name="LDAP Request Defaults" index="&sect-num;.4.11"  width="689" height="232" screenshot="ldap_defaults.png">
 <description><p>The LDAP Request Defaults component lets you set default values for LDAP testing.  See the <complink name="LDAP Request"/>.</p>
 </description>
 
 </component>
 
-<component name="LDAP Extended Request Defaults" index="&sect-num;.4.12"  width="597" height="545" screenshot="ldapext_defaults.png">
+<component name="LDAP Extended Request Defaults" index="&sect-num;.4.12"  width="686" height="184" screenshot="ldapext_defaults.png">
 <description><p>The LDAP Extended Request Defaults component lets you set default values for extended LDAP testing.  See the <complink name="LDAP Extended Request"/>.</p>
 </description>
 
 </component>
 
-<component name="TCP Sampler Config" index="&sect-num;.4.13"  width="823" height="260" screenshot="tcpsamplerconfig.png">
+<component name="TCP Sampler Config" index="&sect-num;.4.13"  width="826" height="450" screenshot="tcpsamplerconfig.png">
 <description>
         <p>
-	The TCP Sampler Config provides default data for the TCP Sampler
-	</p>
+    The TCP Sampler Config provides default data for the TCP Sampler
+    </p>
 </description>
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
@@ -3835,8 +3961,8 @@ You can reference variables defined in earlier UDVs or on the Test Plan.
 <properties>
   <property name="Name" required="">Descriptive name for this element that is shown in the tree.</property>
   <property name="User Defined Variables" required="">Variable name/value pairs. The string under the "Name"
-  	column is what you'll need to place inside the brackets in ${...} constructs to use the variables later on. The
-  	whole ${...} will then be replaced by the string in the "Value" column.</property>
+      column is what you'll need to place inside the brackets in ${...} constructs to use the variables later on. The
+      whole ${...} will then be replaced by the string in the "Value" column.</property>
 </properties>
 </component>
 
@@ -3922,17 +4048,98 @@ GUI that they can use while developing new JMeter components.</p>
 </component>
 
 
+<component name="MongoDB Source Config" index="&sect-num;.4.18" 
+                 width="1233" height="618" screenshot="mongodb-source-config.png">
+    <description>Creates a MongoDB connection (used by <complink name="MongoDB Script"/>Sampler)
+     from the supplied Connection settings. Each thread gets its own connection.
+     The connection configuration name is used by the JDBC Sampler to select the appropriate
+     connection.
+     You can then access com.mongodb.DB object in Beanshell or JSR223 Test Elements through the element <a href="../api/org/apache/jmeter/protocol/mongodb/config/MongoDBHolder.html">MongoDBHolder</a> 
+     using this code<br/>
+     
+    <code>
+    import com.mongodb.DB;<br/>
+    import org.apache.jmeter.protocol.mongodb.config.MongoDBHolder;<br/>
+    DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source", "value of property Database Name");<br/>
+    ...
+    </code>
+    </description>
+    <properties>
+        <property name="Name" required="No">Descriptive name for the connection configuration that is shown in the tree.</property>
+        <property name="Server Address List" required="Yes">Mongo DB Servers</property>
+        <property name="MongoDB Source" required="Yes">The name of the variable the connection is tied to.  
+        <b>Each name must be different. If there are two configuration elements using the same name, only one will be saved.</b>
+        </property>
+        
+        <property name="Keep Trying" required="No">
+            If true, the driver will keep trying to connect to the same server in case that the socket cannot be established.<br/>
+            There is maximum amount of time to keep retrying, which is 15s by default.<br/>This can be useful to avoid some exceptions being thrown when a server is down temporarily by blocking the operations.
+            <br/>It also can be useful to smooth the transition to a new master (so that a new master is elected within the retry time).<br/>
+            Note that when using this flag\:
+            <br/>- for a replica set, the driver will trying to connect to the old master for that time, instead of failing over to the new one right away 
+            <br/>- this does not prevent exception from being thrown in read/write operations on the socket, which must be handled by application.<br/>
+            Even if this flag is false, the driver already has mechanisms to automatically recreate broken connections and retry the read operations. <br/>
+            Default is false.
+        </property>
+        <property name="Maximum connections per host" required="No"></property>
+        <property name="Connection timeout" required="No">
+            The connection timeout in milliseconds.<br/>It is used solely when establishing a new connection Socket.connect(java.net.SocketAddress, int)<br/>Default is 0 and means no timeout.
+        </property>
+        <property name="Maximum retry time" required="No">
+            The maximum amount of time in MS to spend retrying to open connection to the same server.<br/>Default is 0, which means to use the default 15s if autoConnectRetry is on.
+        </property>
+        <property name="Maximum wait time" required="No">
+            The maximum wait time in ms that a thread may wait for a connection to become available.<br/>Default is 120,000.
+        </property>
+        <property name="Socket timeout" required="No">
+            The socket timeout in milliseconds It is used for I/O socket read and write operations Socket.setSoTimeout(int)<br/>Default is 0 and means no timeout.
+        </property>
+        <property name="Socket keep alive" required="No">
+            This flag controls the socket keep alive feature that keeps a connection alive through firewalls Socket.setKeepAlive(boolean)<br/>
+            Default is false.
+        </property>
+        <property name="ThreadsAllowedToBlockForConnectionMultiplier" required="No">
+        This multiplier, multiplied with the connectionsPerHost setting, gives the maximum number of threads that may be waiting for a connection to become available from the pool.<br/>
+        All further threads will get an exception right away.<br/>
+        For example if connectionsPerHost is 10 and threadsAllowedToBlockForConnectionMultiplier is 5, then up to 50 threads can wait for a connection.<br/>
+        Default is 5.
+        </property>
+        <property name="Write Concern : Safe" required="No">
+            If true the driver will use a WriteConcern of WriteConcern.SAFE for all operations.<br/>
+            If w, wtimeout, fsync or j are specified, this setting is ignored.<br/>
+            Default is false.
+        </property>
+        <property name="Write Concern : Fsync" required="No">
+            The fsync value of the global WriteConcern.<br/>
+            Default is false.
+        </property>
+        <property name="Write Concern : Wait for Journal" required="No">
+            The j value of the global WriteConcern.<br/>
+            Default is false.
+        </property>
+        <property name="Write Concern : Wait for servers" required="No">
+            The w value of the global WriteConcern.<br/>Default is 0.
+        </property>
+        <property name="Write Concern : Wait timeout" required="No">
+            The wtimeout value of the global WriteConcern.<br/>Default is 0.
+        </property>
+        <property name="Write Concern : Continue on error" required="No">
+            If batch inserts should continue after the first error
+        </property>
+    </properties>
+</component>
+
 <a href="#">^</a>
 
 </section>
 
 <section name="&sect-num;.5 Assertions" anchor="assertions">
 <description>
-	<p>
-	Assertions are used to perform additional checks on samplers, and are processed after <b>every sampler</b>
-	in the same scope.
-	To ensure that an Assertion is applied only to a particular sampler, add it as a child of the sampler.
-	</p>
+    <p>
+    Assertions are used to perform additional checks on samplers, and are processed after <b>every sampler</b>
+    in the same scope.
+    To ensure that an Assertion is applied only to a particular sampler, add it as a child of the sampler.
+    </p>
     <p>
     Note: Unless documented otherwise, Assertions are not applied to sub-samples (child samples) -
     only to the parent sample.
@@ -3953,41 +4160,41 @@ GUI that they can use while developing new JMeter components.</p>
     If the JMeter variable option is used, it is assumed to relate to the main sample, and
     any failure will be applied to the main sample only.
     </p>
-	<note>
-	The variable <b>JMeterThread.last_sample_ok</b> is updated to
-	"true" or "false" after all assertions for a sampler have been run.
-	 </note>
+    <note>
+    The variable <b>JMeterThread.last_sample_ok</b> is updated to
+    "true" or "false" after all assertions for a sampler have been run.
+     </note>
 </description>
 <component name="Response Assertion" index="&sect-num;.5.1" anchor="basic_assertion"  width="921" height="423" screenshot="assertion/assertion.png">
 
 <description><p>The response assertion control panel lets you add pattern strings to be compared against various
-	fields of the response.
-	The pattern strings are:
-	<ul>
-	<li>Contains, Matches: Perl5-style regular expressions</li>
-	<li>Equals, Substring: plain text, case-sensitive</li>
-	</ul>
-	</p>
-	<p>
-	A summary of the pattern matching characters can be found at <a href="http://jakarta.apache.org/oro/api/org/apache/oro/text/regex/package-summary.html">ORO Perl5 regular expressions.</a>
-	</p>
-	<p>You can also choose whether the strings will be expected
+    fields of the response.
+    The pattern strings are:
+    <ul>
+    <li>Contains, Matches: Perl5-style regular expressions</li>
+    <li>Equals, Substring: plain text, case-sensitive</li>
+    </ul>
+    </p>
+    <p>
+    A summary of the pattern matching characters can be found at <a href="http://jakarta.apache.org/oro/api/org/apache/oro/text/regex/package-summary.html">ORO Perl5 regular expressions.</a>
+    </p>
+    <p>You can also choose whether the strings will be expected
 to <b>match</b> the entire response, or if the response is only expected to <b>contain</b> the
 pattern. You can attach multiple assertions to any controller for additional flexibility.</p>
 <p>Note that the pattern string should not include the enclosing delimiters, 
-	i.e. use <b>Price: \d+</b> not <b>/Price: \d+/</b>.
-	</p>
-	<p>
-	By default, the pattern is in multi-line mode, which means that the "." meta-character does not match newline.
+    i.e. use <b>Price: \d+</b> not <b>/Price: \d+/</b>.
+    </p>
+    <p>
+    By default, the pattern is in multi-line mode, which means that the "." meta-character does not match newline.
     In multi-line mode, "^" and "$" match the start or end of any line anywhere within the string 
     - not just the start and end of the entire string. Note that \s does match new-line.
-	Case is also significant. To override these settings, one can use the <i>extended regular expression</i> syntax.
-	For example:
+    Case is also significant. To override these settings, one can use the <i>extended regular expression</i> syntax.
+    For example:
 </p>
 <pre>
-	(?i) - ignore case
-	(?s) - treat target as single line, i.e. "." matches new-line
-	(?is) - both the above
+    (?i) - ignore case
+    (?s) - treat target as single line, i.e. "." matches new-line
+    (?is) - both the above
     These can be used anywhere within the expression and remain in effect until overriden.  e.g.
     (?i)apple(?-i) Pie - matches "ApPLe Pie", but not "ApPLe pIe"
     (?s)Apple.+?Pie - matches Apple followed by Pie, which may be on a subsequent line.
@@ -4053,7 +4260,7 @@ pattern. You can attach multiple assertions to any controller for additional fle
         </property>
 </properties>
 <p>
-	The pattern is a Perl5-style regular expression, but without the enclosing brackets.
+    The pattern is a Perl5-style regular expression, but without the enclosing brackets.
 </p>
 <example title="Assertion Examples" anchor="assertion_examples">
 <center>
@@ -4104,7 +4311,7 @@ the size be equal to, greater than, less than, or not equal to a given number of
 </properties>
 </component>
 
-<component name="XML Assertion" index="&sect-num;.5.4"  width="303" height="196" screenshot="xml_assertion.png">
+<component name="XML Assertion" index="&sect-num;.5.4"  width="470" height="85" screenshot="xml_assertion.png">
 <description><p>The XML Assertion tests that the response data consists of a formally correct XML document.  It does not
 validate the XML based on a DTD or schema or do any further validation.</p></description>
 
@@ -4114,7 +4321,7 @@ validate the XML based on a DTD or schema or do any further validation.</p></des
 </properties>
 </component>
 
-<component name="BeanShell Assertion" index="&sect-num;.5.5"  width="597" height="303" screenshot="bsh_assertion.png">
+<component name="BeanShell Assertion" index="&sect-num;.5.5"  width="849" height="633" screenshot="beanshell_assertion.png">
 <description><p>The BeanShell Assertion allows the user to perform assertion checking using a BeanShell script.
 </p>
 <p>
@@ -4148,11 +4355,11 @@ See the file BeanShellListeners.bshrc for example definitions.
     For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </property>
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul></property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul></property>
     <property name="Script file" required="No">A file containing the BeanShell script to run. This overrides the script.
     The file name is stored in the script variable FileName</property>
     <property name="Script" required="Yes (unless script file is provided)">The BeanShell script to run. The return value is ignored.</property>
@@ -4163,28 +4370,28 @@ Before invoking the script, some variables are set up in the BeanShell interpret
 These are strings unless otherwise noted:
 <ul>
 <li>log - the Logger Object. (e.g.) log.warn("Message"[,Throwable])</li>
-	<li>SampleResult - the <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a> Object; read-write</li>
-	<li>Response - the response Object; read-write</li>
-	<li>Failure - boolean; read-write; used to set the Assertion status</li>
-	<li>FailureMessage - String; read-write; used to set the Assertion message</li>
-	<li>ResponseData - the response body (byte [])</li>
-	<li>ResponseCode - e.g. 200</li>
-	<li>ResponseMessage - e.g. OK</li>
-	<li>ResponseHeaders - contains the HTTP headers</li>
-	<li>RequestHeaders - contains the HTTP headers sent to the server</li>
-	<li>SampleLabel</li>
-	<li>SamplerData - data that was sent to the server</li>
-	<li>ctx - <a href="../api/org/apache/jmeter/threads/JMeterContext.html">JMeterContext</a></li>
-	<li>vars - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. vars.get("VAR1"); vars.put("VAR2","value"); vars.putObject("OBJ1",new Object());</li>
+    <li>SampleResult - the <a href="../api/org/apache/jmeter/samplers/SampleResult.html">SampleResult</a> Object; read-write</li>
+    <li>Response - the response Object; read-write</li>
+    <li>Failure - boolean; read-write; used to set the Assertion status</li>
+    <li>FailureMessage - String; read-write; used to set the Assertion message</li>
+    <li>ResponseData - the response body (byte [])</li>
+    <li>ResponseCode - e.g. 200</li>
+    <li>ResponseMessage - e.g. OK</li>
+    <li>ResponseHeaders - contains the HTTP headers</li>
+    <li>RequestHeaders - contains the HTTP headers sent to the server</li>
+    <li>SampleLabel</li>
+    <li>SamplerData - data that was sent to the server</li>
+    <li>ctx - <a href="../api/org/apache/jmeter/threads/JMeterContext.html">JMeterContext</a></li>
+    <li>vars - <a href="../api/org/apache/jmeter/threads/JMeterVariables.html">JMeterVariables</a>  - e.g. vars.get("VAR1"); vars.put("VAR2","value"); vars.putObject("OBJ1",new Object());</li>
     <li>props - JMeterProperties (class java.util.Properties) - e.g. props.get("START.HMS"); props.put("PROP1","1234");</li>
 </ul>
 </p>
 <p>The following methods of the Response object may be useful:
 <ul>
-	<li>setStopThread(boolean)</li>
-	<li>setStopTest(boolean)</li>
-	<li>String getSampleLabel()</li>
-	<li>setSampleLabel(String)</li>
+    <li>setStopThread(boolean)</li>
+    <li>setStopTest(boolean)</li>
+    <li>String getSampleLabel()</li>
+    <li>setSampleLabel(String)</li>
 </ul></p>
 </component>
 
@@ -4220,27 +4427,33 @@ document, and is the default XPath Expression.
 The assertion also supports boolean expressions, such as "count(//*error)=2".
 See <a href="http://www.w3.org/TR/xpath">http://www.w3.org/TR/xpath</a> for more information
 on XPath.
-</p></description>
+</p>
+Some sample expressions:
+<ul>
+<li>//title[text()='Text to match'] - matches &amp;lt;text&amp;gt;Text to match&amp;lt;/text&amp;gt; anywhere in the response</li>
+<li>/title[text()='Text to match'] - matches &amp;lt;text&amp;gt;Text to match&amp;lt;/text&amp;gt; at root level in the response</li>
+</ul>
+</description>
 
 <properties>
-<property name="Name"		required="No">Descriptive name for this element that is shown in the tree.</property>
-<property name="Use Tidy (tolerant parser)"	required="Yes">Use Tidy, i.e. be tolerant of XML/HTML errors</property>
-<property name="Quiet"	required="If Tidy is selected">Sets the Tidy Quiet flag</property>
-<property name="Report Errors"	required="If Tidy is selected">If a Tidy error occurs, then set the Assertion accordingly</property>
-<property name="Show warnings"	required="If Tidy is selected">Sets the Tidy showWarnings option</property>
-<property name="Use Namespaces"	required="If Tidy is not selected">Should namespaces be honoured?</property>
-<property name="Validate XML"	required="If Tidy is not selected">Check the document against its schema.</property>
+<property name="Name"        required="No">Descriptive name for this element that is shown in the tree.</property>
+<property name="Use Tidy (tolerant parser)"    required="Yes">Use Tidy, i.e. be tolerant of XML/HTML errors</property>
+<property name="Quiet"    required="If Tidy is selected">Sets the Tidy Quiet flag</property>
+<property name="Report Errors"    required="If Tidy is selected">If a Tidy error occurs, then set the Assertion accordingly</property>
+<property name="Show warnings"    required="If Tidy is selected">Sets the Tidy showWarnings option</property>
+<property name="Use Namespaces"    required="If Tidy is not selected">Should namespaces be honoured?</property>
+<property name="Validate XML"    required="If Tidy is not selected">Check the document against its schema.</property>
 <property name="Ignore Whitespace"  required="If Tidy is not selected">Ignore Element Whitespace.</property>
 <property name="Fetch External DTDs"  required="If Tidy is not selected">If selected, external DTDs are fetched.</property>
-<property name="XPath Assertion"	required="Yes">XPath to match in the document.</property>
-<property name="True if nothing matches"	required="No">True if a XPath expression is not matched</property>
+<property name="XPath Assertion"    required="Yes">XPath to match in the document.</property>
+<property name="True if nothing matches"    required="No">True if a XPath expression is not matched</property>
 </properties>
 <note>
 The non-tolerant parser can be quite slow, as it may need to download the DTD etc.
 </note>
 <note>
-To overcome Xalan XPath parser implementation on which JMeter is based, you can help the parsing by 
-providing a Properties file which will contain:
+As a work-round for namespace limitations of the Xalan XPath parser implementation on which JMeter is based,
+you can provide a Properties file which contains mappings for the namespace prefixes: 
 <ul>
 <li>prefix1=Full Namespace 1</li>
 <li>prefix2=Full Namespace 2</li>
@@ -4253,7 +4466,7 @@ You reference this file in jmeter.properties file using the property:
 </ul>
 </note>
 </component>
-<component name="XML Schema Assertion" index="&sect-num;.5.9"  width="771" height="171" screenshot="assertion/XMLSchemaAssertion.png">
+<component name="XML Schema Assertion" index="&sect-num;.5.9"  width="472" height="132" screenshot="assertion/XMLSchemaAssertion.png">
 <description><p>The XML Schema Assertion allows the user to validate a response against an XML Schema.</p></description>
 
 <properties>
@@ -4262,7 +4475,7 @@ You reference this file in jmeter.properties file using the property:
 </properties>
 </component>
 
-<component name="BSF Assertion" index="&sect-num;.5.10"  width="805" height="382" screenshot="bsf_assertion.png">
+<component name="BSF Assertion" index="&sect-num;.5.10"  width="847" height="634" screenshot="bsf_assertion.png">
 <description>
 <p>
 The BSF Assertion allows BSF script code to be used to check the status of the previous sample.
@@ -4371,20 +4584,20 @@ please ensure that you select "Store the message using MIME (raw)" otherwise the
 
 <section name="&sect-num;.6 Timers" anchor="timers">
 <description>
-	<br></br>
-	<p>
-	Note that timers are processed <b>before</b> each sampler in the scope in which they are found;
-	if there are several timers in the same scope, <b>all</b> the timers will be processed <b>before
-	each</b> sampler.
-	<br></br>
-	Timers are only processed in conjunction with a sampler.
-	A timer which is not in the same scope as a sampler will not be processed at all.
-	<br></br>
-	To apply a timer to a single sampler, add the timer as a child element of the sampler.
-	The timer will be applied before the sampler is executed.
-	To apply a timer after a sampler, either add it to the next sampler, or add it as the
-	child of a <complink name="Test Action"/> Sampler.
-	</p>
+    <br></br>
+    <p>
+    Note that timers are processed <b>before</b> each sampler in the scope in which they are found;
+    if there are several timers in the same scope, <b>all</b> the timers will be processed <b>before
+    each</b> sampler.
+    <br></br>
+    Timers are only processed in conjunction with a sampler.
+    A timer which is not in the same scope as a sampler will not be processed at all.
+    <br></br>
+    To apply a timer to a single sampler, add the timer as a child element of the sampler.
+    The timer will be applied before the sampler is executed.
+    To apply a timer after a sampler, either add it to the next sampler, or add it as the
+    child of a <complink name="Test Action"/> Sampler.
+    </p>
 </description>
 <component name="Constant Timer" index="&sect-num;.6.1" anchor="constant" width="372" height="100" screenshot="timers/constant_timer.png">
 <description>
@@ -4400,9 +4613,12 @@ requests, use this timer.</p></description>
 <component name="Gaussian Random Timer" index="&sect-num;.6.2" width="372" height="156" screenshot="timers/gauss_random_timer.png">
 
 <description><p>This timer pauses each thread request for a random amount of time, with most
-of the time intervals ocurring near a particular value.  The total delay is the
-sum of the Gaussian distributed value (with mean 0.0 and standard deviation 1.0) times
-the deviation value you specify, and the offset value.</p></description>
+of the time intervals ocurring near a particular value.  
+The total delay is the sum of the Gaussian distributed value (with mean 0.0 and standard deviation 1.0) times
+the deviation value you specify, and the offset value.
+Another way to explain it, in Gaussian Random Timer, the variation around constant offset has a gaussian curve distribution. 
+
+</p></description>
 
 
 <properties>
@@ -4486,7 +4702,7 @@ points of the test plan.
 
 </component>
 
-<component name="BeanShell Timer" index="&sect-num;.6.6"  width="553" height="382" screenshot="timers/beanshell_timer.png">
+<component name="BeanShell Timer" index="&sect-num;.6.6"  width="846" height="636" screenshot="timers/beanshell_timer.png">
 <description>
 <p>
 The BeanShell Timer can be used to generate a delay.
@@ -4509,12 +4725,12 @@ See the file BeanShellListeners.bshrc for example definitions.
     For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </property>
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul>
-	</property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul>
+    </property>
     <property name="Script file" required="No">
     A file containing the BeanShell script to run.
     The file name is stored in the script variable FileName
@@ -4537,7 +4753,7 @@ See the file BeanShellListeners.bshrc for example definitions.
 </component>
 
 
-<component name="BSF Timer" index="&sect-num;.6.7"  width="548" height="350" screenshot="timers/bsf_timer.png">
+<component name="BSF Timer" index="&sect-num;.6.7"  width="844" height="636" screenshot="timers/bsf_timer.png">
 <description>
 <p>
 The BSF Timer can be used to generate a delay using a BSF scripting language.
@@ -4607,11 +4823,11 @@ to the random delay.</property>
 </section>
 
 <section name="&sect-num;.7 Pre Processors" anchor="preprocessors">
-	<description>
-	<br></br>
-		Preprocessors are used to modify the Samplers in their scope.
-	<br></br>
-	</description>
+    <description>
+    <br></br>
+        Preprocessors are used to modify the Samplers in their scope.
+    <br></br>
+    </description>
 <component name="HTML Link Parser" index="&sect-num;.7.1" width="239" height="113" screenshot="html_link_parser.png" anchor="html_link_parser">
 <description>
 <p>This modifier parses HTML response from the server and extracts
@@ -4665,7 +4881,7 @@ your dynamic test sample.</note>
 
 </component>
 
-<component name="HTTP URL Re-writing Modifier" index="&sect-num;.7.2"  width="485" height="247" screenshot="url_rewriter.png">
+<component name="HTTP URL Re-writing Modifier" index="&sect-num;.7.2"  width="609" height="215" screenshot="url_rewriter.png">
 <description><p>This modifier works similarly to the HTML Link Parser, except it has a specific purpose for which
 it is easier to use than the HTML Link Parser, and more efficient.  For web applications that
 use URL Re-writing to store session ids instead of cookies, this element can be attached at the
@@ -4692,7 +4908,7 @@ Clever users will even determine that this modifier can be used to grab values t
 </properties>
 </component>
 
-<component name="HTML Parameter Mask" index="&sect-num;.7.3" useinstead="Counter"  width="624" height="209" screenshot="parameter_mask.png">
+<component name="HTML Parameter Mask (DEPRECATED)" index="&sect-num;.7.3" useinstead="Counter"  width="624" height="209" screenshot="parameter_mask.png">
 <description><p>The HTML Parameter Mask is used to generate unique values for HTML arguments.  By
 specifying the name of the parameter, a value prefix and suffix, and counter parameters, this
 modifier will generate values of the form "<code>name=prefixcountersuffix</code>".  Any HTTP
@@ -4720,7 +4936,7 @@ user_4, etc.</p></description>
 </properties>
 </component>
 
-<component name="User Parameters" index="&sect-num;.7.5"  width="638" height="274" screenshot="user_params.png">
+<component name="User Parameters" index="&sect-num;.7.5"  width="703" height="303" screenshot="user_params.png">
 <description><p>Allows the user to specify values for User Variables specific to individual threads.</p>
 <p>User Variables can also be specified in the Test Plan but not specific to individual threads. This panel allows
 you to specify a series of values for any User Variable. For each thread, the variable will be assigned one of the values from the series
@@ -4745,7 +4961,7 @@ To add a new value to the series, click the 'Add User' button and fill in the de
 </properties>
 </component>
 
-<component name="BeanShell PreProcessor" index="&sect-num;.7.7"  width="568" height="325" screenshot="beanshell_preprocessor.png">
+<component name="BeanShell PreProcessor" index="&sect-num;.7.7"  width="845" height="633" screenshot="beanshell_preprocessor.png">
 <description>
 <p>
 The BeanShell PreProcessor allows arbitrary code to be applied before taking a sample.
@@ -4768,11 +4984,11 @@ See the file BeanShellListeners.bshrc for example definitions.
     For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </property>
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul></property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul></property>
     <property name="Script file" required="No">A file containing the BeanShell script to run.
     The file name is stored in the script variable FileName</property>
     <property name="Script" required="Yes (unless script file is provided)">The BeanShell script. The return value is ignored.</property>
@@ -4790,7 +5006,7 @@ See the file BeanShellListeners.bshrc for example definitions.
 <p>If the property <b>beanshell.preprocessor.init</b> is defined, this is used to load an initialisation file, which can be used to define methods etc for use in the BeanShell script.</p>
 </component>
 
-<component name="BSF PreProcessor" index="&sect-num;.7.8"  width="634" height="357" screenshot="bsf_preprocessor.png">
+<component name="BSF PreProcessor" index="&sect-num;.7.8"  width="844" height="632" screenshot="bsf_preprocessor.png">
 <description>
 <p>
 The BSF PreProcessor allows BSF script code to be applied before taking a sample.
@@ -4904,26 +5120,26 @@ this one will be used by "Calculate Price cut off".
 </section>
 
 <section name="&sect-num;.8 Post-Processors" anchor="postprocessors">
-	<description>
-	<p>
-		As the name suggests, Post-Processors are applied after samplers. Note that they are
-		applied to <b>all</b> the samplers in the same scope, so to ensure that a post-processor
-		is applied only to a particular sampler, add it as a child of the sampler.
-	</p>
-	<p>
-	Note: Unless documented otherwise, Post-Processors are not applied to sub-samples (child samples) -
-	only to the parent sample.
-	In the case of BSF and BeanShell post-processors, the script can retrieve sub-samples using the method
-	<code>prev.getSubResults()</code> which returns an array of SampleResults.
-	The array will be empty if there are none.
-	</p>
-	<p>
-	Post-Processors are run before Assertions, so they do not have access to any Assertion Results, nor will
-	the sample status reflect the results of any Assertions. If you require access to Assertion Results, try
-	using a Listener instead. Also note that the variable JMeterThread.last_sample_ok is set to "true" or "false"
-	after all Assertions have been run.
-	</p>
-	</description>
+    <description>
+    <p>
+        As the name suggests, Post-Processors are applied after samplers. Note that they are
+        applied to <b>all</b> the samplers in the same scope, so to ensure that a post-processor
+        is applied only to a particular sampler, add it as a child of the sampler.
+    </p>
+    <p>
+    Note: Unless documented otherwise, Post-Processors are not applied to sub-samples (child samples) -
+    only to the parent sample.
+    In the case of BSF and BeanShell post-processors, the script can retrieve sub-samples using the method
+    <code>prev.getSubResults()</code> which returns an array of SampleResults.
+    The array will be empty if there are none.
+    </p>
+    <p>
+    Post-Processors are run before Assertions, so they do not have access to any Assertion Results, nor will
+    the sample status reflect the results of any Assertions. If you require access to Assertion Results, try
+    using a Listener instead. Also note that the variable JMeterThread.last_sample_ok is set to "true" or "false"
+    after all Assertions have been run.
+    </p>
+    </description>
 <component name="Regular Expression Extractor" index="&sect-num;.8.1"  width="790" height="276" screenshot="regex_extractor.png">
 <description><p>Allows the user to extract values from a server response using a Perl-type regular expression.  As a post-processor,
 this element will execute after each Sample request in its scope, applying the regular expression, extracting the requested values,
@@ -4975,11 +5191,11 @@ generate the template string, and store the result into the given variable name.
         with special elements to refer to groups within the regular expression.  The syntax to refer to a group is: '$1$' to refer to
         group 1, '$2$' to refer to group 2, etc. $0$ refers to whatever the entire expression matches.</property>
         <property name="Match No." required="Yes">Indicates which match to use.  The regular expression may match multiple times.  
-        	<ul>
-        		<li>Use a value of zero to indicate JMeter should choose a match at random.</li>
-        		<li>A positive number N means to select the nth match.</li>
-        		<li> Negative numbers are used in conjunction with the ForEach controller - see below.</li>
-        	</ul>
+            <ul>
+                <li>Use a value of zero to indicate JMeter should choose a match at random.</li>
+                <li>A positive number N means to select the nth match.</li>
+                <li> Negative numbers are used in conjunction with the ForEach controller - see below.</li>
+            </ul>
         </property>
         <property name="Default Value" required="No, but recommended">
         If the regular expression does not match, then the reference variable will be set to the default value.
@@ -4994,34 +5210,34 @@ generate the template string, and store the result into the given variable name.
         </property>
 </properties>
 <p>
-	If the match number is set to a non-negative number, and a match occurs, the variables are set as follows:
-	<ul>
-		<li>refName - the value of the template</li>
-		<li>refName_gn, where n=0,1,2 - the groups for the match</li>
-		<li>refName_g - the number of groups in the Regex (excluding 0)</li>
-	</ul>
-	If no match occurs, then the refName variable is set to the default (unless this is absent). 
-	Also, the following variables are removed:
-	<ul>
-		<li>refName_g0</li>
-		<li>refName_g1</li>
-		<li>refName_g</li>
-	</ul>
+    If the match number is set to a non-negative number, and a match occurs, the variables are set as follows:
+    <ul>
+        <li>refName - the value of the template</li>
+        <li>refName_gn, where n=0,1,2 - the groups for the match</li>
+        <li>refName_g - the number of groups in the Regex (excluding 0)</li>
+    </ul>
+    If no match occurs, then the refName variable is set to the default (unless this is absent). 
+    Also, the following variables are removed:
+    <ul>
+        <li>refName_g0</li>
+        <li>refName_g1</li>
+        <li>refName_g</li>
+    </ul>
 </p>
 <p>
-	If the match number is set to a negative number, then all the possible matches in the sampler data are processed.
-	The variables are set as follows:
-	<ul>
-		<li>refName_matchNr - the number of matches found; could be 0</li>
-		<li>refName_n, where n = 1,2,3 etc - the strings as generated by the template</li>
-		<li>refName_n_gm, where m=0,1,2 - the groups for match n</li>
-		<li>refName - always set to the default value</li>
-		<li>refName_gn - not set</li>
-	</ul>
-	Note that the refName variable is always set to the default value in this case, 
-	and the associated group variables are not set.
-	<p>See also <complink name="Response Assertion"/> for some examples of how to specify modifiers,
-	and <a href="regular_expressions.html"> for further information on JMeter regular expressions.</a></p>
+    If the match number is set to a negative number, then all the possible matches in the sampler data are processed.
+    The variables are set as follows:
+    <ul>
+        <li>refName_matchNr - the number of matches found; could be 0</li>
+        <li>refName_n, where n = 1,2,3 etc - the strings as generated by the template</li>
+        <li>refName_n_gm, where m=0,1,2 - the groups for match n</li>
+        <li>refName - always set to the default value</li>
+        <li>refName_gn - not set</li>
+    </ul>
+    Note that the refName variable is always set to the default value in this case, 
+    and the associated group variables are not set.
+    <p>See also <complink name="Response Assertion"/> for some examples of how to specify modifiers,
+    and <a href="regular_expressions.html"> for further information on JMeter regular expressions.</a></p>
 </p>
 </component>
 
@@ -5052,7 +5268,7 @@ extracting the node as text or attribute value and store the result into the giv
         As of JMeter 2.9, 2 implementations for CSS/JQuery based syntax are supported:
         <ul>
                 <li><a href="http://jsoup.org/" >JSoup</a></li>
-                <li><a href="http://jodd.org/doc/lagarto/index.html" >Jodd-Lagerto (CSSelly)</a></li>
+                <li><a href="http://jodd.org/doc/lagarto/index.html" >Jodd-Lagarto (CSSelly)</a></li>
         </ul>
         If selector is set to empty, default implementation(JSoup) will be used.
         </property>
@@ -5069,7 +5285,7 @@ extracting the node as text or attribute value and store the result into the giv
         For more details on syntax, see:
             <ul>
                 <li><a href="http://jsoup.org/cookbook/extracting-data/selector-syntax" >JSoup</a></li>
-                <li><a href="http://jodd.org/doc/csselly/" >Jodd-Lagerto (CSSelly)</a></li>
+                <li><a href="http://jodd.org/doc/csselly/" >Jodd-Lagarto (CSSelly)</a></li>
             </ul>
         </property>
         <property name="Attribute" required="false">
@@ -5118,9 +5334,9 @@ extracting the node as text or attribute value and store the result into the giv
 </component>
 
 <component name="XPath Extractor" index="&sect-num;.8.3"  width="729" height="317" screenshot="xpath_extractor.png">
-	<description>This test element allows the user to extract value(s) from 
-		structured response - XML or (X)HTML - using XPath
-		query language.
+    <description>This test element allows the user to extract value(s) from 
+        structured response - XML or (X)HTML - using XPath
+        query language.
    </description>
    <properties>
        <property name="Name" required="No">Descriptive name for this element that is shown in the tree.</property>
@@ -5135,12 +5351,12 @@ extracting the node as text or attribute value and store the result into the giv
         </ul>
         XPath matching is applied to all qualifying samples in turn, and all the matching results will be returned.
        </property>
-	   <property name="Use Tidy (tolerant parser)" required="Yes">If checked use Tidy to parse HTML response into XHTML.
-	   <ul>
-		   <li>"Use Tidy" should be checked on for HTML response. Such response is converted to valid XHTML (XML compatible HTML) using Tidy</li>
-		   <li>"Use Tidy" should be unchecked for both XHTML or XML response (for example RSS)</li>
-	   </ul>
-	   </property>
+       <property name="Use Tidy (tolerant parser)" required="Yes">If checked use Tidy to parse HTML response into XHTML.
+       <ul>
+           <li>"Use Tidy" should be checked on for HTML response. Such response is converted to valid XHTML (XML compatible HTML) using Tidy</li>
+           <li>"Use Tidy" should be unchecked for both XHTML or XML response (for example RSS)</li>
+       </ul>
+       </property>
 <property name="Quiet"  required="If Tidy is selected">Sets the Tidy Quiet flag</property>
 <property name="Report Errors"  required="If Tidy is selected">If a Tidy error occurs, then set the Assertion accordingly</property>
 <property name="Show warnings"  required="If Tidy is selected">Sets the Tidy showWarnings option</property>
@@ -5169,9 +5385,9 @@ extracting the node as text or attribute value and store the result into the giv
     In this case, //title/text() would return "Apache JMeter".
     </property>
     <property name="Reference Name" required="Yes">The name of the JMeter variable in which to store the result.</property>
-	<property name="XPath Query" required="Yes">Element query in XPath language. Can return more than one match.</property>
-	<property name="Default Value" required="">Default value returned when no match found. 
-	It is also returned if the node has no value and the fragment option is not selected.</property>
+    <property name="XPath Query" required="Yes">Element query in XPath language. Can return more than one match.</property>
+    <property name="Default Value" required="">Default value returned when no match found. 
+    It is also returned if the node has no value and the fragment option is not selected.</property>
    </properties>
    <p>To allow for use in a ForEach Controller, the following variables are set on return:</p>
    <ul>
@@ -5184,7 +5400,7 @@ extracting the node as text or attribute value and store the result into the giv
    and if there are no matches, then refName_1 is set to null.
    </p>
    <p>XPath is query language targeted primarily for XSLT transformations. However it is usefull as generic query language for structured data too. See 
-	   <a href="http://www.topxml.com/xsl/xpathref.asp">XPath Reference</a> or <a href="http://www.w3.org/TR/xpath">XPath specification</a> for more information. Here are few examples:
+       <a href="http://www.topxml.com/xsl/xpathref.asp">XPath Reference</a> or <a href="http://www.w3.org/TR/xpath">XPath specification</a> for more information. Here are few examples:
    </p>
   <dl> 
    <dt>/html/head/title</dt>
@@ -5199,11 +5415,11 @@ extracting the node as text or attribute value and store the result into the giv
         form with name attribute 'countryForm'</dd>
  </dl>
  <note>When "Use Tidy" is checked on - resulting XML document may slightly differ from original HTML response:
-	 <ul>
-		 <li>All elements and attribute names are converted to lowercase</li>
-		 <li>Tidy attempts to correct improperly nested elements. For example - original (incorrect) <code>ul/font/li</code> becomes correct <code>ul/li/font</code></li>
-	 </ul>
-	 See <a href="http://jtidy.sf.net">Tidy homepage</a> for more information.
+     <ul>
+         <li>All elements and attribute names are converted to lowercase</li>
+         <li>Tidy attempts to correct improperly nested elements. For example - original (incorrect) <code>ul/font/li</code> becomes correct <code>ul/li/font</code></li>
+     </ul>
+     See <a href="http://jtidy.sf.net">Tidy homepage</a> for more information.
  </note>
  
 </component>
@@ -5227,7 +5443,7 @@ extracting the node as text or attribute value and store the result into the giv
    </properties>
 </component>
 
-<component name="BeanShell PostProcessor"  index="&sect-num;.8.5"  width="655" height="306" screenshot="beanshell_postprocessor.png">
+<component name="BeanShell PostProcessor"  index="&sect-num;.8.5"  width="847" height="633" screenshot="beanshell_postprocessor.png">
 <description>
 <p>
 The BeanShell PreProcessor allows arbitrary code to be applied after taking a sample.
@@ -5251,11 +5467,11 @@ See the file BeanShellListeners.bshrc for example definitions.
     For further information, see <a href="best-practices#bsh_scripting">Best Practices - BeanShell scripting</a>.
     </property>
     <property name="Parameters" required="No">Parameters to pass to the BeanShell script.
-	The parameters are stored in the following variables:
-	<ul>
-		<li>Parameters - string containing the parameters as a single variable</li>
-	    <li>bsh.args - String array containing parameters, split on white-space</li>
-	</ul></property>
+    The parameters are stored in the following variables:
+    <ul>
+        <li>Parameters - string containing the parameters as a single variable</li>
+        <li>bsh.args - String array containing parameters, split on white-space</li>
+    </ul></property>
     <property name="Script file" required="No">A file containing the BeanShell script to run.
     The file name is stored in the script variable FileName</property>
     <property name="Script" required="Yes (unless script file is provided)">The BeanShell script. The return value is ignored.</property>
@@ -5273,7 +5489,7 @@ See the file BeanShellListeners.bshrc for example definitions.
 <p>If the property <b>beanshell.postprocessor.init</b> is defined, this is used to load an initialisation file, which can be used to define methods etc for use in the BeanShell script.</p>
 </component>
 
-<component name="BSF PostProcessor" index="&sect-num;.8.6"  width="634" height="357" screenshot="bsf_postprocessor.png">
+<component name="BSF PostProcessor" index="&sect-num;.8.6"  width="844" height="633" screenshot="bsf_postprocessor.png">
 <description>
 <p>
 The BSF PostProcessor allows BSF script code to be applied after taking a sample.
@@ -5342,7 +5558,7 @@ In the linked test plan,"JDBC PostProcessor" JDBC PostProcessor calls a stored p
 
 <section name="&sect-num;.9 Miscellaneous Features" anchor="Miscellaneous_Features">
 <description>
-		<br></br>
+        <br></br>
 </description>
 <component name="Test Plan" index="&sect-num;.9.1"  width="560" height="457" screenshot="testplan.png">
 <description>
@@ -5380,13 +5596,17 @@ The tearDown threads won't be run if the test is forcibly stopped.
 </p>
 <p>
 Test plan now provides an easy way to add classpath setting to a specific test plan. 
-The feature is additive, meaning that you can add jar files or directories, but removing an entry requires restarting JMeter.
+The feature is additive, meaning that you can add jar files or directories,
+but removing an entry requires restarting JMeter.
 Note that this cannot be used to add JMeter GUI plugins, because they are processed earlier.
-However it can be useful for utility jars such as JDBC drivers. 
+However it can be useful for utility jars such as JDBC drivers. The jars are only added to
+the search path for the JMeter loader, not for the system class loader.
 </p>
 <p>
 JMeter properties also provides an entry for loading additional classpaths.
-In jmeter.properties, edit "user.classpath" to include additional libraries.
+In jmeter.properties, edit "user.classpath" or "plugin_dependency_paths" to include additional libraries.
+See <a href="get-started.html#classpath">JMeter's Classpath</a> and
+<a href="get-started.html#configuring_jmeter">Configuring JMeter</a> for details.
 </p>
 </description>
 </component>
@@ -5430,30 +5650,35 @@ JMeter does not interrupt samplers which are waiting for a response, so the end 
         </property>
         <property name="Scheduler" required="Yes">If selected, enables the scheduler</property>
         <property name="Start Time" required="No">If the scheduler checkbox is selected, one can choose an absolute start time.  When you start your test, JMeter will wait until the specified start time to begin testing.
-        	Note: the Startup Delay field over-rides this - see below.
-        	</property>
+            Note: the Startup Delay field over-rides this - see below.
+            </property>
         <property name="End Time" required="No">If the scheduler checkbox is selected, one can choose an absolute end time.  When you start your test, JMeter will wait until the specified start time to begin testing, and it will stop at the specified end time.
-        	Note: the Duration field over-rides this - see below.
-        	</property>
+            Note: the Duration field over-rides this - see below.
+            </property>
         <property name="Duration (seconds)" required="No">
-        	If the scheduler checkbox is selected, one can choose a relative end time. 
-        	JMeter will use this to calculate the End Time, and ignore the End Time value.
+            If the scheduler checkbox is selected, one can choose a relative end time. 
+            JMeter will use this to calculate the End Time, and ignore the End Time value.
         </property>
         <property name="Startup delay (seconds)" required="No">
-        	If the scheduler checkbox is selected, one can choose a relative startup delay.
-        	JMeter will use this to calculate the Start Time, and ignore the Start Time value.
+            If the scheduler checkbox is selected, one can choose a relative startup delay.
+            JMeter will use this to calculate the Start Time, and ignore the Start Time value.
         </property>
 </properties>
 </component>
 
-<component name="WorkBench" index="&sect-num;.9.3"  width="232" height="68" screenshot="workbench.png">
+<component name="WorkBench" index="&sect-num;.9.3"  width="384" height="103" screenshot="workbench.png">
 <description>
 <p>The WorkBench simply provides a place to temporarily store test elements while not in use, for copy/paste purposes, or any other purpose you desire. 
 When you save your test plan, WorkBench items are not saved with it. 
 Your WorkBench can be saved independently, if you like (right-click on WorkBench and choose Save).</p>
 <p>Certain test elements are only available on the WorkBench:</p>
+<properties>
+         <property name="Save WorkBench" required="No">
+                Allow to save the WorkBench's elements into the JMX file.
+        </property>
+</properties>
 <ul>
-<li><complink name="HTTP Proxy Server"/></li>
+<li><complink name="HTTP(S) Test Script Recorder"/></li>
 <li><complink name="HTTP Mirror Server"/></li>
 <li><complink name="Property Display"/></li>
 </ul>
@@ -5508,40 +5733,104 @@ Your WorkBench can be saved independently, if you like (right-click on WorkBench
 </p>
 </component>
 
-<component name="HTTP Proxy Server" index="&sect-num;.9.5"  width="957" height="593" screenshot="proxy_control.png">
-<description><p>The Proxy Server allows JMeter to watch and record your actions while you browse your web application
+<component name="HTTP(S) Test Script Recorder" was="HTTP Proxy Server" index="&sect-num;.9.5"  width="917" height="622" screenshot="proxy_control.png">
+<description><p>The HTTP(S) Test Script Recorder allows JMeter to intercept and record your actions while you browse your web application
 with your normal browser.  JMeter will create test sample objects and store them
-directly into your test plan as you go (so you can view samples interactively while you make them).</p>
+directly into your test plan as you go (so you can view samples interactively while you make them).<br/>
+Ensure you read this <a href="https://wiki.apache.org/jmeter/TestRecording210">wiki page</a> to setup correctly JMeter.
+</p>
 
-<p>To use the proxy server, <i>add</i> the HTTP Proxy Server element to the workbench.
+<p>To use the recorder, <i>add</i> the HTTP(S) Test Script Recorder element to the workbench.
 Select the WorkBench element in the tree, and right-click on this element to get the
-Add menu (Add --> Non-Test Elements --> HTTP Proxy Server).</p>
+Add menu (Add --> Non-Test Elements --> HTTP(S) Test Script Recorder).</p>
 <p>
-You also need to set up your browser to use the JMeter proxy port as the proxy for HTTP and HTTPS requests.
-Do not use JMeter as the proxy for any other request types - FTP, etc. - as the JMeter proxy cannot handle them.
+The recorder is implemented as an HTTP(S) proxy server.
+You need to set up your browser use the proxy for all HTTP and HTTPS requests.
+[Do not use JMeter as the proxy for any other request types - FTP, etc. - as JMeter cannot handle them.]
 </p>
 <p>
-When recording HTTPS, the JMeter proxy server uses a dummy certificate to enable it to accept the SSL connection from
-the browser. This certificate is not one of the certificates that browsers normally trust, and will not be for the
-correct host, so the browser should display a dialogue asking if you want to accept the certificate or not. For example:
+Ideally use private browsing mode when recording the session.
+This should ensure that the browser starts with no stored cookies, and prevents certain changes from being saved.
+For example, Firefox does not allow certificate overrides to be saved permanently.
+</p>
+<h4>HTTPS recording and certificates</h4>
+<p>
+HTTPS connections use certificates to authenticate the connection between the browser and the web server.
+When connecting via HTTPS, the server presents the certificate to the browser.
+To authenticate the certificate, the browser checks that the server certificate is signed
+by a Certificate Authority (CA) that is linked to one of its in-built root CAs.
+[Browsers also check that the certificate is for the correct host or domain, and that it is valid and not expired.]
+If any of the browser checks fail, it will prompt the user who can then decided whether to allow the connection to proceed.  
+</p>
+<p>
+JMeter needs to use its own certificate to enable it to intercept the HTTPS connection from
+the browser. Effectively JMeter has to pretend to be the target server.
+</p>
+<p>
+For versions of JMeter from 2.10, JMeter will generate its own certificate(s).
+These are generated with a validity period defined by the property <code>proxy.cert.validity</code>, default 7 days, and random passwords.
+If JMeter detects that it is running under Java 7 or later, it will generate certificates for each target server as necessary (dynamic mode)
+unless the following property is defined: <code>proxy.cert.dynamic_keys=false</code>.
+When using dynamic mode, the certificate will be for the correct host name, and will be signed by a JMeter-generated CA certificate.
+By default, this CA certificate won't be trusted by the browser, however it can be installed as a trusted certificate.
+Once this is done, the generated server certificates will be accepted by the browser.
+This has the advantage that even embedded HTTPS resources can be intercepted, and there is no need to override the browser checks for each new server.
+(Browsers don't prompt for embedded resources. So with earlier versions, embedded resources would only be downloaded for servers that were already 'known' to the browser)
+</p>
+<p>Unless a keystore is provided (and you define the property <code>proxy.cert.alias</code>),
+JMeter needs to use the keytool application to create the keystore entries. 
+Versions of JMeter after 2.10 include code to check that keytool is available by looking in various standard places.
+If JMeter is unable to find the keytool application, it will report an error.
+If necessary, the systen property <code>keytool.directory</code> can be used to tell JMeter where to find keytool.
+This should be defined in the file <code>system.properties</code>.
+</p>
+<p>
+The JMeter certificates are generated (if necessary) when the Start button is pressed.
+<b>Certificate generation can take some while, during which time the GUI will be unresponsive.</b>
+The cursor is changed to an hour-glass whilst this is happening.
+When certificate generation is complete, the GUI will display a pop-up dialogue containing the details of the certificate for the root CA.
+This certificate needs to be installed by the browser in order for it to accept the host certificates generated by JMeter; see <a href="#install_cert">below</a> for details.
+</p>
+<p>
+If necessary, you can force JMeter to regenerate the keystore (and the exported certificates - ApacheJMeterTemporaryRootCA[.usr|.crt]) by deleting the keystore file <code>proxyserver.jks</code> from the JMeter directory.
+</p>
+<p>
+With versions of JMeter up to 2.9, it used a single certificate for all target servers.
+[Likewise if JMeter is not being run under Java 1.7 or later]
+This certificate is not one of the certificates that browsers normally trust, and will not be for the
+correct host.<br/>
+As a consequence: 
+<ul>
+<li>The browser should display a dialogue asking if you want to accept the certificate or not. For example:<br/>
 <code>
 1) The server's name "www.example.com" does not match the certificate's name
-   "JMeter Proxy". Somebody may be trying to eavesdrop on you.
-2) The certificate for "JMeter Proxy" is signed by the unknown Certificate Authority
-   "JMeter Proxy". It is not possible to verify that this is a valid certificate.
-</code> 
+   "JMeter Proxy (DO NOT TRUST)". Somebody may be trying to eavesdrop on you.<br/>
+2) The certificate for "JMeter Proxy (DO NOT TRUST)" is signed by the unknown Certificate Authority
+   "JMeter Proxy (DO NOT TRUST)". It is not possible to verify that this is a valid certificate.<br/>
+</code> <br/>
 You will need to accept the certificate in order to allow the JMeter Proxy to intercept the SSL traffic in order to
-record it. You should only accept the certificate temporarily.
+record it.
+However, do not accept this certificate permanently; it should only be accepted temporarily.
+Browsers only prompt this dialogue for the certificate of the main url, not for the resources loaded in the page, such as images, css or javascript files hosted on a secured external CDN. 
+If you have such resources (gmail has for example), you'll have to first browse manually to these other domains in order to accept JMeter's certificate for them. 
+Check in jmeter.log for secure domains that you need to register certificate for.
+</li>
+<li>If the browser has already registered a validated certificate for this domain, the browser will detect JMeter as a security breach and will refuse to load the page. If so, you have to remove the trusted certificate from your browser's keystore.
+</li>
+</ul>
 </p>
 <p>
+Versions of JMeter from 2.10 onwards still support this method, and will continue to do so if the you define the following property:
+<code>proxy.cert.alias</code>
 The following properties can be used to change the certificate that is used:
 <ul>
 <li>proxy.cert.directory - the directory in which to find the certificate (default = JMeter bin/)</li>
 <li>proxy.cert.file - name of the keystore file (default "proxyserver.jks")</li>
-<li>proxy.cert.keystorepass - keystore password (default "password")</li>
-<li>proxy.cert.keypassword - certificate key password (default "password")</li>
-<li>proxy.cert.type - the certificate type (default "JKS")</li>
-<li>proxy.cert.factory - the factory (default "SunX509")</li>
+<li>proxy.cert.keystorepass - keystore password (default "password") [Ignored if using JMeter certificate]</li>
+<li>proxy.cert.keypassword - certificate key password (default "password") [Ignored if using JMeter certificate]</li>
+<li>proxy.cert.type - the certificate type (default "JKS") [Ignored if using JMeter certificate]</li>
+<li>proxy.cert.factory - the factory (default "SunX509") [Ignored if using JMeter certificate]</li>
+<li>proxy.cert.alias - the alias for the key to be used. If this is defined, JMeter does not attempt to generate its own certificate(s).</li>
 <li>proxy.ssl.protocol - the protocol to be used (default "SSLv3")</li>
 </ul>
 </p>
@@ -5551,11 +5840,71 @@ then you need to <a href="get-started.html#proxy_server">tell JMeter to use that
 using the <a href="get-started.html#options">command-line options</a> -H and -P.
 This setting will also be needed when running the generated test plan.
 </note>
+<a name="install_cert"/>
+<h4>Installing the JMeter CA certificate for HTTPS recording</h4>
+<p>
+As mentioned above, when run under Java 7, JMeter can generate certificates for each server.
+For this to work smoothly, the root CA signing certificate used by JMeter needs to be trusted by the browser.
+The first time that the recorder is started, it will generate the certificates if necessary. 
+The root CA certificate is exported into a file with the name <code>ApacheJMeterTemporaryRootCA</code> in the current launch directory.
+When the certificates have been set up, JMeter will show a dialog with the current certificate details.
+At this point, the certificate can be imported into the browser, as per the instructions below.
+</p>
+<p>
+Note that once the root CA certificate has been installed as a trusted CA, the browser will trust any certificates signed by it.
+Until such time as the certificate expires or the certificate is removed from the browser, it will not warn the user that the certificate is being relied upon.
+So anyone that can get hold of the keystore and password can use the certificate to generate certificates which will be accepted
+by any browsers that trust the JMeter root CA certificate.
+For this reason, the password for the keystore and private keys are randomly generated and a short validity period used.
+The passwords are stored in the local preferences area.
+Please ensure that only trusted users have access to the host with the keystore.
+</p>
+<h5>Installing the certificate in Firefox</h5>
+<p>
+Choose the following options:
+<ul>
+<li>Tools / Options</li>
+<li>Advanced / Certificates</li>
+<li>View Certificates</li>
+<li>Authorities</li>
+<li>Import ...</li>
+<li>Browse to the JMeter launch directory, and click on the file <code>ApacheJMeterTemporaryRootCA.crt</code>, press Open</li>
+<li>Click View and check that the certificate details agree with the ones displayed by the JMeter Test Script Recorder</li>
+<li>If OK, select "Trust this CA to identify web sites", and press OK</li>
+<li>Close dialogs by pressing OK as necessary</li>
+</ul>
+</p>
+<h5>Installing the certificate in Chrome or Internet Explorer</h5>
+<p>
+Both Chrome and Internet Explorer use the same trust store for certificates.
+<ul>
+<li>Browse to the JMeter launch directory, and click on the file <code>ApacheJMeterTemporaryRootCA.crt</code>, and open it</li>
+<li>Click on the "Details" tab and check that the certificate details agree with the ones displayed by the JMeter Test Script Recorder</li>
+<li>If OK, go back to the "General" tab, and click on "Install Certificate ..." and follow the Wizard prompts</li>
+</ul>
+</p>
+<h5>Installing the certificate in Opera</h5>
+<p>
+<ul>
+<li>Tools / Preferences / Advanced / Security</li>
+<li>Manage Certificates...</li>
+<li>Select "Intermediate" tab, click "Import..."</li>
+<li>Browse to the JMeter launch directory, and click on the file <code>ApacheJMeterTemporaryRootCA.usr</code>, and open it</li>
+<li></li>
+</ul>
+</p>
 </description>
 
 <properties>
         <property name="Name" required="No">Descriptive name for this element that is shown in the tree.</property>
-        <property name="Port" required="Yes">The port that the Proxy Server listens to.  8080 is the default, but you can change it.</property>
+        <property name="Port" required="Yes">The port that the HTTP(S) Test Script Recorder listens to.  8080 is the default, but you can change it.</property>
+        <property name="HTTPS Domains" required="No">List of domain (or host) names for HTTPS. Use this to pre-generate certificates for all servers you wish to record.
+        <br/>
+        For example, *.apache.org,*.incubator.apache.org
+        <br/>
+        Note that wildcard domains only apply to one level,
+        i.e. podling.incubator.apache.org matches *.incubator.apache.org but not *.apache.org
+        </property>
         <property name="Target Controller" required="Yes">The controller where the proxy will store the generated samples. By default, it will look for a Recording Controller and store them there wherever it is.</property>
         <property name="Grouping" required="Yes">Whether to group samplers for requests from a single "click" (requests received without significant time separation), and how to represent that grouping in the recording:
            <ul>
@@ -5570,29 +5919,32 @@ This setting will also be needed when running the generated test plan.
            If you are using grouping, please ensure that you leave the required gap between clicks.
         </property>
         <!-- TODO:property name="Group Separation Interval">Inactivity time between two requests needed to consider them in two separate groups.</property-->
-		<property name="Capture HTTP Headers" required="Yes">Should headers be added to the plan?
-		If specified, a Header Manager will be added to each HTTP Sampler.
-		The Proxy server always removes Cookie and Authorization headers from the generated Header Managers.
-		By default it also removes If-Modified-Since and If-None-Match headers.
-		These are used to determine if the browser cache items are up to date;
-		when recording one normally wants to download all the content.
+        <property name="Capture HTTP Headers" required="Yes">Should headers be added to the plan?
+        If specified, a Header Manager will be added to each HTTP Sampler.
+        The Proxy server always removes Cookie and Authorization headers from the generated Header Managers.
+        By default it also removes If-Modified-Since and If-None-Match headers.
+        These are used to determine if the browser cache items are up to date;
+        when recording one normally wants to download all the content.
         To change which additional headers are removed, define the JMeter property <b>proxy.headers.remove</b>
         as a comma-separated list of headers.
         </property>
-		<property name="Add Assertions" required="Yes">Add a blank assertion to each sampler?</property>
-		<property name="Regex Matching" required="Yes">Use Regex Matching when replacing variables? If checked replacement will use word boundaries, ie it will only replace word matching values of variable, not part of a word. A word boundary follows Perl5 definition and is equivalent to \b.</property>
+        <property name="Add Assertions" required="Yes">Add a blank assertion to each sampler?</property>
+        <property name="Regex Matching" required="Yes">Use Regex Matching when replacing variables? If checked replacement will use word boundaries, ie it will only replace word matching values of variable, not part of a word. A word boundary follows Perl5 definition and is equivalent to \b.</property>
         <property name="Type" required="Yes">Which type of sampler to generate (the Java default or HTTPClient)</property>
         <property name="Redirect Automatically" required="Yes">Set Redirect Automatically in the generated samplers?</property>
-        <property name="Follow Redirects" required="Yes">Set Follow Redirects in the generated samplers?</property>
-		<property name="Use Keep-Alive" required="Yes">Set Use Keep-Alive in the generated samplers?</property>
-		<property name="Retrieve all Embedded Resources" required="Yes">Set Retrieve all Embedded Resources in the generated samplers?</property>
-		<property name="Content Type filter" required="No">
-		Filter the requests based on the content-type - e.g. "text/html [;charset=utf-8 ]".
-		The fields are regular expressions which are checked to see if they are contained in the content-type.
-		[Does not have to match the entire field].
-		The include filter is checked first, then the exclude filter.
-		Samples which are filtered out will not be stored.
-		</property>
+        <property name="Follow Redirects" required="Yes">Set Follow Redirects in the generated samplers?<br/>
+        <b>Note:</b> see "Recording and redirects" section below for important information.
+        </property>
+        <property name="Use Keep-Alive" required="Yes">Set Use Keep-Alive in the generated samplers?</property>
+        <property name="Retrieve all Embedded Resources" required="Yes">Set Retrieve all Embedded Resources in the generated samplers?</property>
+        <property name="Content Type filter" required="No">
+        Filter the requests based on the content-type - e.g. "text/html [;charset=utf-8 ]".
+        The fields are regular expressions which are checked to see if they are contained in the content-type.
+        [Does not have to match the entire field].
+        The include filter is checked first, then the exclude filter.
+        Samples which are filtered out will not be stored.
+        <b>Note: this filtering is applied to the content type of the response</b>
+        </property>
         <property name="Patterns to Include" required="No">Regular expressions that are matched against the full URL that is sampled.  Allows filtering of requests that are recorded.  All requests pass through, but only
         those that meet the requirements of the Include/Exclude fields are <i>recorded</i>.  If both Include and Exclude are
         left empty, then everything is recorded (which can result in dozens of samples recorded for each page, as images, stylesheets,
@@ -5606,6 +5958,26 @@ This setting will also be needed when running the generated test plan.
   useful when you change/add/delete an include/exclude filter expression.</property>
 </properties>
 
+<h4>Recording and redirects</h4>
+<p>
+During recording, the browser will follow a redirect response and generate an additional request.
+The Proxy will record both the original request and the redirected request
+(subject to whatever exclusions are configured).
+The generated samples have "Follow Redirects" selected by default, because that is generally better.
+[Redirects may depend on the original request, so repeating the originally recorded sample may not always work.]
+</p>
+<p>
+Now if JMeter is set to follow the redirect during replay, it will issue the original request, 
+and then replay the redirect request that was recorded.
+To avoid this duplicate replay, JMeter tries to detect when a sample is the result of a previous
+redirect. If the current response is a redirect, JMeter will save the redirect URL.
+When the next request is received, it is compared with the saved redirect URL and if there is a match,
+JMeter will disable the generated sample. It also adds comments to the redirect chain.
+This assumes that all the requests in a redirect chain will follow each other without any intervening requests.
+To disable the redirect detection, set the property <code>proxy.redirect.disabling=false</code>
+</p>
+
+<h4>Includes and Excludes</h4>
 <p>The <b>include and exclude patterns</b> are treated as regular expressions (using Jakarta ORO).
 They will be matched against the host name, port (actual or implied) path and query (if any) of each browser request.
 If the URL you are browsing is <br></br> 
@@ -5629,6 +6001,7 @@ you should be able to record what you are interested in and skip what you are no
 N.B. the string that is matched by the regular expression must be the same as the <b>whole</b> host+path string.<br></br>Thus <b>&quot;\.html&quot;</b> will <b>not</b> match <b>j.a.o/index.html</b>
 </p>
 
+<h4>Capturing binary POST data</h4>
 <p>
 Versions of JMeter from 2.3.2 are able to capture binary POST data.
 To configure which content-types are treated as binary, update the JMeter property proxy.binary.types.
@@ -5643,8 +6016,9 @@ proxy.binary.filesuffix=.binary
 </pre>
 </p>
 
+<h4>Adding timers</h4>
 <p>It is also possible to have the proxy add timers to the recorded script. To
-do this, create a timer directly within the HTTP Proxy Server component.
+do this, create a timer directly within the HTTP(S) Test Script Recorder component.
 The proxy will place a copy of this timer into each sample it records, or into
 the first sample of each group if you're using grouping. This copy will then be
 scanned for occurences of variable ${T} in its properties, and any such
@@ -5656,7 +6030,7 @@ recorded (in milliseconds).</p>
 appropriate server and port, where the server is the machine JMeter is running on, and
 the port # is from the Proxy Control Panel shown above.</note>
 
-<p><b>Where Do Samples Get Recorded?</b></p>
+<h4>Where Do Samples Get Recorded?</h4>
 <p>JMeter places the recorded samples in the Target Controller you choose. If you choose the default option
 "Use Recording Controller", they will be stored in the first Recording Controller found in the test object tree (so be
 sure to add a Recording Controller before you start recording).</p>
@@ -5673,20 +6047,20 @@ If JMeter does not record browser URLs such as http://localhost/ or http://127.0
 try using the non-loopback hostname or IP address, e.g. http://myhost/ or http://192.168.0.2/.
 </p>
 
-<p><b>Handling of HTTP Request Defaults</b></p>
-<p>If the HTTP Proxy Server finds enabled <complink name="HTTP Request Defaults"/> directly within the
+<h4>Handling of HTTP Request Defaults</h4>
+<p>If the HTTP(S) Test Script Recorder finds enabled <complink name="HTTP Request Defaults"/> directly within the
 controller where samples are being stored, or directly within any of its parent controllers, the recorded samples
 will have empty fields for the default values you specified. You may further control this behaviour by placing an
-HTTP Request Defaults element directly within the HTTP Proxy Server, whose non-blank values will override
+HTTP Request Defaults element directly within the HTTP(S) Test Script Recorder, whose non-blank values will override
 those in the other HTTP Request Defaults. See <a href="best-practices.html#proxy_server"> Best
-Practices with the Proxy Server</a> for more info.</p>
+Practices with the HTTP(S) Test Script Recorder</a> for more info.</p>
 
-<p><b>User Defined Variable replacement</b></p>
-<p>Similarly, if the HTTP Proxy Server finds <complink name="User Defined Variables"/> (UDV) directly within the
+<h4>User Defined Variable replacement</h4>
+<p>Similarly, if the HTTP(S) Test Script Recorder finds <complink name="User Defined Variables"/> (UDV) directly within the
 controller where samples are being stored, or directly within any of its parent controllers, the recorded samples
 will have any occurences of the values of those variables replaced by the corresponding variable. Again, you can
-place User Defined Variables directly within the HTTP Proxy Server to override the values to be replaced. See
-<a href="best-practices.html#proxy_server"> Best Practices with the Proxy Server</a> for more info.</p>
+place User Defined Variables directly within the HTTP(S) Test Script Recorder to override the values to be replaced. See
+<a href="best-practices.html#proxy_server"> Best Practices with the Test Script Recorder</a> for more info.</p>
 
 <note>Please note that matching is case-sensitive.</note>
 
@@ -5710,12 +6084,19 @@ so be sure to check this if UDVs are not working as expected.
 your browser's proxy settings.  Now, you may want to sort and re-order the test script, add timers, listeners, a
 cookie manager, etc.</p>
 
-<p><b>How can I record the server's responses too?</b></p>
-<p>Just place a <complink name="View Results Tree"/> listener as a child of the Proxy Server and the responses will be displayed. 
+<h4>How can I record the server's responses too?</h4>
+<p>Just place a <complink name="View Results Tree"/> listener as a child of the HTTP(S) Test Script Recorder and the responses will be displayed. 
 You can also add a <complink name="Save Responses to a file"/> Post-Processor which will save the responses to files.
 </p>
 
-<p><b>Cookie Manager</b></p>
+<h4>Associating requests with responses</h4>
+<p>
+If you define the property <code>proxy.number.requests=true</code> 
+JMeter will add a number to each sampler and each response.
+Note that there may be more responses than samplers if excludes or includes have been used.
+Responses that have been excluded will have labels enclosed in [ and ], for example <code>[23 /favicon.ico]</code> 
+</p>
+<h4>Cookie Manager</h4>
 <p>
 If the server you are testing against uses cookies, remember to add an <complink name="HTTP Cookie Manager"/> to the test plan
 when you have finished recording it.
@@ -5724,19 +6105,19 @@ to do the cookie handling during a test run.
 The JMeter Proxy server passes on all cookies sent by the browser during recording, but does not save them to the test
 plan because they are likely to change between runs.
 </p>
-<p><b>Authorization Manager</b></p>
+<h4>Authorization Manager</h4>
 <p>
 The Proxy server passes on any Authorization headers sent by the browser, but does not save them in the test plan.
 If the site requires Authorization, you will need to add an Authorization Manager and fill it in with the necessary entries.
 </p>
-<p><b>Uploading files</b></p>
+<h4>Uploading files</h4>
 <p>
 Some browsers (e.g. Firefox and Opera) don't include the full name of a file when uploading files.
 This can cause the JMeter proxy server to fail.
 One solution is to ensure that any files to be uploaded are in the JMeter working directory,
 either by copying the files there or by starting JMeter in the directory containing the files.
 </p>
-<p><b>Recording HTTP Based Non Textual Protocols not natively available in JMeter</b></p>
+<h4>Recording HTTP Based Non Textual Protocols not natively available in JMeter</h4>
 <p>
 You may have to record an HTTP protocol that is not handled by default by JMeter (Custom Binary Protocol, Adobe Flex, Microsoft Silverlight... ).
 Although JMeter does not provide a native proxy implementation to record these protocols, you have the ability to
@@ -5768,8 +6149,11 @@ Note that you can get more control on responses by adding an HTTP Header Manager
 <properties>
         <property name="X-Sleep" required="No">Time to sleep in ms before sending response</property>
         <property name="X-SetCookie" required="No">Cookies to be set on response</property>
-        <property name="X-ResponseStatus" required="No">Response status, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Stauts responses</a>, example 200 OK, 500 Internal Server Error ....</property>
+        <property name="X-ResponseStatus" required="No">Response status, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status responses</a>, example 200 OK, 500 Internal Server Error ....</property>
         <property name="X-ResponseLength" required="No">Size of response, this enable returning only a substring of Request content</property>
+        <property name="X-SetHeaders" required="No">Pipe separator list of headers, example:<br/> 
+        <code>headerA=valueA|headerB=valueB</code> would set headerA to valueA and headerB to valueB.        
+        </property>
 </properties>
 
 </note>
@@ -5833,6 +6217,9 @@ The Test Fragment is used in conjunction with the <complink name="Include Contro
 <properties>
         <property name="Name" required="Yes">Descriptive name for this element that is shown in the tree.</property>
 </properties>
+<note>
+When using Test Fragment with <complink name="Module Controller"/>, ensure you disable the Test Fragment to avoid the execution of Test Fragment itself.
+</note>
 </component>
 
 <component name="setUp Thread Group" index="&sect-num;.9.10" width="537" height="289" screenshot="setup_thread_group.png">
@@ -5861,7 +6248,7 @@ The Test Fragment is used in conjunction with the <complink name="Include Contro
 <!-- 
 <section name="&sect-num;.10 Reports" anchor="Reports">
 <description>
-		<br></br>
+        <br></br>
 </description>
 
 <component name="Report Plan" index="&sect-num;.10.1" screenshot="">

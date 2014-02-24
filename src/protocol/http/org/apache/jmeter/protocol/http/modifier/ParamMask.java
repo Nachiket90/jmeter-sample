@@ -27,7 +27,7 @@ import org.apache.jmeter.testelement.property.LongProperty;
  * This object defines with what a parameter has its value replaced, and the
  * policies for how that value changes. Used in {@link ParamModifier}.
  *
- * @version $Revision: 905028 $
+ * @version $Revision$
  */
 public class ParamMask extends AbstractTestElement implements Serializable {
 
