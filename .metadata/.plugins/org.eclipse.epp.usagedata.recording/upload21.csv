@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Core exception while retrieving the content description",1395311734674
+error,log,,,"Core exception while retrieving the content description",1395311734689
+error,log,,,"Core exception while retrieving the content description",1395311734689
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739783
+error,log,,,"Core exception while retrieving the content description",1395311739799
+error,log,,,"Core exception while retrieving the content description",1395311741158
+error,log,,,"Core exception while retrieving the content description",1395311741158
+error,log,,,"Core exception while retrieving the content description",1395311741158
+error,log,,,"Core exception while retrieving the content description",1395311741174
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311742814
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311746158
+started,bundle,org.eclipse.jdt.debug,3.5.0.v20090526,"org.eclipse.jdt.debug",1395311757627
+started,bundle,org.eclipse.jdt.debug.ui,3.4.0.v20090527,"org.eclipse.jdt.debug.ui",1395311757799
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311758627
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311760439
+deactivated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311760502
+activated,workbench,org.eclipse.ui.workbench,3.5.0.I20090603-2000,"",1395311769924
+executed,command,org.eclipse.jdt.debug.ui,3.4.0.v20090527,"org.eclipse.jdt.debug.ui.localJavaShortcut.run",1395311769955
+activated,view,org.eclipse.ui.ide,3.5.0.I20090525-2000,"org.eclipse.ui.views.AllMarkersView",1395311772877
+activated,view,org.eclipse.ui.navigator.resources,3.4.0.I20090525-2000,"org.eclipse.ui.navigator.ProjectExplorer",1395311784314

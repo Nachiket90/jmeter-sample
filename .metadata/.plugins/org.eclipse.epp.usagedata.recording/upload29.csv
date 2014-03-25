@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+java.vm.specification.version,sysinfo,,,"1.7",1395312534216
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1395312534216
+java.vm.version,sysinfo,,,"24.0-b56",1395312534216
+activated,view,org.eclipse.ui.navigator.resources,3.4.0.I20090525-2000,"org.eclipse.ui.navigator.ProjectExplorer",1395312543372
+started,bundle,org.eclipse.jst.servlet.ui,1.1.300.v200902191739,"org.eclipse.jst.servlet.ui",1395312543434
+started,bundle,org.eclipse.compare,3.5.0.I20090514-0808,"org.eclipse.compare",1395312548122
+started,bundle,org.eclipse.debug.ui,3.5.0.v20090603,"org.eclipse.debug.ui",1395312549637
+started,bundle,org.eclipse.ant.ui,3.4.0.v20090520,"org.eclipse.ant.ui",1395312550716
+executed,command,org.eclipse.ant.ui,3.4.0.v20090520,"org.eclipse.ant.ui.antShortcut.run",1395312550747
+started,bundle,org.eclipse.ui.externaltools,3.2.0.v20090504,"org.eclipse.ui.externaltools",1395312550747
+started,bundle,org.eclipse.core.variables,3.2.200.v20090521,"org.eclipse.core.variables",1395312550747
+started,bundle,org.eclipse.ant.core,3.2.100.v20090520,"org.eclipse.ant.core",1395312550825
+started,bundle,org.eclipse.pde.build,3.5.0.v20090527-1800,"org.eclipse.pde.build",1395312550919
+started,bundle,org.eclipse.jdt.debug,3.5.0.v20090526,"org.eclipse.jdt.debug",1395312550997
+started,bundle,org.eclipse.jdt.debug.ui,3.4.0.v20090527,"org.eclipse.jdt.debug.ui",1395312551184
+activated,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1395312553559
+started,bundle,org.eclipse.compare.core,3.5.0.I20090430-0408,"org.eclipse.compare.core",1395312556403
+started,bundle,org.eclipse.equinox.p2.artifact.repository,1.0.100.v20090527-1812,"org.eclipse.equinox.p2.artifact.repository",1395312556512
+started,bundle,org.eclipse.help.base,3.4.0.v200906111540,"org.eclipse.help.base",1395312556528
+started,bundle,org.eclipse.emf.ant,2.4.0.v200906151043,"org.eclipse.emf.ant",1395312556528
+started,bundle,org.eclipse.emf.converter,2.5.0.v200906151043,"org.eclipse.emf.converter",1395312556528
+started,bundle,org.eclipse.emf.importer,2.5.0.v200906151043,"org.eclipse.emf.importer",1395312556528
+started,bundle,org.eclipse.emf.importer.ecore,2.4.0.v200906151043,"org.eclipse.emf.importer.ecore",1395312556528
+started,bundle,org.eclipse.equinox.p2.publisher,1.0.0.v20090527-1812,"org.eclipse.equinox.p2.publisher",1395312556528
+started,bundle,org.eclipse.emf.importer.rose,2.5.0.v200906151043,"org.eclipse.emf.importer.rose",1395312556528

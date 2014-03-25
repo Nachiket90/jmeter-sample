@@ -4,22 +4,29 @@ import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.swing.BorderFactory;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.tree.TreePath;
 
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.control.gui.LoopControlPanel;
+import org.apache.jmeter.exceptions.IllegalUserActionException;
+import org.apache.jmeter.gui.GuiPackage;
 import org.apache.jmeter.gui.action.AddToTree;
 import org.apache.jmeter.gui.tree.JMeterTreeModel;
 import org.apache.jmeter.gui.tree.JMeterTreeNode;
 import org.apache.jmeter.gui.util.JDateField;
 import org.apache.jmeter.gui.util.VerticalPanel;
 import org.apache.jmeter.reporters.CustomReporter;
+import org.apache.jmeter.reporters.gui.CustomReporterGui;
 import org.apache.jmeter.testelement.TestElement;
+import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jmeter.testelement.property.BooleanProperty;
 import org.apache.jmeter.testelement.property.LongProperty;
 import org.apache.jmeter.threads.AbstractThreadGroup;
@@ -63,23 +70,63 @@ public class CustomThreadGroupGui extends AbstractThreadGroupGui implements Item
 		this.showDelayedStart = true;
     	initCustom();
     	initCustomGui(); //not passing loopcount for inifinite run
+    	//addReporter();
+    	System.out.println("in constructor");
 	}
 	
 	public String getLabelResource() {
+		System.out.println("in getlabelresource");
         return "custom_thread_group_title"; // $NON-NLS-1$
 
     }
 	public TestElement createTestElement() {
+		System.out.println("in CreateTestElement");
         CustomThreadGroup tg = new CustomThreadGroup();
-        modifyTestElement(tg);
-        CustomReporter cr=new CustomReporter();
-        modifyTestElement(cr);
-        JMeterTreeModel jm = new JMeterTreeModel();
-        HashTree jmtree = jm.getTestPlan();
-        jmtree.add(tg);
-        jmtree.add(cr);
+        //String ReporterClass="org.apache.jmeter.reporters.gui.CustomReporterGui";
+        //GuiPackage guiPackage = GuiPackage.getInstance();
+        tg.addTestElementOnce(new CustomReporter());        
+        modifyTestElement(tg);     
+        //TestElement tg1=addReporter(tg);
         return tg;
     }
+
+	private void addReporter() {
+		
+		System.out.println("in add Reporter class");
+		TestElement testElementTg = null;
+		String ReporterClass="org.apache.jmeter.reporters.gui.CustomReporterGui";
+		String ThreadClass="org.apache.jmeter.threads.gui.CustomThreadGroupGui";
+		GuiPackage guiPackage = GuiPackage.getInstance();
+		
+		HashTree tree=guiPackage.getTreeModel().getTestPlan();
+		//JMeterTreeModel planTree=guiPackage.getTreeModel();
+		//TestElement testElement = guiPackage.createTestElement(ReporterClass);
+		//planTree.addComponent(testElement, node);
+		
+		Iterator<Object> iter = new LinkedList<Object>(tree.list()).iterator();
+		
+		while (iter.hasNext()) {
+			JMeterTreeNode item = (JMeterTreeNode) iter.next();
+			System.out.println("instance of : " + item.getTestElement().getName());
+			if(item.getTestElement() instanceof TestPlan){
+				guiPackage.updateCurrentNode();
+				testElementTg = guiPackage.createTestElement(ThreadClass);
+				TestElement testElementRp = guiPackage.createTestElement(ReporterClass);
+				JMeterTreeNode node1,node2;
+				/*try {
+					//node1 = guiPackage.getTreeModel().addComponent(testElementTg, item);
+					//guiPackage.getMainFrame().getTree().setSelectionPath(new TreePath(node1.getPath()));
+					//node2 = guiPackage.getTreeModel().addComponent(testElementRp, node1);
+					//guiPackage.getMainFrame().getTree().setSelectionPath(new TreePath(node2.getPath()));
+				} catch (IllegalUserActionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} */            
+			}
+		}
+		guiPackage.updateCurrentNode();
+		//return testElementTg;
+	}
 
 	/**
      * Modifies a given TestElement to mirror the data in the gui components.
@@ -89,6 +136,7 @@ public class CustomThreadGroupGui extends AbstractThreadGroupGui implements Item
 	@Override
 	public void modifyTestElement(TestElement tg) {
 		// TODO Auto-generated method stub
+		System.out.println("in modifytestelement");
 		 super.configureTestElement(tg);
 	        if (tg instanceof AbstractThreadGroup) {
 	            ((AbstractThreadGroup) tg).setSamplerController((LoopController) loopPanel.createTestElement());
@@ -102,6 +150,32 @@ public class CustomThreadGroupGui extends AbstractThreadGroupGui implements Item
 	        }
 	        tg.setProperty(new BooleanProperty(ThreadGroup.SCHEDULER, scheduler.isSelected()));
 	        tg.setProperty(ThreadGroup.DELAY, delay.getText());
+	        
+	        String ReporterClass="org.apache.jmeter.reporters.gui.CustomReporterGui";
+	        GuiPackage guiPackage = GuiPackage.getInstance();
+			
+			HashTree tree=guiPackage.getTreeModel().getTestPlan();			
+			Iterator<Object> iter = new LinkedList<Object>(tree.list()).iterator();
+			
+			while (iter.hasNext()) {
+				JMeterTreeNode item = (JMeterTreeNode) iter.next();
+				System.out.println("instance of : " + item.getTestElement().getName());
+				if(item.getTestElement() instanceof CustomThreadGroup && item.isLeaf()){
+					guiPackage.updateCurrentNode();
+					TestElement testElementRp = guiPackage.createTestElement(ReporterClass);
+					JMeterTreeNode node;
+					try {
+						node = guiPackage.getTreeModel().addComponent(testElementRp, item);
+						guiPackage.getMainFrame().getTree().setSelectionPath(new TreePath(node.getPath()));
+						break;
+					} catch (IllegalUserActionException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}             
+				}
+			}
+			//guiPackage.updateCurrentNode();
+		
 		
 	}
 
@@ -129,6 +203,8 @@ public class CustomThreadGroupGui extends AbstractThreadGroupGui implements Item
 	            start.setDate(new Date(tg.getPropertyAsLong(ThreadGroup.START_TIME)));
 	        }
 	        delay.setText(tg.getPropertyAsString(ThreadGroup.DELAY));
+	        
+	        
 	    }
 
 	    @Override

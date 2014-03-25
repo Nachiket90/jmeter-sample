@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.wst.jsdt.core,1.0.200.v200905201910,"org.eclipse.wst.jsdt.core",1395312534200
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.100.v200809240707,"org.eclipse.wst.jsdt.manipulation",1395312534200
+started,bundle,org.eclipse.wst.jsdt.ui,1.0.200.v200905242047,"org.eclipse.wst.jsdt.ui",1395312534200
+started,bundle,org.eclipse.wst.sse.core,1.1.400.v200905141750,"org.eclipse.wst.sse.core",1395312534200
+started,bundle,org.eclipse.wst.validation,1.2.102.v200905201610,"org.eclipse.wst.validation",1395312534200
+started,bundle,org.eclipse.wst.web,1.1.300.v200901261500,"org.eclipse.wst.web",1395312534200
+started,bundle,org.eclipse.wst.ws.service.policy.ui,1.0.102.v200903070248,"org.eclipse.wst.ws.service.policy.ui",1395312534200
+started,bundle,org.eclipse.wst.xml.core,1.1.400.v200904300540,"org.eclipse.wst.xml.core",1395312534200
+started,bundle,org.eclipse.equinox.simpleconfigurator,1.0.100.v20090520-1905,"org.eclipse.equinox.simpleconfigurator",1395312534216
+os,sysinfo,,,"win32",1395312534216
+arch,sysinfo,,,"x86",1395312534216
+ws,sysinfo,,,"win32",1395312534216
+locale,sysinfo,,,"en_US",1395312534216
+processors,sysinfo,,,"2",1395312534216
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1395312534216
+java.runtime.version,sysinfo,,,"1.7.0_40-b43",1395312534216
+java.specification.name,sysinfo,,,"Java Platform API Specification",1395312534216
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1395312534216
+java.specification.version,sysinfo,,,"1.7",1395312534216
+java.vendor,sysinfo,,,"Oracle Corporation",1395312534216
+java.version,sysinfo,,,"1.7.0_40",1395312534216
+java.vm.info,sysinfo,,,"mixed mode, sharing",1395312534216
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1395312534216
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1395312534216
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1395312534216
